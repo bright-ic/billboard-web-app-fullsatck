@@ -18,14 +18,10 @@ export const MAILGUN_DOMAIN:string = process.env.MAILGUN_DOMAIN || "";
 
 export const ELECTRICITY_MINIMUM_VENDING_AMOUNT = 500;
 
-// API PROVIDERS
-export const API_PROVIDER_API_BASE_URL_LIVE = process.env.API_PROVIDER_FELA_MP_API_BASE_URL_LIVE || '';
-export const API_PROVIDER_API_BASE_URL_STAGING = process.env.API_PROVIDER_FELA_MP_API_BASE_URL_STAGING || '';
+// API
+export const BILLBOARD_API_BASE_DOMAIN = process.env.BILLBOARD_API_BASE_DOMAIN || "";
+export const BILLBOARD_API_KEY = process.env.BILLBOARD_API_KEY || "";
 
-export const API_PROVIDER_FELA_MP = process.env.API_PROVIDER_FELA_MP || '';
-export const FELA_MP_API_STAGING_AUTH_TOKEN = process.env.FELA_MP_API_STAGING_AUTH_TOKEN || '';
-export const FELA_MP_MERCHANT_ID =  process.env.FELA_MP_MERCHANT_ID || '';
-export const FELA_MP_MERCHANT_PASSWORD = process.env.FELA_MP_MERCHANT_PASSWORD || '';
 
 export const REDIS_URL:string = process.env.REDIS_URL || '';
 export const REDIS_KEY_API_TOKEN = "valid_api_tokens";

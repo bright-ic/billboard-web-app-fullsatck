@@ -7,6 +7,8 @@ import _ from 'lodash';
 import BaseController from './base';
 import { Request, Response } from "express";
 import { ROUTE_HOME } from '../lib/route-constants';
+import ElectricityService from '../services/electricity';
+import { ObjectType } from '../types';
 
 class IndexController extends BaseController {
 
@@ -15,10 +17,22 @@ class IndexController extends BaseController {
 	}
 
 	async index(req:Request, res:Response) {
+		const view_data:ObjectType = {};
+		view_data.discos = [];
 		try {
-			
-			res.render('index', this.setTemplateParameters(req, {
+			const electricityService = new ElectricityService();
+			const discos_res = await electricityService.getDiscos();
+			if(discos_res.success && discos_res.data) {
+				view_data.discos = discos_res.data;
+			}
+		} catch(e) {
+			console.log(e);
+		}
 
+		try {
+			res.render('index', this.setTemplateParameters(req, {
+				selected_page: 'home_page',
+				...view_data
 			}));
 		} catch (e) {
 			console.log(e)
