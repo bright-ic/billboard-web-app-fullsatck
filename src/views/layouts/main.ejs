@@ -37,6 +37,11 @@
             <% } else if(typeof errors === "string") { %>
                 errors = '<%=errors%>';
             <%}%>
+            <% if(typeof _flash === "object") { %>
+                flash_errors = <%- JSON.stringify(_flash) %>;
+            <% } else if(typeof _flash === "string") { %>
+                flash_errors = '<%=_flash%>';
+            <%}%>
         </script>
         
         <%- style %>

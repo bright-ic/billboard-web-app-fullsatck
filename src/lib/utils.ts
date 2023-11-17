@@ -1,5 +1,6 @@
 import * as _ from "lodash";
 import { Request } from 'express';
+import { ObjectType } from "../types";
 
 export function get_ip_address (req: Request) {
     let ip: any = null;
@@ -39,3 +40,24 @@ export const uniqid = (prefix:string = "", more_entropy:boolean = false) => {
     const id = sec.toString(16).replace(/\./g, "").padEnd(13, "0");
     return `${prefix}${id}${more_entropy ? `.${Math.trunc(Math.random() * 100000000)}` : ""}`;
 };
+
+/**
+ * Reindex a result set/array by a given key
+ * @param {array} array Array to be searched
+ * @param {string} key Field to search
+ * Useful for taking database result sets and indexing them by id or unique_hash
+ *
+ */
+export const reindex = (array:ObjectType[], key = 'id') => {
+    const indexed_array:ObjectType = {};
+    if ((_.isArray(array) || _.isObject(array)) && !_.isEmpty(array)) {
+        _.forEach(array, item => {
+            if (isObject(item) && _.has(item, key)) {
+                indexed_array[item[key]] = item;
+            }
+        })
+        return indexed_array;
+    } else {
+        return false;
+    }
+}

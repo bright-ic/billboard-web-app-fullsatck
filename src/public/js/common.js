@@ -305,7 +305,10 @@ function display_errors(errors, target_form_id, redirect_url, callback_function)
 function build_errors () {
     if (!isUndefined(errors) && !empty(errors)) {
         display_errors(errors);
+    } else if (!isUndefined(flash_errors) && !empty(flash_errors)) {
+        display_errors(flash_errors);
     }
+    
 }
 
 function build_success_message (success_message) {
@@ -436,6 +439,27 @@ var isEmpty = function(data)  {
     else if (isNull(data)) rtn = true;
 
     return rtn;
+}
+
+/**
+ * Reindex a result set/array by a given key
+ * @param {array} array Array to be searched
+ * @param {string} key Field to search
+ * Useful for taking database result sets and indexing them by id or unique_hash
+ *
+ */
+var reindex = function(array, key = 'id') {
+    const indexed_array = {};
+    if (isArray(array) && !isEmpty(array)) {
+        array.forEach(function(item) {
+            if (isObject(item) && item.hasOwnProperty(key)) {
+                indexed_array[item[key]] = item;
+            }
+        })
+        return indexed_array;
+    } else {
+        return false;
+    }
 }
 
 /**

@@ -20,6 +20,17 @@ export type RequestHeaderConfigType = {
         [key:string]: any
     }
 }
+export type ValidateMeterRequestDataType = {
+    disco: string,
+    account_type: string,
+    meter_number: string
+    customer_email: string,
+    customer_phone_number: string,
+    amount: string | number,
+    transaction_reference?: string,
+    [key:string]: any
+}
+
 export type ValidateMeterPayloadType = {
     disco: string,
     account_type: string,
