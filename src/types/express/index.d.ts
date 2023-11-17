@@ -20,7 +20,9 @@ declare global {
 		decoded_jwt_data?: SignInPayloadType;
 		user?: UserInterface,
 		session: Session & Partial<SessionData>,
-		status: number
+		status: number,
+		flash(message?: string): { [key: string]: string[] };
+        flash(event: string, message: string | string[]): any;
     }
     export interface Response {
         new_token?: string;

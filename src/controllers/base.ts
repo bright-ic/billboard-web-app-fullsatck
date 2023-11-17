@@ -1,7 +1,8 @@
 
-import { has, isObject as _isObject, each, isString, isEmpty } from 'lodash';
+import _ , { has, isObject as _isObject, each, isString, isEmpty } from 'lodash';
 import { Request, Response } from 'express';
 import { SessionData } from 'express-session';
+import { IS_LIVE } from '../lib/contants';
 
 /**
  * Base functionality for all routes/controllers to inherit in other controllers/routes
@@ -45,6 +46,19 @@ class BaseController {
 		// if there is no local template data to merge with global data
 		if (typeof localData === 'undefined') {
 			localData = {};
+		}
+
+		if (this.is_dev) {
+			localData.TEMPLATE_VERSION = new Date().getTime();
+		} else {
+			localData.TEMPLATE_VERSION = process.env. TEMPLATE_VERSION || '2023.00';
+		}
+		if (!localData.page_title) {
+			localData.page_title = "";
+    	}
+		localData.is_live = IS_LIVE;
+		if (!_.isEmpty(req.originalUrl)) {
+			localData.request_url = req.originalUrl;
 		}
 
 		return this.render(req, localData);
