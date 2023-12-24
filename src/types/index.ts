@@ -59,11 +59,14 @@ export type PurchasePowerPayloadType = {
     disco: string,
     customer_meter_number: string, 
     account_type: string,
-    merchant_id: string, 
+    merchant_id?: string, 
     amount: number | string,
     transaction_reference: string,
     gift_phone_number?: string
     gift_email?: string
+    // for phed
+    customer_number?:string,
+    customer_name?:string
 }
 export type EnergyArearsType = {
     HEAD: string,

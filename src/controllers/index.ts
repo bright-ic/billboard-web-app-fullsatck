@@ -12,10 +12,6 @@ import { ObjectType } from '../types';
 
 class IndexController extends BaseController {
 
-	constructor(req:Request) {
-		super(req);
-	}
-
 	async index(req:Request, res:Response) {
 		const view_data:ObjectType = {};
 		view_data.discos = [];
