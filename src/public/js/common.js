@@ -33,7 +33,7 @@ function hide_spinner() {
  * @data action - {string} - Action to be taken when form is submited
  * @data callback - {function} - function to be executed after request is successfull
  */
-function do_form_submit(target_form_id, action, callback_function) {
+function process_form_submit(target_form_id, action, callback_function) {
     var submit_url = $('#' + target_form_id).attr("action");
     var form_data = $('#' + target_form_id).serializeArray();
    

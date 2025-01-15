@@ -1,12 +1,12 @@
 {
-  "name": "deeptech-shared-libraries",
+  "name": "jerax-services",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "start": "env-cmd -f ./config/dev.env nodemon --exec 'ts-node' src/server.ts",
-    "copy": "copyfiles private.key dist && copyfiles public.key dist",
+    "copy": "copyfiles private.key dist && copyfiles public.key dist && copyfiles -u 1 'src/public/**/*' dist && copyfiles -u 1 'src/views/**/*' dist",
     "dev": "npm run build && npm run copy && env-cmd -f ./config/dev.env  nodemon --exec babel-node dist/server.js",
     "live": "npm run build && npm run copy && env-cmd -f ./config/live.env node dist/server.js"
   },
@@ -14,11 +14,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/express-ejs-layouts": "^2.5.4",
-    "@types/handlebars": "^4.1.0",
-    "@types/validator": "^13.11.6",
-    "@types/validatorjs": "^3.15.3",
-    "aws-sdk": "^2.1482.0",
     "axios": "^1.6.1",
     "compression": "^1.7.4",
     "connect-redis": "^4.0.4",
@@ -31,7 +26,6 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "flash": "^1.1.0",
-    "flutterwave-node-v3": "^1.1.6",
     "helmet": "^7.0.0",
     "http-proxy": "^1.18.1",
     "ioredis": "^5.3.2",
@@ -42,7 +36,6 @@
     "moment-timezone": "^0.5.34",
     "mongodb": "^6.2.0",
     "striptags": "^3.2.0",
-    "ts-node": "^10.9.1",
     "typescript": "^5.2.2",
     "validator": "^13.5.2",
     "validatorjs": "^3.22.1"
@@ -63,9 +56,14 @@
     "@types/lodash": "^4.14.199",
     "@types/mongodb": "^4.0.7",
     "@types/node": "^20.8.10",
+    "@types/express-ejs-layouts": "^2.5.4",
+    "@types/handlebars": "^4.1.0",
+    "@types/validator": "^13.11.6",
+    "@types/validatorjs": "^3.15.3",
     "copyfiles": "^2.4.1",
     "env-cmd": "^9.0.3",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1"
   },
   "engines": {
     "npm": ">=8.0.0",

@@ -2,9 +2,6 @@
 export const DATABASE = process.env.DATABASE || '';
 
 export const COLLECTION_USERS = 'users';
-export const COLLECTION_API_TOKENS = 'api_tokens';
-export const COLLECTION_PAYMENTS = 'payments';
-export const COLLECTION_TRANSACTIONS = 'transactions';
 
 
 export const IS_LIVE = process.env.NODE_ENV && process.env.NODE_ENV === "production";
@@ -16,32 +13,6 @@ export const MAILGUN_URL:string = process.env.MAILGUN_URL || "api.mailgun.net";
 export const MAILGUN_DOMAIN:string = process.env.MAILGUN_DOMAIN || "";
 
 
-export const ELECTRICITY_MINIMUM_VENDING_AMOUNT = 500;
-
-// API
-export const BILLBOARD_API_BASE_DOMAIN = process.env.BILLBOARD_API_BASE_DOMAIN || "";
-export const BILLBOARD_API_KEY = process.env.BILLBOARD_API_KEY || "";
 
 
 export const REDIS_URL:string = process.env.REDIS_URL || '';
-export const REDIS_KEY_API_TOKEN = "valid_api_tokens";
-export const REDIS_KEY_FELA_MP_API_TOKEN_FIELD_NAME = "fela_mp_active_api_token";
-
-export const TRANSACTION_STATUS_INITIALIZED = 'INITIALIZED';
-// export const TRANSACTION_STATUS_PAYMENT_CONFIRMATION_FAILED = 'PAYMENT-CONFIRMATION-FAILED';
-// export const TRANSACTION_STATUS_PAYMENT_CONFIRMATION_SUCCEEDED = 'PAYMENT-CONFIRMATION-SUCCEEDED';
-export const TRANSACTION_STATUS_TOKEN_GENERATION_FAILED = 'TOKEN-GENERATION-FAILED';
-export const TRANSACTION_STATUS_TOKEN_GENERATION_PENDING = 'TOKEN-GENERATION-PENDING';
-export const TRANSACTION_STATUS_PROVIDER_ERROR = 'PROVIDER-ERROR';
-export const TRANSACTION_STATUS_SUCCESS = 'SUCCESS';
-export const TRANSACTION_STATUS_FAILED = 'FAILED';
-export const STATUS_SUCCESS = "SUCCESS";
-export const STATUS_FAILED = "FAILED";
-export const STATUS_PENDING = "PENDING";
-export const STATUS_ACTIVE = "ACTIVE";
-export const STATUS_INACTIVE = "INACTIVE";
-export const STATUS_PAYMENT_FAILED_VERIFICATION = "FAILED-VERIFICATION";
-
-export const FLW_SECRET_KEY = process.env.FLW_SECRET_KEY || "";
-export const FLW_PUBLIC_KEY = process.env.FLW_PUBLIC_KEY || "";
-export const PAYMENT_PROVIDER_FLUTTERWAVE = "flutterwave";

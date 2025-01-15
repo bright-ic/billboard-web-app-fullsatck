@@ -8,7 +8,6 @@ import connect_redis from 'connect-redis';
 import Redis from './services/redis';
 const redis = new Redis(process.env.REDIS_URL || '');
 const RedisStore = connect_redis(session);
-import UserModel from "./models/user";
 import path from "path";
 import expressLayouts from 'express-ejs-layouts';
 import flash from "flash";
@@ -47,10 +46,6 @@ const ExpressConfig = (): Application => {
   }));
 
   app.use(flash());
-
-  try {
-    new UserModel();
-  } catch(e:any) {}
 
   return app
 }

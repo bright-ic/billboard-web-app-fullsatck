@@ -5,16 +5,12 @@ import IndexController from "./controllers";
 
 // Route groups
 import index_route from "./routes/index";
-import transaction_route from "./routes/transaction";
-import electricity_route from "./routes/electricity";
 
 const AppRoutes = () => {
     const app = expressConfig();
 
     // Routes
     app.use('/',index_route);
-    app.use('/',transaction_route);
-    app.use('/',electricity_route);
 
     // No matching route
     app.use((req: Request, res: Response, next: NextFunction) => {

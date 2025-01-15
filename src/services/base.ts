@@ -9,14 +9,9 @@ import { Request } from 'express';
  * All base functions for the service
  */
 class BaseService {
-    public generic_error_message: string
+    public generic_error_message: string = "Unfortunately, we couldn't process your request at the moment. Please check your request and try again!";
 
-	constructor(req?: Request | null) {
-    	this.generic_error_message = "Unfortunately, we couldn't process your request at the moment. Please check your request and try again!";
-		if(req) {
-
-		}
-	}
+	constructor(req?: Request | null) {}
 
 	/**
      * uniform expectation of failed response data
@@ -24,7 +19,7 @@ class BaseService {
      * @return mixed
      */
     static sendFailedResponse: StandardServiceResponse = (data: any) => {
-        const returnData = { success: false, data: '' };
+        const returnData = { success: false, data: null };
         if (!isUndefined(data)) {
             returnData.data = data;
         }
@@ -37,7 +32,7 @@ class BaseService {
      * @return mixed
      */
     static sendSuccessResponse: StandardServiceResponse = (data: any) => {
-        const returnData = { success: true, data: '' };
+        const returnData = { success: true, data: null };
         if (!isUndefined(data)) {
             returnData.data = data;
         }
@@ -97,17 +92,6 @@ class BaseService {
 			});
 		}
 		return data;
-	}
-
-	/**
-     *
-     * @todo complete function
-     * @param value
-     * @param flag
-     * @return {*}
-     */
-    static getRegex(value: any, flag: string = "") {
-		return value;
 	}
 }
 

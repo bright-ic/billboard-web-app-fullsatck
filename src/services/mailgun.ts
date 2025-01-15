@@ -1,10 +1,8 @@
 import * as _ from 'lodash';
 import BaseService  from "./base";
-import strip_tags from 'striptags';
 import FormData from 'form-data';
 import Mailgun, {MailgunClientOptions, Interfaces, MailgunMessageData} from 'mailgun.js';
-import { isObject } from '../lib/utils';
-import {IS_DEV, MAILGUN_API_KEY, MAILGUN_URL, MAILGUN_DOMAIN} from "../lib/contants";
+import {MAILGUN_API_KEY, MAILGUN_URL, MAILGUN_DOMAIN} from "../lib/contants";
 
 export type returnDataType = {[key:string]: any} | null;
 
@@ -24,7 +22,7 @@ class MailgunService extends BaseService {
     }
 
 
-    async sendMessage(mailgun_domain:string = "", mg_message: MailgunMessageData) {
+    async send(mailgun_domain:string = "", mg_message: MailgunMessageData) {
         let return_data:returnDataType = null;
         try {
             mailgun_domain = !_.isEmpty(mailgun_domain) ? mailgun_domain : MAILGUN_DOMAIN;

@@ -40,15 +40,15 @@ $(function() {
                 // Use Ajax to Submit form
                 if (!empty(action)) {
                     if (!empty(callback_name)) {
-                        do_form_submit(target_form_id, action, callback_name);
+                        process_form_submit(target_form_id, action, callback_name);
                     } else {
-                        do_form_submit(target_form_id, action);
+                        process_form_submit(target_form_id, action);
                     }
                 } else {
                     if (!empty(callback_name)) {
-                        do_form_submit(target_form_id, null, callback_name);
+                        process_form_submit(target_form_id, null, callback_name);
                     } else {
-                        do_form_submit(target_form_id);
+                        process_form_submit(target_form_id);
                     }
                 }
             } else {

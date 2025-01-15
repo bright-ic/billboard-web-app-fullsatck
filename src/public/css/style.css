@@ -22,28 +22,3 @@ textarea.errors::placeholder {color: #D50A0A !important;}
 
 
 /* HOME PAGE */
-body.home_page .page_container {width: 100%;}
-body.home_page .page_container .form_container {width: 100%; max-width: 600px; margin: 0 auto; margin-top: 40px; background-color: rgb(215, 215, 247); padding: 30px;}
-
-body.home_page section.transaction_ref_section {padding: 40px 30px 60px;}
-body.home_page section.transaction_ref_section .ref_container {width: 100%; max-width: 600px; margin: 0 auto; margin-top: 40px; }
-body.home_page section.transaction_ref_section .ref_container .title {text-transform: uppercase; font-size: 24px; text-align: center;}
-body.home_page section.transaction_ref_section .ref_container .sub-text {color: #6c6666; text-align: left;}
-body.home_page section.transaction_ref_section .ref_container ul.action-list {padding-left: 20px; color: #6c6666;}
-body.home_page section.transaction_ref_section .ref_container .trans-ref {font-size: 20px; text-align: left;}
-body.home_page section.transaction_ref_section .ref_container .button-container {text-align: center; padding-top: 25px;}
-body.home_page section.transaction_ref_section .ref_container .button-container .btn-transaction-continue {min-width: 180px;}
-body.home_page section.transaction_ref_section .ref_container .meter-details-title {font-size: 24px; margin: 0px; margin-top: 40px;}
-body.home_page section.transaction_ref_section .ref_container .meter_details {width: 100%; padding-top: 0px;}
-body.home_page section.transaction_ref_section .ref_container .meter_details .flex-container {width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; padding-bottom: 7px;}
-body.home_page section.transaction_ref_section .ref_container .meter_details .flex-container .label-container {width: 220px;}
-body.home_page section.transaction_ref_section .ref_container .meter_details .flex-container .text-container {flex:1;}
-
-/* TRANSACTION RECEIPT */
-body.transaction_receipt_page .transaction_receipt_container {width: 100%; max-width: 800px; padding: 30px; margin: 0px auto;}
-body.transaction_receipt_page .transaction_receipt_container .meter-details-title {font-size: 24px; margin: 0px; margin-top: 40px;}
-body.transaction_receipt_page .transaction_receipt_container .meter_details {width: 100%; padding-top: 0px;}
-body.transaction_receipt_page .transaction_receipt_container .meter_details .flex-container {width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; padding-bottom: 7px;}
-body.transaction_receipt_page .transaction_receipt_container .meter_details .flex-container .label-container {width: 220px;}
-body.transaction_receipt_page .transaction_receipt_container .meter_details .flex-container .text-container {flex:1;}
-body.transaction_receipt_page .transaction_receipt_container .meter_details .token-text {font-weight: 700;}
