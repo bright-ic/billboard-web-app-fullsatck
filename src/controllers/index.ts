@@ -13,9 +13,11 @@ class IndexController extends BaseController {
 
 	async index(req:Request, res:Response) {
 		const view_data:ObjectType = {};
-		
+
 		try {
 			res.render('index', this.setTemplateParameters(req, {
+				page_styles: [],
+				page_title: '',
 				selected_page: 'home_page',
 				...view_data
 			}));
@@ -28,7 +30,7 @@ class IndexController extends BaseController {
 
 	async error404(req:Request, res:Response) {
 		try {
-			
+
 			res.render('error404', this.setTemplateParameters(req, {
 
 			}));
@@ -41,7 +43,7 @@ class IndexController extends BaseController {
 
 	async error500(req:Request, res:Response) {
 		try {
-			
+
 			res.render('error500', this.setTemplateParameters(req, {
 
 			}));
