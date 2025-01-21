@@ -664,12 +664,7 @@ our_services .our_services li a{color: #fff;}
 .widget-subscribe-us #subscribe-form .submit-button {padding: 3px;position: absolute;right: 0;top: 0;color: #fff;background-color: #18ba60;width: 47px;height: 47px;border: none;text-align: center;font-size: 13px;line-height: 30px;font-weight: 700;-webkit-transition: all 0.3s ease-in-out;-moz-transition: all 0.3s ease-in-out;-ms-transition: all 0.3s ease-in-out;-o-transition: all 0.3s ease-in-out;transition: all 0.3s ease-in-out;}
 .widget-subscribe-us #subscribe-form .submit-button:hover {background-color: #fff;color: #18ba60;}
 
-.widget-subscribe-us #subscribe-form .mailchimp-email {
-    height: 47px;
-    line-height: 20px;
-    width: 100%;
-    padding: 0 10px 0 16px;
-}
+.widget-subscribe-us #subscribe-form .mailchimp-email {height: 47px;line-height: 20px;width: 100%;padding: 0 10px 0 16px;}
 
 
 /*========================================================= Media Query  =================================================== */
