@@ -10,16 +10,16 @@ import { Request, Response } from "express";
 
 
 
-class TrainingController extends BaseController {
+class TeamController extends BaseController {
 
-	async viewTraining(req:Request, res:Response) {
+	async viewTeam(req:Request, res:Response) {
 		//const view_data:ObjectType = {};
 
 		try {
-			res.render('training/index', this.setTemplateParameters(req, {
+			res.render('team', this.setTemplateParameters(req, {
 				page_styles: [],
 				page_title: '',
-				selected_page: 'training_page',
+				selected_page: 'team_page',
 				//...view_data
 			}));
 		} catch (e) {
@@ -31,5 +31,4 @@ class TrainingController extends BaseController {
 
 }
 
-// export { TrainingController };
-export default TrainingController;
+export { TeamController };

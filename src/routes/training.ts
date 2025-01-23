@@ -7,7 +7,7 @@ import { Router, Request, Response } from 'express';
 const router = Router();
 
 import { ROUTE_TRAINING} from '../lib/route-constants';
-import {TrainingController} from '../controllers/training';
+import TrainingController from '../controllers/training';
 
 
 router.get(ROUTE_TRAINING, async (req: Request, res: Response) => {
