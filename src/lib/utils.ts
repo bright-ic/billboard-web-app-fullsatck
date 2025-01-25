@@ -1,6 +1,8 @@
 import * as _ from "lodash";
 import { Request } from 'express';
-import { ObjectType } from "../types";
+import { ObjectType, StandardServiceResponse } from "../types";
+import mongoose from "mongoose";
+import { DynamicObject } from "../types/Types";
 
 export function get_ip_address (req: Request) {
     let ip: any = null;
@@ -59,5 +61,42 @@ export const reindex = (array:ObjectType[], key = 'id') => {
         return indexed_array;
     } else {
         return false;
+    }
+}
+
+export const validMongoId = (id: any) => {
+    try {
+        if(mongoose.Types.ObjectId.isValid(id)) {
+            return true;
+        }
+    } catch(e)  {}
+    return false;
+}
+
+export const getPaginatedRecords = async (Model: any, query: DynamicObject={}, options: {page: number, limit: number}={page:1, limit:10}): Promise<StandardServiceResponse> => {
+    try {
+        if(Model) {
+            return {success: false, data: 'Invalid collection'};
+        }
+        const { page = 1, limit = 10 } = options;
+
+        const records = await Model.find(query)
+            .skip((+page - 1) * +limit)
+            .limit(+limit);
+    
+        const totalRecords = await Model.countDocuments(query);
+            
+        return {
+            success: true,
+            data: {
+                records: records,
+                totalRecords: totalRecords,
+                totalPages: Math.ceil(totalRecords / +limit),
+                page: +page,
+            }
+        };
+    } catch (err) {
+        console.log(err);
+        return {success: false, data: 'Internal server error occurred'};
     }
 }

@@ -5,4 +5,9 @@ export type DynamicObject = {
 export enum RoleEnum {
     Admin = "admin",
     User = "user",
-  }
+}
+
+export enum TicketStatusEnum {
+    Closed = "closed",
+    Open = "open"
+}

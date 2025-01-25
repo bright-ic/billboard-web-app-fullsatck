@@ -7,8 +7,9 @@ import { Customer, UserInterface } from '../interfaces';
 import { DynamicObject, RoleEnum } from '../types/Types';
 import errorMessages from '../lib/error-messages';
 import {StandardServiceResponse} from "../types/index"
+import { getPaginatedRecords } from '../lib/utils';
 
-class AuthService extends BaseService {
+class UserService extends BaseService {
 
     static createAdminUser = async (postData: UserInterface): Promise<StandardServiceResponse> => {
         try {
@@ -85,22 +86,11 @@ class AuthService extends BaseService {
         }
     }
 
-    static getPaginatedAdmins = async (reqQuery: {page: number, limit: number} & DynamicObject): Promise<StandardServiceResponse> => {
+    static getAdmins = async (reqQuery: {page: number, limit: number} & DynamicObject): Promise<StandardServiceResponse> => {
         try {
             const { page = 1, limit = 10 } = reqQuery;
 
-            const admins = await User.find({ role: RoleEnum.Admin })
-                .skip((+page - 1) * +limit)
-                .limit(+limit);
-        
-            const totalAdmins = await User.countDocuments({ role: RoleEnum.Admin });
-                
-            return BaseService.sendSuccessResponse({
-                records: admins,
-                totalRecords: totalAdmins,
-                totalPages: Math.ceil(totalAdmins / +limit),
-                page: +page,
-            });
+            return await getPaginatedRecords(User, { role: RoleEnum.Admin }, reqQuery);
         } catch (err) {
             console.log(err);
             return BaseService.sendFailedResponse(errorMessages.server_error)
@@ -144,4 +134,4 @@ class AuthService extends BaseService {
     }
 }
 
-export default AuthService;
+export default UserService;

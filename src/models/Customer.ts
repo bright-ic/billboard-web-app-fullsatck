@@ -1,12 +1,12 @@
 
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
-interface IUser extends Document {
+export interface ICustomer extends Document {
     firstName: string;
     lastName: string;
     email: string;
-    accessCode: string;
-    lastLogin: string;
+    accessCode?: string;
+    lastLogin?: string;
   }
   
   const UserSchema: Schema = new Schema({
@@ -29,6 +29,6 @@ interface IUser extends Document {
     return data;
   };
   
-  const UserModel: Model<IUser> = mongoose.model<IUser>('Customer', UserSchema);
+  const UserModel: Model<ICustomer> = mongoose.model<ICustomer>('Customer', UserSchema);
 
   export default UserModel;

@@ -35,4 +35,23 @@ export interface SanitizeData {
 export interface ISessionData extends SessionData {
     flash:{[key:string] : () => any}
     user: UserInterface
-  }
+}
+
+export interface CreateTicketPayload {
+    firstName: string;
+    lastName: string;
+    email: string;
+    reason?: string;
+    subject: string;
+    description: string;
+    status?: 'open' | 'closed';
+    attachments?: string[];
+}
+export interface CreateTicketDocument {
+    reason?: string;
+    subject: string;
+    description: string;
+    status?: 'open' | 'closed';
+    attachments?: string[];
+    user: mongoose.Schema.Types.ObjectId;
+}

@@ -1,6 +1,7 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
 
-interface ITicket extends Document {
+export interface ITicket extends Document {
+    reason: string;
     subject: string;
     description: string;
     user: mongoose.Schema.Types.ObjectId;
@@ -9,6 +10,7 @@ interface ITicket extends Document {
   }
   
   const TicketSchema: Schema = new Schema({
+    reason: { type: String, required: false },
     subject: { type: String, required: true },
     description: { type: String, required: true },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
