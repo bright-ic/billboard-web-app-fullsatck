@@ -10,8 +10,15 @@ const redis = new Redis(process.env.REDIS_URL || '');
 const RedisStore = connect_redis(session);
 import path from "path";
 import expressLayouts from 'express-ejs-layouts';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
 import flash from "flash";
 import { IS_DEV } from "./lib/contants";
+import morgan from "morgan";
+import DBConnect from "./config/db";
+// import fileUpload from 'express-fileupload';
+
+dotenv.config();
 
 const ExpressConfig = (): Application => {
   const app = express()
@@ -26,7 +33,12 @@ const ExpressConfig = (): Application => {
   }
 
   app.use(helmet({...helmetConfig}))
-  app.use(cookieParser())
+  app.use(cookieParser());
+  app.use(morgan('dev'));
+  // app.use(fileUpload());
+
+  // Connect to MongoDB
+  DBConnect();
 
   app.set('views', path.join(__dirname, '/views'));
   app.use(express.static(path.join(__dirname, '/public')));

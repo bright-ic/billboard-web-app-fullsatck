@@ -161,6 +161,19 @@ class BaseController {
             return null;
         }
     }
+
+	logout(req: Request) {
+		try {
+			if(req) {
+				req.session.user = null;
+				delete req.session.user;
+				req.session.save();
+			}
+		} catch(e) {
+			console.log(e);
+		}
+		return true;
+	}
 }
 
 export default BaseController;

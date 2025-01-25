@@ -18,7 +18,7 @@ class BaseService {
      * @param data
      * @return mixed
      */
-    static sendFailedResponse: StandardServiceResponse = (data: any) => {
+    static sendFailedResponse = (data: any): StandardServiceResponse => {
         const returnData = { success: false, data: null };
         if (!isUndefined(data)) {
             returnData.data = data;
@@ -31,7 +31,7 @@ class BaseService {
      * @param data
      * @return mixed
      */
-    static sendSuccessResponse: StandardServiceResponse = (data: any) => {
+    static sendSuccessResponse = (data: any): StandardServiceResponse => {
         const returnData = { success: true, data: null };
         if (!isUndefined(data)) {
             returnData.data = data;
