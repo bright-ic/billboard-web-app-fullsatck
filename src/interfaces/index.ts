@@ -55,3 +55,40 @@ export interface CreateTicketDocument {
     attachments?: string[];
     user: mongoose.Schema.Types.ObjectId;
 }
+
+export interface CategoryDocument {
+    _id?: mongoose.Schema.Types.ObjectId;
+    id?: string;
+    name: string;
+    description: string;
+    createdBy?: mongoose.Schema.Types.ObjectId;
+    updatedBy?: mongoose.Schema.Types.ObjectId;
+    status: "ACTIVE" | "INACTIVE";
+}
+
+export interface CreateUpdateCategoryPayload {
+    id?: string;
+    name: string;
+    description: string;
+    [Key: string]: any;
+    status: "ACTIVE" | "INACTIVE";
+}
+
+export interface BlogDocument {
+    title: string;
+    slug?: string;
+    category?: mongoose.Schema.Types.ObjectId;
+    content: string;
+    author?: mongoose.Schema.Types.ObjectId;
+    thumbnail?: string;
+    updatedBy?: mongoose.Schema.Types.ObjectId;
+    status: "ACTIVE" | "INACTIVE"
+}
+
+export interface BlogPostPayload {
+    title: string;
+    category: string;
+    content: string;
+    thumbnail?: string;
+    status: "ACTIVE" | "INACTIVE"
+}

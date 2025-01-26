@@ -6,3 +6,16 @@ export const ROUTE_LOGOUT = '/logout';
 // Training
 export const ROUTE_TRAINING = '/training';
 export const ROUTE_ONSITE_TRAINING = '/training/onsite';
+
+// blog
+export const ROUTE_BLOG = '/blog';
+export const ROUTE_BLOG_GET_ALL = '/blog/get-all';
+export const ROUTE_BLOG_GET = '/blog/get/:id'; // id or slug
+// Blog categories
+export const ROUTE_BLOG_CATEGORY = '/blog/category';
+export const ROUTE_BLOG_CATEGORY_GET_ALL = '/blog/category/get-all';
+export const ROUTE_BLOG_CATEGORY_GET = '/blog/category/get/:id'; // id or slug
+// Tickets
+export const ROUTE_SUPPORT_TICKET = '/support/ticket';
+export const ROUTE_SUPPORT_TICKET_GET = '/support/ticket/get/:id';
+export const ROUTE_SUPPORT_TICKET_GET_ALL = '/support/ticket/get-all';

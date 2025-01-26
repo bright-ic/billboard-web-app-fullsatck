@@ -11,3 +11,8 @@ export enum TicketStatusEnum {
     Closed = "closed",
     Open = "open"
 }
+
+export enum BlogStatusEnum {
+    ACTIVE = "ACTIVE",
+    INACTIVE = "INACTIVE"
+}

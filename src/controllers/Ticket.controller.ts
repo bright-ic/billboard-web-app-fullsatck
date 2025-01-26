@@ -8,7 +8,7 @@ import { DynamicObject } from '../types/Types';
 
 
 class TicketController extends BaseController {
-    createSupportTicket = async (req: Request, res: Response) => {
+    postSupportTicket = async (req: Request, res: Response) => {
         try {
             const result = await TicketService.createTicket(req.body);
             if(!result.success) {
@@ -21,7 +21,7 @@ class TicketController extends BaseController {
         }
     }
 
-    updateSupportTicket = async (req: Request, res: Response) => {
+    patchSupportTicket = async (req: Request, res: Response) => {
         try {
             const result = await TicketService.updateTicket(req.body?.id, req.body?.status);
             if(!result.success) {
