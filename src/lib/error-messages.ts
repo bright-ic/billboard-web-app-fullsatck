@@ -3,6 +3,7 @@ const errorMessages = {
     "server_error": {"_server_error": "Internal server error occurred"},
     "db_error": {"_db_error": "DB error occurred"},
     "missing_params": {"_missing_params": 'Required parameters are missing in your request'},
+    "genetic_Error": {"error": 'Sorry, something went wrong while processing your request'},
   };
  
   export default errorMessages;

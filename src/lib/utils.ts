@@ -73,6 +73,17 @@ export const validMongoId = (id: any) => {
     return false;
 }
 
+export const getMongoId = (id: any="") => {
+    try {
+        if(validMongoId(id)) {
+            return new mongoose.Types.ObjectId(id);
+        }
+        return new mongoose.Types.ObjectId();
+    } catch(e)  {
+        return new mongoose.Types.ObjectId();
+    }
+}
+
 export const getPaginatedRecords = async (Model: any, query: DynamicObject={}, options: {page: number, limit: number}={page:1, limit:10}): Promise<StandardServiceResponse> => {
     try {
         if(Model) {

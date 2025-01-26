@@ -11,7 +11,7 @@ import UserService from './User.service';
 import { ICustomer } from '../models/Customer';
 import mongoose from 'mongoose';
 import mongodb from "mongodb";
-import { getPaginatedRecords, validMongoId } from '../lib/utils';
+import { getMongoId, getPaginatedRecords, validMongoId } from '../lib/utils';
 
 class TicketService extends BaseService {
 
@@ -112,7 +112,7 @@ class TicketService extends BaseService {
 
     static getTickets = async (reqQuery: {page: number, limit: number} & DynamicObject): Promise<StandardServiceResponse> => {
         try {
-            const { page = 1, limit = 10, status } = reqQuery;
+            const { page = 1, limit = 10, status, user } = reqQuery;
             const query: DynamicObject = {};
             if(status) {
                 if(!(typeof status === "string" && status.trim() === "" && ['closed', 'open'].includes(status.trim().toLowerCase()))) {
@@ -120,8 +120,27 @@ class TicketService extends BaseService {
                 }
                 query.status = status;
             }
+            if(user && typeof user === "string" && user.trim() === "" && validMongoId(user.trim())) {
+                query.user = getMongoId(user);
+            }
 
             return await getPaginatedRecords(TicketModel, query, {page, limit});
+        } catch (err) {
+            console.log(err);
+            return BaseService.sendFailedResponse(errorMessages.server_error)
+        }
+    }
+
+    static getTicket = async (id: string): Promise<StandardServiceResponse> => {
+        try {
+            if(!(typeof id === "string" && id.trim() === "" && validMongoId(id))) {
+                return BaseService.sendFailedResponse({id: 'Missing or invalid  required param "id"'})
+            }
+            const ticket: ITicket | null = await TicketModel.findById(id);
+            if(!ticket || !ticket._id) {
+                return BaseService.sendFailedResponse({ticket: "Ticket with id not found"})
+            }
+            return BaseService.sendSuccessResponse(ticket)
         } catch (err) {
             console.log(err);
             return BaseService.sendFailedResponse(errorMessages.server_error)
