@@ -135,3 +135,11 @@ var responsiveMenu = function() {
         e.stopImmediatePropagation()
     });
 }
+
+if($("#contact-form")[0]) {
+    $("#contact-form").off("submit").on("submit", function(e) {
+        e.preventDefault();
+        display_spinner();
+        process_form_submit('contact-form');
+    });
+}

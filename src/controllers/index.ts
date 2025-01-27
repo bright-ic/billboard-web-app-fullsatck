@@ -17,8 +17,25 @@ class IndexController extends BaseController {
 		try {
 			res.render('index', this.setTemplateParameters(req, {
 				page_styles: [],
-				page_title: '',
+				page_title: 'Homepage',
 				selected_page: 'home_page',
+				...view_data
+			}));
+		} catch (e) {
+			console.log(e)
+			let error = 'An error occurred processing your request. Please check your request and try again';
+			return BaseController.sendFailResponse(res, error);
+		}
+	}
+
+	async about(req:Request, res:Response) {
+		const view_data:ObjectType = {};
+
+		try {
+			res.render('about', this.setTemplateParameters(req, {
+				page_styles: [],
+				page_title: 'About Us',
+				selected_page: 'about_us_page',
 				...view_data
 			}));
 		} catch (e) {
