@@ -1,6 +1,5 @@
 @import url("font-fo.css");
 @import url("monster-icon.css");
-@import url("flaticon.css");
 @import url("owl.carousel.css");
 /* @import url("shortcodes.css"); */
 @import url("jquery.fancybox.css");
@@ -114,6 +113,8 @@ input[type="color"] {
     -ms-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+    width: 100%;border-radius: 3px;
+    border: 2px solid var(--jerax-bg-1);
 }
 
 textarea:focus,
@@ -373,63 +374,17 @@ ul,ol {padding: 0;}
     padding: 0;
 }
 
-#mainnav-mobi ul li {
-    margin: 0;
-    position: relative;
-    text-align: left;
-    border-top: 1px solid #333333;
-    cursor: pointer
-}
-
-#mainnav-mobi ul>li>a {
-    text-decoration: none;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 50px;
-    color: #fff;
-}
-
-#mainnav-mobi ul.sub-menu {
-    top: 100%;
-    left: 0;
-    z-index: 2000;
-    position: relative;
-    background-color: #333333;
-}
-
+#mainnav-mobi ul li {margin: 0;position: relative;text-align: left;border-top: 1px solid #333333;cursor: pointer}
+#mainnav-mobi ul>li>a {text-decoration: none;height: 50px;line-height: 50px;padding: 0 50px;color: #fff;}
+#mainnav-mobi ul.sub-menu {top: 100%;left: 0;z-index: 2000;position: relative;background-color: #333333;}
 #mainnav-mobi>ul>li>ul>li,
-#mainnav-mobi>ul>li>ul>li>ul>li {
-    position: relative;
-    border-top: 1px solid #333333;
-}
-
-#mainnav-mobi>ul>li>ul>li>ul>li a {
-    padding-left: 70px !important
-}
-
-#mainnav-mobi ul.sub-menu>li>a {
-    display: block;
-    text-decoration: none;
-    padding: 0 60px;
-    border-top-color: rgba(255, 255, 255, .1);
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-}
-
-#mainnav-mobi>ul>li>ul>li:first-child a {
-    border-top: none;
-}
-
+#mainnav-mobi>ul>li>ul>li>ul>li {position: relative;border-top: 1px solid #333333;}
+#mainnav-mobi>ul>li>ul>li>ul>li a {padding-left: 70px !important}
+#mainnav-mobi ul.sub-menu>li>a {display: block;text-decoration: none;padding: 0 60px;border-top-color: rgba(255, 255, 255, .1);-webkit-transition: all 0.2s ease-out;-moz-transition: all 0.2s ease-out;-o-transition: all 0.2s ease-out;transition: all 0.2s ease-out;}
+#mainnav-mobi>ul>li>ul>li:first-child a {border-top: none;}
 #mainnav-mobi ul.sub-menu>li>a:hover,
-#mainnav-mobi>ul>li>ul>li.active>a {
-    color: #fff;
-}
-
-.header.is-sticky .btn-menu {
-    margin: 20px 40px;
-}
+#mainnav-mobi>ul>li>ul>li.active>a {color: #fff;}
+.header.is-sticky .btn-menu {margin: 20px 40px;}
 
 /* Button menu mobile */
 a.theme-btn {color: #ffffff;font-size: 15px;font-weight: 700;line-height: 22px;text-transform: uppercase;text-align: center;position: relative;cursor: pointer;z-index: 10;display: inline-block;border-width: 2px;border-style: solid;border-color: var(--jerax-green) ;border-image: initial;padding: 14px 35px;overflow: hidden;transition: color 400ms, background;border-radius: 4px;}
@@ -618,7 +573,15 @@ a.theme-btn {color: #ffffff;font-size: 15px;font-weight: 700;line-height: 22px;t
 .about_us_page  .why-us-header h2{font-size: 35px;}
 .about_us_page  .why-us-section h3{font-size: 24px;}
 
+/* ----------- Contact Page -------------- */
+.contact-section .contact-form button[type="submit"]{padding: 14px 35px;font-size: 15px;height: auto;padding: 14px 35px;overflow: hidden;border-radius: 4px;font-weight: 700;line-height: 22px;text-transform: uppercase;}
+.contact-section .contact-info{line-height: 32px;}
+.contact-section .contact-info ul li .icon{margin-right: 5px;}
+.map-section .map-outer{height: 520px;position: relative;overflow: hidden;left: 0px;top: 0px;width: 100%;}
 
+
+/* ------------------- Training Page ------------- */
+.sidebar-services .list-services ul li {background-color: #f1f1f1;color: #222;font-weight: 700;border-bottom: none;margin-bottom: 2px;-webkit-transition: all 0.5s ease-in-out;-moz-transition: all 0.5s ease-in-out;-ms-transition: all 0.5s ease-in-out;-o-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;}
 
 /*------ Footer Section ------ */
 .footer_container .footer {background-color: var(--jerax-bg-light);padding: 50px 0 20px;color: var(--jerax-heading-color);}

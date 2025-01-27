@@ -1,5 +1,5 @@
 /**
- * All registration controller actions
+ * All traing controller actions
  * Only service calls should be made here
  */
 
@@ -10,17 +10,18 @@ import { Request, Response } from "express";
 
 
 
+
 class TrainingController extends BaseController {
 
 	async viewTraining(req:Request, res:Response) {
-		//const view_data:ObjectType = {};
+		const view_data:ObjectType = {};
 
 		try {
 			res.render('training/index', this.setTemplateParameters(req, {
 				page_styles: [],
 				page_title: '',
 				selected_page: 'training_page',
-				//...view_data
+				...view_data
 			}));
 		} catch (e) {
 			console.log(e)

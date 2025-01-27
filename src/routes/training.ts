@@ -1,5 +1,5 @@
 /**
- * Home Page and Static Pages
+ * Training Page and Static Pages
  * @type {e | (() => Express)}
  */
 

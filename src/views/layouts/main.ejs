@@ -161,8 +161,7 @@
         <script src ="/js/common.js?v=<%= TEMPLATE_VERSION %>"></script>
         <script src ="/js/base.js?v=<%= TEMPLATE_VERSION %>"></script>
 
-        <script src="/js/homepage.js"></script>
-        <% if (typeof selected_page === 'home_page') { %>
+        <% if (typeof selected_page === 'string' && selected_page === 'home_page') { %>
             <script src="/js/homepage.js"></script>
         <% } %>
 
