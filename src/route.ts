@@ -3,11 +3,13 @@ import expressConfig from "./app";
 
 import IndexController from "./controllers";
 import TrainingController from "./controllers/training";
+import ServicesController from "./controllers/services";
 
 // Route groups
 import index_route from "./routes/index";
 import training from "./routes/training";
 import contact from "./routes/contact";
+import services from "./routes/services";
 
 const AppRoutes = () => {
     const app = expressConfig();
@@ -16,6 +18,7 @@ const AppRoutes = () => {
     app.use('/', index_route);
     app.use('/', training);
     app.use('/', contact);
+    app.use('/', services);
 
     // No matching route
     app.use((req: Request, res: Response, next: NextFunction) => {
