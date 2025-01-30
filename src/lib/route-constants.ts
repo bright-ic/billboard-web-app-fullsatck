@@ -2,6 +2,9 @@
 export const ROUTE_HOME = '/';
 export const ROUTE_LOGOUT = '/logout';
 
+export const ROUTE_ABOUT = '/about';
+export const ROUTE_CONTACT = '/contact';
+
 
 // Training
 export const ROUTE_TRAINING = '/training';
@@ -19,3 +22,8 @@ export const ROUTE_BLOG_CATEGORY_GET = '/blog/category/get/:id'; // id or slug
 export const ROUTE_SUPPORT_TICKET = '/support/ticket';
 export const ROUTE_SUPPORT_TICKET_GET = '/support/ticket/get/:id';
 export const ROUTE_SUPPORT_TICKET_GET_ALL = '/support/ticket/get-all';
+// Team
+export const ROUTE_TEAM = '/team';
+
+// Services
+export const ROUTE_SERVICES = '/services';

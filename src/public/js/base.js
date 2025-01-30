@@ -135,3 +135,68 @@ var responsiveMenu = function() {
         e.stopImmediatePropagation()
     });
 }
+
+if ($("#contact-form")[0]) {
+    alert('con2');
+    $("#contact-form").off("submit").on("submit", function(e) {
+        e.preventDefault();
+        display_spinner();
+        process_form_submit('contact-form');
+    });
+}
+
+var headerFixed = function() {
+    if ($('body').hasClass('header-sticky')) {
+        var nav = $('.header');
+        alert('con');
+        if (nav.size() != 0) {
+            var offsetTop = $('.header').offset().top,
+                headerHeight = $('.header').height(),
+                injectSpace = $('<div />', {
+                    height: headerHeight
+                }).insertAfter(nav);
+            injectSpace.hide();
+
+            $(window).on('load scroll', function() {
+                if ($(window).scrollTop() > offsetTop + 120) {
+                    $('.header').addClass('downscrolled');
+                    injectSpace.show();
+                } else {
+                    $('.header').removeClass('header-small downscrolled');
+                    injectSpace.hide();
+                }
+
+                if ($(window).scrollTop() > 500) {
+                    $('.header').addClass('header-small upscrolled');
+                } else {
+                    $('.header').removeClass('upscrolled');
+                }
+            })
+        }
+    }
+};
+
+ //Accordion Box
+ if ($('.accordion-box').length) {
+    $(".accordion-box").on('click', '.acc-btn', function() {
+
+        var target = $(this).parents('.accordion');
+
+        if ($(this).hasClass('active') !== true) {
+            $('.accordion .acc-btn').removeClass('active');
+
+        }
+
+        if ($(this).next('.acc-content').is(':visible')) {
+            //$(this).removeClass('active');
+            return false;
+            //$(this).next('.accord-content').slideUp(300);
+        } else {
+            $(this).addClass('active');
+            $('.accordion').removeClass('active-block');
+            $('.accordion .acc-content').slideUp(300);
+            target.addClass('active-block');
+            $(this).next('.acc-content').slideDown(300);
+        }
+    });
+}
