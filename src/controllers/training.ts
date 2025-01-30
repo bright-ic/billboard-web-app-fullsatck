@@ -1,5 +1,5 @@
 /**
- * All traing controller actions
+ * All training controller actions
  * Only service calls should be made here
  */
 

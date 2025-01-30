@@ -12,3 +12,6 @@ export const ROUTE_ONSITE_TRAINING = '/training/onsite';
 
 // Team
 export const ROUTE_TEAM = '/team';
+
+// Services
+export const ROUTE_SERVICES = '/services';
