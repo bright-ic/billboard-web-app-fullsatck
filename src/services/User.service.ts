@@ -108,27 +108,39 @@ class UserService extends BaseService {
                 lastName: 'no_html|required|string|valid_name',
                 email: 'no_html|required|email'
             };
+            if(postData.hasOwnProperty('phoneNumber')) {
+                validation_rules.phoneNumber = 'no_html|string|valid_phone';
+            }
             const validationResponse = await validatePost(postData, validation_rules, validation_messages);
             if(!validationResponse.success){
               return BaseService.sendFailedResponse(validationResponse.data);
             }
             const SanitizeData = BaseService.sanitizeRequestData(postData);
-            const { firstName, lastName, email } = SanitizeData;
+            const { firstName, lastName, email, phoneNumber } = SanitizeData;
 
             // check if user with email exist
             const checkCustomer = await CustomerModel.findOne({email});
             if(checkCustomer && checkCustomer._id) {
-                return BaseService.sendSuccessResponse(checkCustomer);
+                return BaseService.sendSuccessResponse({user: checkCustomer?.toJSON()});
             }
 
-            const newUser = new User({firstName, lastName,  email });
-            const result = await newUser.save();
+            const customerDoc: Customer = {
+                firstName, 
+                lastName, 
+                email, 
+                phoneNumber,
+                role: RoleEnum.User
+            };
+
+            const Customer = new CustomerModel(customerDoc);
+            const result = await Customer.save();
             if(!result) {
                 return BaseService.sendFailedResponse({customer: "Sorry, an error occurred while trying to create your customer record"})
             }
             const newCustomer = await CustomerModel.findOne({email});
             return  BaseService.sendSuccessResponse({user: newCustomer?.toJSON(), message: "Customer account was created successfully"});
         } catch (err) {
+            console.log(err)
             return BaseService.sendFailedResponse(errorMessages.server_error)
         }
     }

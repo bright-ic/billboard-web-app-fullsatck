@@ -5,6 +5,7 @@ export interface ICustomer extends Document {
     firstName: string;
     lastName: string;
     email: string;
+    phoneNumber?: string;
     accessCode?: string;
     lastLogin?: string;
   }
@@ -12,6 +13,7 @@ export interface ICustomer extends Document {
   const UserSchema: Schema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
+    phoneNumber: { type: String, default: "" },
     email: { type: String, required: true, unique: true },
     accessCode: { type: String, required: false },
     lastLogin: {type: String, required: false}

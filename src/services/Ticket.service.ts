@@ -26,8 +26,11 @@ class TicketService extends BaseService {
                 subject: 'no_html|required|string',
                 description: 'no_html|required|string',
                 email: 'no_html|required|string|email',
-                reason: 'no_html|string'
+                reason: 'no_html|string',
             };
+            if(postData.hasOwnProperty('phoneNumber')) {
+                validation_rules.phoneNumber = 'no_html|string|valid_phone';
+            }
             const validationResponse = await validatePost(postData, validation_rules, validation_messages);
             if(!validationResponse.success){
               return BaseService.sendFailedResponse(validationResponse.data);
@@ -51,7 +54,7 @@ class TicketService extends BaseService {
                 status: 'open',
                 subject,
                 description,
-                user: new mongoose.Schema.Types.ObjectId(customer.id.toString())
+                user: new mongoose.Types.ObjectId(customer.id.toString())
             }
             if(reason) {
                 ticketDoc.reason = reason;

@@ -7,6 +7,7 @@ interface IUser extends Document {
     firstName: string;
     lastName: string;
     email: string;
+    phoneNumber?: string;
     password: string;
     role: 'admin' | 'user';
     userGroup?: string;
@@ -16,6 +17,7 @@ interface IUser extends Document {
   const UserSchema: Schema = new Schema({
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
+    phoneNumber: { type: String, default: "" },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     role: {

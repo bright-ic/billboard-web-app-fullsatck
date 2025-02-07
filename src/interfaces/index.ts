@@ -1,25 +1,29 @@
 import { Response } from "express";
 import { SessionData } from "express-session";
 import mongoose from "mongoose";
+import { RoleEnum } from "../types/Types";
 
 
 export interface UserInterface {
-    _id?: mongoose.Schema.Types.ObjectId;
+    _id?: mongoose.Types.ObjectId;
     id?: string;
     email: string;
     firstName: string;
     lastName: string;
+    phoneNumber?: string;
     password: string;
     [Key: string]: any
 }
 
 export interface Customer {
-    _id?: mongoose.Schema.Types.ObjectId;
+    _id?: mongoose.Types.ObjectId;
     id?: string;
     email: string;
     firstName: string;
     lastName: string;
+    phoneNumber?: string;
     accessCode?: string;
+    role?: 'admin' | 'user';
     [Key: string]: any
 }
 
@@ -53,16 +57,16 @@ export interface CreateTicketDocument {
     description: string;
     status?: 'open' | 'closed';
     attachments?: string[];
-    user: mongoose.Schema.Types.ObjectId;
+    user: mongoose.Types.ObjectId;
 }
 
 export interface CategoryDocument {
-    _id?: mongoose.Schema.Types.ObjectId;
+    _id?: mongoose.Types.ObjectId;
     id?: string;
     name: string;
     description: string;
-    createdBy?: mongoose.Schema.Types.ObjectId;
-    updatedBy?: mongoose.Schema.Types.ObjectId;
+    createdBy?: mongoose.Types.ObjectId;
+    updatedBy?: mongoose.Types.ObjectId;
     status: "ACTIVE" | "INACTIVE";
 }
 
@@ -77,11 +81,11 @@ export interface CreateUpdateCategoryPayload {
 export interface BlogDocument {
     title: string;
     slug?: string;
-    category?: mongoose.Schema.Types.ObjectId;
+    category?: mongoose.Types.ObjectId;
     content: string;
-    author?: mongoose.Schema.Types.ObjectId;
+    author?: mongoose.Types.ObjectId;
     thumbnail?: string;
-    updatedBy?: mongoose.Schema.Types.ObjectId;
+    updatedBy?: mongoose.Types.ObjectId;
     status: "ACTIVE" | "INACTIVE"
 }
 

@@ -52,6 +52,7 @@ function process_form_submit(target_form_id, action, callback_function) {
         dataType: "JSON",
         data: form_data,
         success: function (response) {
+            console.log(1,response)
             var success_message;
             var redirect;
             if (typeof response !== "undefined" && response) {
@@ -72,6 +73,7 @@ function process_form_submit(target_form_id, action, callback_function) {
                 }
 
             }
+            console.log(success_message);
 
             if (typeof callback_function === "function") {
                 callback_function.call(this, response);
@@ -79,8 +81,10 @@ function process_form_submit(target_form_id, action, callback_function) {
                 window[callback_function](response);
             } else if (typeof success_message !== "undefined" && success_message) {
                 hide_spinner();
-                $('#' + target_form_id + ' .submit_btn').attr('disabled', false);
-                $('#' + target_form_id + ' .submit_btn').removeClass('is_clicked');
+                if($('#' + target_form_id + ' .submit_btn')[0]) {
+                    $('#' + target_form_id + ' .submit_btn').attr('disabled', false);
+                    $('#' + target_form_id + ' .submit_btn').removeClass('is_clicked');
+                }
                 $('#' + target_form_id).trigger("reset");
 
                 if (typeof redirect !== "undefined" && redirect) {
@@ -93,16 +97,20 @@ function process_form_submit(target_form_id, action, callback_function) {
                     location.href = "" + redirect;
                 } else {
                     hide_spinner();
-                    $('#' + target_form_id + ' .submit_btn').attr('disabled', false);
-                    $('#' + target_form_id + ' .submit_btn').removeClass('is_clicked');
+                    if($('#' + target_form_id + ' .submit_btn')[0]) {
+                        $('#' + target_form_id + ' .submit_btn').attr('disabled', false);
+                        $('#' + target_form_id + ' .submit_btn').removeClass('is_clicked');
+                    }
                 }
             }
         },
         error: function (result) {
 
             hide_spinner();
-            $('#' + target_form_id + ' .submit_btn').attr('disabled', false);
-            $('#' + target_form_id + ' .submit_btn').removeClass('is_clicked');
+            if($('#' + target_form_id + ' .submit_btn')[0]) {
+                $('#' + target_form_id + ' .submit_btn').attr('disabled', false);
+                $('#' + target_form_id + ' .submit_btn').removeClass('is_clicked');
+            }
             
             var error_data = {};
             var returned_errors = {};
@@ -320,15 +328,13 @@ function build_success_message (success_message) {
                             <div class='response-alert-circle-box flex-center response_alert_success'>
                             <i class='fa fa-check text-white'></i>
                             </div>
-                            <p class='mt-30'>Successful!</p>
                             <span>${!empty(success_message) ? success_message : "The process has completed successfully."}</span>
                         </div>`
         
-        var modal_bucket = $("#alert_modal_box");
-        $("#alert_modal_body").html(template);
-        modal_bucket.addClass("response_alert");
-        $("#alert_modal-footer").addClass("hide");
-        $("#alert_modal_container").removeClass("hide");
+        bootbox.alert({
+            message: template,
+            className: 'response_alert'
+        })
 }
 
 function build_success () {

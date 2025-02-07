@@ -58,6 +58,23 @@ $(function() {
         }
     });
 
+    if($('form#complaint_form')[0]) {
+        $('form#complaint_form').off().on('submit', function(e) {
+            e.preventDefault();
+            display_spinner();
+            process_form_submit('complaint_form');
+        });
+    }
+
+    if($('.btn-submit-complaint')[0]) {
+        $('.btn-submit-complaint').on('click', function() {
+            if($(this).closest('form')[0]) {
+                $(this).closest('form').trigger('submit');
+            }
+        })
+    }
+    
+
     var headerFixed = function() {
         if ($('body').hasClass('header-sticky')) {
             var nav = $('.header');

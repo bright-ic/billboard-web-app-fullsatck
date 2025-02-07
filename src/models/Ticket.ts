@@ -17,6 +17,15 @@ export interface ITicket extends Document {
     status: { type: String, enum: ['open', 'closed'], default: 'open' },
     attachments: [{ type: String }],
   }, { timestamps: true, collection: "ticket" });
+
+  TicketSchema.methods.toJSON = function () {
+    const data = { ...this._doc, id: this._doc._id?.toString() };
+
+    delete data._id;
+    delete data.__v;
+  
+    return data;
+  };
   
   const Ticket: Model<ITicket> = mongoose.model<ITicket>('Ticket', TicketSchema);
 

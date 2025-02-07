@@ -42,6 +42,8 @@ body { font-family: "Montserrat", sans-serif;font-style: normal; font-size: 16px
 .form-control,
 .form-control:focus {outline: none; box-shadow: none;}
 
+.error_label {font-size: 14px; color: #D50A0A; }
+
 input[type="text"].errors,
 input[type="password"].errors,
 input[type="email"].errors,
@@ -487,8 +489,10 @@ a.theme-btn {color: #ffffff;font-size: 15px;font-weight: 700;line-height: 22px;t
 .appointment_modal .flat-choose-us .box .title-v1 .title {font-family: "Poppins", sans-serif;font-size: 24px;color: var(--jerax-heading-color);margin-bottom: 21px;font-weight: 700;text-transform: uppercase;}
 .appointment_modal .flat-choose-us .box .title-v1 p {font-size: 13px;color: var(--jerax-dark-color);margin-bottom: 32px;font-style: italic !important;}
 .appointment_modal .flat-choose-us .box form select {color: var(--jerax-dark-color);}
+.appointment_modal .flat-choose-us .box form fieldset {margin-bottom: 20px;}
 .appointment_modal .flat-choose-us .box form select,
-.appointment_modal .flat-choose-us .box form fieldset input, .appointment_modal .flat-choose-us .box form textarea {width: 100%;border-radius: 3px;background-color: var(--jerax-bg-4);border: 2px solid var(--jerax-bg-1);font-size: 18px;}
+.appointment_modal .flat-choose-us .box form fieldset input, 
+.appointment_modal .flat-choose-us .box form textarea {width: 100%;border-radius: 3px;background-color: var(--jerax-bg-4);border: 2px solid var(--jerax-bg-1);font-size: 18px; margin-bottom: 0px;}
 .appointment_modal .flat-choose-us .box form select,
 .appointment_modal .flat-choose-us .box form fieldset input[type="text"] {height: 50px;}
 .appointment_modal .flat-choose-us .box .form-box .submit-wrap button {font-size: 14px;font-weight: 700;border-radius: 3px;padding: 0 31px;height: 50px;}
@@ -632,7 +636,7 @@ a.theme-btn {color: #ffffff;font-size: 15px;font-weight: 700;line-height: 22px;t
 .services_page .flat-icon .item {overflow: hidden;margin: 0 -15px 19px;}
 .services_page .flat-icon .iconbox .thumb {position: relative;margin-bottom: 31px;}
 .services_page .flat-icon .iconbox .thumb img{max-width: 100%;height: auto;}
-.services_page .flat-icon .iconbox .thumb .overlay {position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: #3a526a;content: '';z-index: 1;box-sizing: border-box; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity: 0;filter: alpha(opacity=0);-webkit-transition: opacity 0.35s, -webkit-transform: 0.35s;-webkit-transform: scale(0);transition: opacity 0.35s, transform 0.35s;transition: all ease 0.4s;transform: scale(0);}
+.services_page .flat-icon .iconbox .thumb .overlay {position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: #3a526a;content: '';z-index: 1;box-sizing: border-box; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity: 0;filter: alpha(opacity=0);-webkit-transition: opacity 0.35s; -webkit-transform: 0.35s;-webkit-transform: scale(0);transition: opacity 0.35s, transform 0.35s;transition: all ease 0.4s;transform: scale(0);}
 .services_page .flat-icon .iconbox:hover .overlay {-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";opacity: 0.9;filter: alpha(opacity=90);-webkit-transform: scale(1);-moz-transform: scale(1);-ms-transform: scale(1);-o-transform: scale(1);transform: scale(1);}
 .services_page .flat-icon .icon-post .box-title .title {font-family: var(--jerax-font-family-poppins);font-size: 15px;line-height: 22px;font-weight: 600;color: var(--jerax-bg-1);margin-bottom: 13px;text-transform: uppercase;}
 .services_page .flat-icon .iconbox .btn-link{font-weight: 700;cursor: pointer;border-bottom: 1px solid var(--jerax-primary-color);text-transform: uppercase;font-size: 12px;font-family: var(--jerax-font-family-poppins);}
