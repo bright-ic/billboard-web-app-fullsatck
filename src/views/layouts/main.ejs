@@ -51,99 +51,11 @@
 
         <!-- main page content -->
         <div class="default_layout_wrapper">
-            <div class="header-inner-pages">
-                <div class="top">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <ul class="flat-information">
-                                    <li class="phone">
-                                        <a href="tel: +234-000000000"><i class="fa-solid fa-phone-volume"></i> Call us: +234-000000000</a>
-                                    </li>
-                                    <li class="email">
-                                        <a href="mailto: support@jeraxservice.com" title="Email address"><i class="fa-solid fa-envelope"></i>Email: support@jeraxservice.com</a>
-                                    </li>
-                                </ul>
-                                <div class="style-box text-right">
-                                    <ul class="flat-information v1">
-                                        <li class="facebook">
-                                            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-                                        </li>
-                                        <li class="twitter">
-                                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                        </li>
-                                        <li class="instagram">
-                                            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-                                        </li>
-                                    </ul>
-                                    <div class="question">
-                                        <div>
-                                            <i class="fa-solid fa-circle-question"></i>
-                                            <p class="text">Have any questions</p>
-                                        </div>
-                                    </div>
-                                    <div class="box-text text-right">
-                                        <a href="#!" data-bs-toggle="modal" data-bs-target="#appointmentModal"><p>Get An Appointment</p></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="wrap-slider">
-                <header id="header" class="header style-color clearfix">
-                    <div class="container">
-                        <div class="header-wrap clearfix">
-                            <div id="logo" class="logo">
-                                <a href="/" rel="home">
-                                    <img src="images/logo.png" alt="brand logo">
-                                </a>
-                            </div>
 
-                            <div class="nav-wrap">
-                                <div class="btn-menu">
-                                    <span></span>
-                                </div>
-                                <!-- //mobile menu button -->
-
-                                <nav id="mainnav" class="mainnav">
-                                    <ul class="menu">
-                                        <li class="home">
-                                            <a href="/">Home</a>
-                                        </li>
-                                        <li><a href="/about">About Us</a></li>
-                                        <li><a href="/services">Services</a>
-                                            <ul class="submenu">
-                                                <li><a href="/services/engineering_technology">Engineering Technology</a></li>
-                                                <li><a href="/services/talent_outsourcing">Talent Outsourcing</a></li>
-                                                <li><a href="/services/tax_consultation">Tax Consulting</a></li>
-                                                <li><a href="/services/business_consultation">Business Consultation</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="/blog">Blog</a></li>
-                                        <li><a href="/team">Team</a></li>
-                                        <li><a href="/training">Training</a>
-                                            <ul class="submenu">
-                                                <li><a href="/training/onsite">Onsite Training</a></li>
-                                                <li><a href="/training/online">Online Training</a></li>
-                                                <li><a href="/training/aveva_e3d">Aveva E3D</a></li>
-                                                <li><a href="/training/aace_courses">AACE Courses</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="/contact">Contact Us</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-            </div>
             <%- body %>
 
         </div>
-        <%- include('../partials/modals/appointment_modal'); %>
-        <%- include('../partials/footer'); %>
+        
         <% if(typeof is_live === "boolean" && is_live) { %>
             <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
             <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js" integrity="sha256-UnTxHm+zKuDPLfufgEMnKGXDl6fEIjtM+n1Q6lL73ok=" crossorigin="anonymous"></script>
