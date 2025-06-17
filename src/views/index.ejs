@@ -1,3 +1,428 @@
-<section class="page_container">
-    home page
+<section class="page_container" data-id="pay_bill_section">
+   <div class="section_wrapper" id="pay_bill_section">
+             <div class="container">
+            <div class="header-content-container m-auto text-center">
+                <div class="header-super-content">
+                    <h2>Make bill payments, calculate and reconcile wrong electricity bills</h2>
+                    <span class="sub-header">Enjoy convenient and secure bill payments. Reconcile your bills with meter readings, and pay only for the electricity you consume.</span>
+                </div>
+            </div>
+
+            <div class="upper-header-section mt-50">
+                <div class="header-nav-container column-gap-20 d-flex ">
+                    <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                           <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                <img src="/images/person-2.png" class="w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="/images/person-2.png" class="w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img src="/images/person-2.png" class="w-100" alt="...">
+                                </div>
+                            </div>
+                     </div>
+                     <!-- tab area -->
+                      <div class="tabs-area-container">
+                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <div class="icon-holder">
+                                <i class="fa-regular fa-lightbulb"></i>
+                                <!-- <img src="/images/icons/bulb-chargeing.png" alt="Electricity icon"> -->
+                            </div>
+                            <a  href="#" class="nav-link active" id="pills-electricity-tab" data-bs-toggle="pill" data-bs-target="#pills-electricity" role="tab" aria-controls="pills-electricity" aria-selected="true">Electricity Top up</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <div class="icon-holder">
+                               <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <a href="#" class="nav-link " id="pills-airtime-tab" data-bs-toggle="pill" data-bs-target="#pills-airtime" role="tab" aria-controls="pills-airtime" aria-selected="false">Airtime Purchase</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <div class="icon-holder">
+                                <i class="fa-solid fa-right-left"></i>
+                            </div>
+                            <a href="#" class="nav-link" id="pills-data-tab" data-bs-toggle="pill" data-bs-target="#pills-data" role="tab" aria-controls="pills-data" aria-selected="false">Data Bundles</a>
+                        </li>
+                         <li class="nav-item" role="presentation">
+                            <div class="icon-holder">
+                                <i class="fa-solid fa-tv"></i>
+                            </div>
+                            <a href="#" class="nav-link" id="pills-subscriptions-tab" data-bs-toggle="pill" data-bs-target="#pills-subscriptions" role="tab" aria-controls="pills-subscriptions" aria-selected="false">TV Subscriptions</a>
+                        </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <!-- electricity tab start -->
+                        <div class="tab-pane fade show active" id="pills-electricity" role="tabpanel" aria-labelledby="pills-electricity-tab">
+                           <form class="row g-3 needs-validation" novalidate>
+                                <div class="col-md-6">
+                                    <label for="disco_company" class="form-label">Select Disco</label>
+                                    <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
+                                        <div class="img-holder"><img src="/images/brands/EEDC.png" alt="Electricity icon"> </div>
+                                        <select class="form-select" id="disco_company" required>
+                                        <option selected disabled value="">Ikeja Electric</option>
+                                        <option>Ikeja Electric</option>
+                                        <option>Phed</option>
+                                        </select>
+                                    </div>
+                                    <div class="feed_msg"></div>
+                                </div>
+                                  <div class="col-md-6">
+                                        <label class="form-label">Metre Type</label>
+                                        <div class="metre-type column-gap-20 d-flex align-items-center gx-5" id="metreTypeContainer">
+                                         <div class="col d-flex align-items-center justify-content-between form-control border">
+                                            <!-- Prepaid option -->
+                                            <label for="prepaid" class="custom-radio">Prepaid</label>
+                                            <input type="radio" name="metreType" id="prepaid" value="Prepaid" checked />
+                                           
+                                         </div>
+                                          <div class="col d-flex align-items-center justify-content-between form-control border">
+                                            <!-- Postpaid option -->
+                                            <label for="postpaid" class="custom-radio">Postpaid</label>
+                                            <input type="radio" name="metreType" id="postpaid" value="Postpaid" />
+                                           
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="meter_number" class="form-label">Meter Number</label>
+                                    <input type="text" class="form-control" id="meter_number" required>
+                                    <div class=" feed_msg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                     <label for="purchase_amount" class="form-label">Enter Amount</label>
+                                    <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend">₦</span>
+                                    <input type="text" class="form-control"  id="purchase_amount" aria-describedby="inputGroupPrepend" required>
+                                    <div class="feed_msg"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label for="email_address" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email_address" required>
+                                    <div class=" feed_msg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone_number" class="form-label">Phone Number <span>(Optional)</span></label>
+                                    <input type="text" class="form-control" id="phone_number" >
+                                    <div class="feed_msg"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-checks">
+                                    <label class="form-check-label" for="invalidCheck">
+                                        View previous transactions <a href="/transaction">here</a>
+                                    </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-with-icon float-inline-end" type="submit">Proceed</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- electricity tab ends -->
+                         <!-- airtime tab start -->
+                        <div class="tab-pane fade" id="pills-airtime" role="tabpanel" aria-labelledby="pills-airtime-tab">
+                            <form class="row g-3 needs-validation" novalidate>
+                                <div class="col-md-4">
+                                    <label for="validationCustom01" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                                    <div class=" feed_msg"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustom02" class="form-label">Last name</label>
+                                    <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                                    <div class=" feed_msg"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustomUsername" class="form-label">Username</label>
+                                    <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                                    <div class="feed_msg">
+                                        Please choose a username.
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validationCustom03" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="validationCustom03" required>
+                                    <div class="feed_msg">
+                                    Please provide a valid city.
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="validationCustom04" class="form-label">State</label>
+                                    <select class="form-select" id="validationCustom04" required>
+                                    <option selected disabled value="">Choose...</option>
+                                    <option>...</option>
+                                    </select>
+                                    <div class="feed_msg">
+                                    Please select a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="validationCustom05" class="form-label">Zip</label>
+                                    <input type="text" class="form-control" id="validationCustom05" required>
+                                    <div class="feed_msg">
+                                    Please provide a valid zip.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                    <label class="form-check-label" for="invalidCheck">
+                                        Agree to terms and conditions
+                                    </label>
+                                    <div class="feed_msg">
+                                        You must agree before submitting.
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                </div>
+                                </form>
+                        </div>
+                        <!-- airtime tab ends -->
+                        <div class="tab-pane fade" id="pills-data" role="tabpanel" aria-labelledby="pills-data-tab">...</div>
+                        <div class="tab-pane fade" id="pills-subscriptions" role="tabpanel" aria-labelledby="pills-subscriptions-tab">...</div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            </div>
+   </div>
+    <!-- add this two closing div to close the header section-->
+     </div>
+ </div>
+</section>
+<section class="partnership_section">
+     <div class="section_wrapper" id="">
+             <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="content-wrapper">
+                            <div class="text-left">We take pride in our robust list of service providers. </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="img-wrapper">
+                            <div id="multiItemCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="col-brand-item"> <img src="/images/brands/AEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/EEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/AEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/EEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/AEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/EEDC.png" class="brand-logos" alt="brand logos"></div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="col-brand-item"> <img src="/images/brands/AEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/EEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/AEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/EEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/AEDC.png" class="brand-logos" alt="brand logos"></div>
+                                    <div class="col-brand-item"> <img src="/images/brands/EEDC.png" class="brand-logos" alt="brand logos"></div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="header-content-container m-auto text-center">
+                    <div class="header-super-content">
+                        <h3>Navigate your bills with ease</h3>
+                        <div class="sub-header">Say goodbye to the hassles of traditional bill payments and embrace a seamless, <br class="hidden-sm"> user-friendly experience that puts you in control. Whether it's utilities, telecom, <br class="hidden-sm">or credit cards, manage all your bills effortlessly with just a few clicks.</div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="float-left left-img-holder">
+                        <img src="/images/recent-payments.png" alt="recent payments">
+                    </div>
+                    <div class="btn-holder">
+                        <a href="#" class="btn btn-with-icon btn-primary">Pay Bills</a>
+                    </div>
+                    <div class="float-right right-img-holder">
+                        <img src="/images/person-1.png" alt="person paying bills with app">
+                    </div>
+                </div>
+            </div>
+     </div>
+</section>
+
+<section class="reconcile_electricity" data-id="reconcile_electricity">
+    <div class="section_wrapper" id="reconcile_electricity">
+       <div class="container">
+           <div class="bg-1a bg-wrapper">
+               <div class="content-container pt-20 d-flex column-gap-10">
+                     <div class="left-content-container">
+                        <h4>Resolve and reconcile 
+your bill effortlessly</h4>
+<p>Let's help you manage and resolve your bill discrepancies. Stay informed at every step of your resolution requests with 
+our transparent workflow, from submission to resolution.</p>
+<a href="#">Reconcile Your Electricity Bills  <i class="fa-solid fa-arrow-right-long ml-3"></i></a>
+                     </div>
+                     <div class="right-content-container">
+                         <img src="/images/electricity_backlog.png" alt="reconcile electricity">
+                     </div>
+               </div>
+           </div>
+           <div class="bg-1b bg-wrapper">
+               <div class="content-container pt-20 d-flex column-gap-10">
+                    <div class="left-content-container">
+                        <h4>Pay only for the 
+power you consume</h4>
+                        <p>Ensure you are receiving the accurate bill for your meter from power holding companies using our Electricity Bill Calculator feature. Let’s help you detect errors, and address issues promptly.</p>
+                        <a href="#">Calculate Your Electricity Bills<i class="fa-solid fa-arrow-right-long ml-3"></i></a>
+                    </div>
+                     <div class="right-content-container">
+                         <img src="/images/select_appiliance.png" alt="reconcile electricity">
+                     </div>
+               </div>
+           </div>
+           <div class="bg-1c bg-wrapper">
+                <div class="content-container pt-20 d-flex column-gap-10">
+                    <div class="left-content-container">
+                        <div class="d-flex align-items-center column-gap-10 mb-50">
+                            <span class="active rounded-pill ">Coming soon</span>
+                            <span class="inactive rounded-pill">App only</span>
+                        </div>
+                        <h4>Never run out of power! 
+Bill us now, pay later</h4>
+                        <p>We understand that managing finances involves more than just paying bills, so we are offering you great flexibility and control over your expenses. Tailor your repayment plan to suit your budget. </p>
+                       
+                    </div>
+                     <div class="right-content-container">
+                         <img src="/images/bliss_bill.png" alt="pay later">
+                     </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</section>
+
+<section class="feature_section">
+    <div class="section_wrapper" id="feature_section">
+        <div class="container grid-container">
+            <!-- First box: Track how you make payments -->
+            <div class="card track-payments span-row-4">
+                <div class="d-flex justify-content-between">
+                    <h2>Track how you make payments</h2><div class="app-only inactive rounded-pill">App only</div>
+                </div>
+                <p>An innovative tool designed to empower you with insights into your transactions. Take control of your bills like never before.</p>
+                
+                 <div class="float-right right-img-holder">
+                    <img src="/images/vector-1.png" alt="track-payments">
+                </div>
+            </div>
+
+            <!-- Second box: Manage multiple utility accounts -->
+            <div class="card manage-accounts">
+                <h2>Manage multiple utility accounts</h2>
+                <p>Manage all your bills from different service providers in one centralized location.</p>
+            </div>
+
+            <!-- Third box: Secured payment platforms integrations -->
+            <div class="card payment-integrations span-row-4">
+                <h2>Secured payment platforms integrations</h2>
+                <p>Your data is encrypted and protected, ensuring a safe and secure payment environment.</p>
+                 <div class="float-right right-img-holder">
+                    <img src="/images/vector-3.png" alt="payment-integrations">
+                </div>
+            </div>
+
+            <!-- Fourth box: Robust feedback and support system -->
+            <div class="card robust-feedback">
+                <h2>Robust Feedback and support system</h2>
+                <p>Welcome to a world where your queries are heard, and your success is our priority.</p>
+            </div>
+        </div>
+        <div class="container">
+             <div class="header-super-content">
+                <h3>See how Billboard impact others</h3>
+                <div class="sub-header">Hear about our bill payment services from satisfied customers</div>
+            </div>
+        </div>
+        <div class="container carousel-container">
+            <div id="cardCarousel" class="carousel " data-bs-ride="carousel" >
+                <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item  active">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                        <p>What truly stood out was the speed of the payment process. With just a few clicks, my bill payment was processed, and I received instant confirmation. The platform supports various payment methods, giving users options to choose their preferred mode of payment.</p>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="dp-holder">
+                                <img src="/images/testimony_dp.png" alt="user dp" class="card-img" />
+                            </div>
+                            <div>
+                            <h6 class="mb-0">Quadri Jimoh</h6>
+                            <small>Product Designer</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                        <p>What truly stood out was the speed of the payment process. With just a few clicks, my bill payment was processed, and I received instant confirmation. The platform supports various payment methods, giving users options to choose their preferred mode of payment.</p>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="dp-holder">
+                                <img src="/images/testimony_dp.png" alt="user dp" class="card-img" />
+                            </div>
+                            <div>
+                            <h6 class="mb-0">Quadri Jimoh</h6>
+                            <small>Product Designer</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- Slide 2 (additional similar slides) -->
+                <div class="carousel-item">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                        <p>Another testimonial message here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="card-img" />
+                            <div>
+                            <h6 class="mb-0">Jane Doe</h6>
+                            <small>UI Designer</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                        <p>Another testimonial message here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="card-img" />
+                            <div>
+                            <h6 class="mb-0">Jane Doe</h6>
+                            <small>UI Designer</small>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <!-- Custom navigation control -->
+                <div class="navigation-buttons">
+                <button class="btn btn-primary" id="prevBtn">&larr;</button>
+                <button class="btn btn-primary" id="nextBtn">&rarr;</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
