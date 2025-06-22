@@ -26,3 +26,30 @@ $(function() {
   //   nextBtn.addEventListener('click', () => bsCarousel.next());
   //   prevBtn.addEventListener('click', () => bsCarousel.prev());
   // });
+
+
+  // Faqs accordion
+$(document).ready(function () {
+
+  $('.accordion-header').on('click', function () {
+    $('.accordion-header').removeClass('active');
+    $(".panel").not($(this).closest('.accordion-item').find('.panel')).removeClass("active").css("max-height", null);
+
+    //  $('.panel').css('max-height', '0');
+    $(this).toggleClass('active');
+
+    var $panel = $(this).closest('.accordion-item').find('.panel').first();
+
+    if ($panel.css('max-height') !== '0px' && $panel.css('max-height') !== 'none') {
+      $panel.css('max-height', '0');  $panel.removeClass("active");
+    } else {
+      $panel.css('max-height', '98' + 'px'); $panel.addClass("active");
+    }
+  });
+
+  var yearSpan = document.querySelector('.current_year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+});
