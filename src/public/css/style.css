@@ -9,12 +9,12 @@
 :root{
    --heading-color: #232323;
    --red: #db2a2a;
-   --green: #3e8635;
    --dark-color: #1b1a1a;
    --white-color: #ffffff;
-   --primary-color: #18ba60;
+   --primary-color: #1D4ED8;
    --second-color: rgba(93, 93, 93, .75);
    --shadow-color-rgb: 93, 93, 93;
+   --shadow-blur: rgba(43, 40, 174, 1);
 
     /* background colors */
    --bg-1: #3a526a;
@@ -38,7 +38,7 @@ body { font-family: "Inter", sans-serif; font-style: normal; font-size: 18px; li
 
 
 .form-control,
-.form-control:focus {outline: none; box-shadow: none;}
+.form-control:focus, .form-select {outline: none; box-shadow: none;min-height: 44px;border: 1px solid #D5E7FF;}
 
 .error_label {font-size: 14px; color: #D50A0A; }
 
@@ -63,7 +63,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-family-inter);
     font-size: 12px;
     text-transform: uppercase;
     color: #fff;
@@ -222,7 +222,7 @@ ul,ol {padding: 0;}
 /* .upper-header-section .header-nav-container .tabs-area-container .nav-pills .nav-item img{width: 20px;height: auto;} */
 .upper-header-section .header-nav-container .tabs-area-container .nav-pills .nav-item .svg-inline--fa.fa-right-left {transform: rotate(90deg) !important;}
 
-.upper-header-section .header-nav-container .tabs-area-container .tab-content {background-color: #FFFFFF;border-radius: 12px;width: 100%;padding: 15px;}
+.upper-header-section .header-nav-container .tabs-area-container .tab-content {background-color: #FFFFFF;border-radius: 12px;width: 100%;padding: 15px;box-shadow: 2px 4px rgba(var(--shadow-color-rgb), .075);}
 .upper-header-section .header-nav-container .tabs-area-container .tab-content .img-holder{border-radius: 50%;/*margin-bottom: 20px;*/border: 0.1px solid #A7ACB3;}
 .upper-header-section .header-nav-container .tabs-area-container .tab-content .img-holder img{border-radius: 50%;width: 30px;height: 30px;}
 .upper-header-section .header-nav-container .tabs-area-container .tab-content label span{color: #A7ACB3;}
@@ -241,6 +241,10 @@ ul,ol {padding: 0;}
 .partnership_section .left-img-holder{width: 100%; height: auto; max-width: 384px;border: 0.6px solid #D5E7FF;border-radius: 12px;}
 .partnership_section .right-img-holder{width: 100%; height: auto; max-width: 206px;border-radius: 12px;}
 .partnership_section .left-img-holder img, .right-img-holder img{width: 100%;}
+
+
+.tab-pane form {padding: 20px}
+#pills-airtime .amount-short .amount-btn {border: 1px solid #D5E7FF;color: #111827;vertical-align: middle; font-family: var(--font-family-inter); font-size: 16px;line-height: 24px; background-color: #FFF;border-radius: 8px;width: 96px;height: auto;box-shadow: 1px 2px rgba(var(--shadow-color-rgb), .075);}
 
 
 .bg-wrapper{border-radius: 12px;margin-bottom: 80px;}

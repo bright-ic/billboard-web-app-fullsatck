@@ -52,4 +52,13 @@ $(document).ready(function () {
     yearSpan.textContent = new Date().getFullYear();
   }
 
+ 
+ if ($('.amount-btn').length) {
+    $('.amount-btn').on('click', function() {
+      let selectedAmount = $(this).val().replace(/[^\d]/g, ''); 
+      $('#select_amount').val(selectedAmount);
+    });
+  }
+ 
+
 });

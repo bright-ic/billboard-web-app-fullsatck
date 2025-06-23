@@ -60,7 +60,7 @@
                         <div class="tab-content" id="pills-tabContent">
                             <!-- electricity tab start -->
                         <div class="tab-pane fade show active" id="pills-electricity" role="tabpanel" aria-labelledby="pills-electricity-tab">
-                           <form class="row g-3 needs-validation" novalidate>
+                           <form class="row g-3 needs-validation recharge-electricity" novalidate>
                                 <div class="col-md-6">
                                     <label for="disco_company" class="form-label">Select Disco</label>
                                     <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
@@ -110,8 +110,8 @@
                                     <div class=" feed_msg"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="phone_number" class="form-label">Phone Number <span>(Optional)</span></label>
-                                    <input type="text" class="form-control" id="phone_number" >
+                                    <label for="meter_phone_number" class="form-label">Phone Number <span>(Optional)</span></label>
+                                    <input type="text" class="form-control" id="meter_phone_number" >
                                     <div class="feed_msg"></div>
                                 </div>
                                 <div class="col-6">
@@ -129,69 +129,117 @@
                         <!-- electricity tab ends -->
                          <!-- airtime tab start -->
                         <div class="tab-pane fade" id="pills-airtime" role="tabpanel" aria-labelledby="pills-airtime-tab">
-                            <form class="row g-3 needs-validation" novalidate>
-                                <div class="col-md-4">
-                                    <label for="validationCustom01" class="form-label">First name</label>
-                                    <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-                                    <div class=" feed_msg"></div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="validationCustom02" class="form-label">Last name</label>
-                                    <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-                                    <div class=" feed_msg"></div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="validationCustomUsername" class="form-label">Username</label>
-                                    <div class="input-group has-validation">
-                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                                    <div class="feed_msg">
-                                        Please choose a username.
+                            <form class="row g-3 needs-validation recharge-airtime-form" novalidate>
+                                 <div class="col-md-6">
+                                    <label for="network_company" class="form-label">Select Network</label>
+                                    <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
+                                        <div class="img-holder"><img src="/images/brands/mtn.png" alt="service provider icon"> </div>
+                                        <select class="form-select" id="network_company" required>
+                                        <option selected disabled value="">MTN</option>
+                                        <option>Airtel</option>
+                                        <option>Glo</option>
+                                        </select>
                                     </div>
-                                    </div>
+                                    <div class="feed_msg"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="validationCustom03" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="validationCustom03" required>
-                                    <div class="feed_msg">
-                                    Please provide a valid city.
+                                    <label for="airtel_phone_number" class="form-label">Enter Phone Number</label>
+                                    <input type="text" class="form-control" id="airtel_phone_number" required>
+                                    <div class=" feed_msg"></div>
+                                </div>
+                                <div class="col-md-12 amount-short">
+                                    <label for="select_amount">Choose Amount</label>
+                                    <div class="mt-4 flex d-flex align-items-center gap-2">
+                                    <input type="button" value="₦50" class="amount-btn form-control px-4 py-2 rounded-md text-sm font-medium text-gray-700 transition-colors" />
+                                    <input type="button" value="₦100" class="amount-btn form-control px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-sm font-medium text-gray-700 transition-colors" />
+                                    <input type="button" value="₦200" class="amount-btn form-control px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-sm font-medium text-gray-700 transition-colors" />
+                                    <input type="button" value="₦500" class="amount-btn form-control px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-sm font-medium text-gray-700 transition-colors" />
+                                    <input type="button" value="₦1000" class="amount-btn form-control px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-sm font-medium text-gray-700 transition-colors" />
+                                    <input type="text" placeholder="Enter Amount" id="select_amount" class="form-control" />
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label for="validationCustom04" class="form-label">State</label>
-                                    <select class="form-select" id="validationCustom04" required>
-                                    <option selected disabled value="">Choose...</option>
-                                    <option>...</option>
-                                    </select>
-                                    <div class="feed_msg">
-                                    Please select a valid state.
-                                    </div>
+                                <div class="col-md-12">
+                                    <label for="">Email Address</label>
+                                     <input type="text" class="form-control" placeholder="Email address" required>
                                 </div>
-                                <div class="col-md-3">
-                                    <label for="validationCustom05" class="form-label">Zip</label>
-                                    <input type="text" class="form-control" id="validationCustom05" required>
-                                    <div class="feed_msg">
-                                    Please provide a valid zip.
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <div class="col-6">
+                                    <div class="form-checks">
                                     <label class="form-check-label" for="invalidCheck">
-                                        Agree to terms and conditions
+                                        View previous transactions <a href="/transaction">here</a>
                                     </label>
-                                    <div class="feed_msg">
-                                        You must agree before submitting.
-                                    </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-with-icon float-inline-end" type="submit">Proceed</button>
                                 </div>
-                                </form>
+                            </form>
                         </div>
                         <!-- airtime tab ends -->
-                        <div class="tab-pane fade" id="pills-data" role="tabpanel" aria-labelledby="pills-data-tab">...</div>
+                        <div class="tab-pane fade" id="pills-data" role="tabpanel" aria-labelledby="pills-data-tab">
+                             <form class="row g-3 needs-validation" novalidate>
+                                 <div class="col-md-6">
+                                    <label for="network_company" class="form-label">Select Network</label>
+                                    <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
+                                        <div class="img-holder"><img src="/images/brands/mtn.png" alt="service provider icon"> </div>
+                                        <select class="form-select" id="network_company" required>
+                                        <option selected disabled value="">MTN</option>
+                                        <option>Airtel</option>
+                                        <option>Glo</option>
+                                        </select>
+                                    </div>
+                                    <div class="feed_msg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="data_phone_number" class="form-label">Enter Phone Number</label>
+                                    <input type="text" class="form-control" id="data_phone_number" required>
+                                    <div class=" feed_msg"></div>
+                                </div>
+                                  <div class="col-md-6">
+                                        <label class="form-label">Sort </label>
+                                        <div class="metre-type column-gap-20 d-flex align-items-center gx-5" id="metreTypeContainer">
+                                         <div class="col d-flex ">
+                                           <select name="" class="form-select" id="" required>
+                                                <option value="">By validity</option>
+                                                <option value=""></option>
+                                           </select>
+                                         </div>
+                                          <div class="col d-flex">
+                                            <select name="" class="form-select" id="" required>
+                                                <option value="daily">Daily</option>
+                                                <option value="weekly">Weekly</option>
+                                                <option value="monthly">Monthly</option>
+                                           </select>
+                                         </div>
+                                        </div>
+                                   </div>
+                                 <div class="col-md-6">
+                                    <label for="network_company" class="form-label">Select Data Bundle</label>
+                                    <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
+                                        <div class="img-holder"><img src="/images/brands/mtn.png" alt="service provider icon"> </div>
+                                        <select class="form-select" id="network_company" required>
+                                        <option selected disabled value="">100 MB</option>
+                                        <option>150 GB</option>
+                                        <option>500 GB</option>
+                                        </select>
+                                    </div>
+                                    <div class="feed_msg"></div>
+                                </div>
+                                 <div class="col-md-12">
+                                    <label for="">Email Address</label>
+                                     <input type="text" class="form-control" placeholder="Email address" required>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-checks">
+                                    <label class="form-check-label" for="invalidCheck">
+                                        View previous transactions <a href="/transaction">here</a>
+                                    </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-with-icon float-inline-end" type="submit">Proceed</button>
+                                </div>
+                            </form>
+                        </div>
                         <div class="tab-pane fade" id="pills-subscriptions" role="tabpanel" aria-labelledby="pills-subscriptions-tab">...</div>
                         </div>
                       </div>
@@ -543,16 +591,16 @@ Bill us now, pay later</h4>
                  </ul>
 
                  <div class="lower-footer-content mt-20 row">
-                     <div class="col-md-10">
-                         <p><span class="current_year">2024</span> Deeptech Ltd. All right reserved</p>
+                     <div class="col-lg d-lg-flex align-items-center">
+                         <p class="justify-content-center justify-content-lg-start text-3"><span class="current_year">2024</span> Deeptech Ltd. All right reserved</p>
                      </div>
-                     <div class="col-md-2">
+                     <div class="col-lg d-lg-flex justify-content-lg-end mt-3 mt-lg-0">
                          <div class="socials-handles d-flex align-items-center justify-content-between">
-                       <div class="icon-item"> <a href="#"><img src="/images/icons/whatsapp.png" alt="whatsapp"></a></div>
-                       <div class="icon-item"> <a href="#"><img src="/images/icons/twitter.png" alt="twitter"></a></div>
-                       <div class="icon-item"> <a href="#"><img src="/images/icons/facebook.png" alt="facebook"></a></div>
-                       <div class="icon-item"> <a href="#"><img src="/images/icons/instagram.png" alt="instagram"></a></div>
-                     </div>
+                        <div class="icon-item"> <a href="#"><img src="/images/icons/whatsapp.png" alt="whatsapp"></a></div>
+                        <div class="icon-item"> <a href="#"><img src="/images/icons/twitter.png" alt="twitter"></a></div>
+                        <div class="icon-item"> <a href="#"><img src="/images/icons/facebook.png" alt="facebook"></a></div>
+                        <div class="icon-item"> <a href="#"><img src="/images/icons/instagram.png" alt="instagram"></a></div>
+                        </div>
                      </div>
                  </div>
             </div>
