@@ -129,7 +129,7 @@
                         <!-- electricity tab ends -->
                          <!-- airtime tab start -->
                         <div class="tab-pane fade" id="pills-airtime" role="tabpanel" aria-labelledby="pills-airtime-tab">
-                            <form class="row g-3 needs-validation recharge-airtime-form" novalidate>
+                            <form class="row g-3 needs-validation recharge-airtime-form" novalidate id="recharge-airtime-form">
                                  <div class="col-md-6">
                                     <label for="network_company" class="form-label">Select Network</label>
                                     <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
@@ -144,7 +144,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="airtel_phone_number" class="form-label">Enter Phone Number</label>
-                                    <input type="text" class="form-control" id="airtel_phone_number" required>
+                                     <div class="input-wrapper">
+                                        <div class="relative">
+                                            <input type="tel" class="paste_target form-control" id="airtel_phone_number" min="0" step="1"  required> 
+                                            <div class="input-icon">
+                                               <img src="/images/paste_item.png" alt="paste icon">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class=" feed_msg"></div>
                                 </div>
                                 <div class="col-md-12 amount-short">
@@ -176,12 +183,12 @@
                         </div>
                         <!-- airtime tab ends -->
                         <div class="tab-pane fade" id="pills-data" role="tabpanel" aria-labelledby="pills-data-tab">
-                             <form class="row g-3 needs-validation" novalidate>
+                             <form class="row g-3 needs-validation" novalidate id="form-pills-data">
                                  <div class="col-md-6">
-                                    <label for="network_company" class="form-label">Select Network</label>
+                                    <label for="data_network_company" class="form-label">Select Network</label>
                                     <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
                                         <div class="img-holder"><img src="/images/brands/mtn.png" alt="service provider icon"> </div>
-                                        <select class="form-select" id="network_company" required>
+                                        <select class="form-select" id="data_network_company" required>
                                         <option selected disabled value="">MTN</option>
                                         <option>Airtel</option>
                                         <option>Glo</option>
@@ -191,7 +198,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="data_phone_number" class="form-label">Enter Phone Number</label>
-                                    <input type="text" class="form-control" id="data_phone_number" required>
+                                    <div class="input-wrapper">
+                                        <div class="relative">
+                                            <input type="tel" class="paste_target form-control" id="data_phone_number" min="0" step="1"  required> 
+                                            <div class="input-icon">
+                                               <img src="/images/paste_item.png" alt="paste icon">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class=" feed_msg"></div>
                                 </div>
                                   <div class="col-md-6">
@@ -213,18 +227,15 @@
                                         </div>
                                    </div>
                                  <div class="col-md-6">
-                                    <label for="network_company" class="form-label">Select Data Bundle</label>
-                                    <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
-                                        <div class="img-holder"><img src="/images/brands/mtn.png" alt="service provider icon"> </div>
-                                        <select class="form-select" id="network_company" required>
-                                        <option selected disabled value="">100 MB</option>
-                                        <option>150 GB</option>
-                                        <option>500 GB</option>
+                                    <label for="subscriptions_bundle" class="form-label">Select Data Bundle</label>
+                                        <select class="form-select" id="subscriptions_bundle" required>
+                                        <option selected disabled value="">₦100 - 100MB</option>
+                                        <option>₦1000 - 150 GB</option>
+                                        <option>₦15000 - 5000 GB</option>
                                         </select>
-                                    </div>
                                     <div class="feed_msg"></div>
                                 </div>
-                                 <div class="col-md-12">
+                                <div class="col-md-12">
                                     <label for="">Email Address</label>
                                      <input type="text" class="form-control" placeholder="Email address" required>
                                 </div>
@@ -240,14 +251,72 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tab-pane fade" id="pills-subscriptions" role="tabpanel" aria-labelledby="pills-subscriptions-tab">...</div>
+                        <div class="tab-pane fade" id="pills-subscriptions" role="tabpanel" aria-labelledby="pills-subscriptions-tab">
+                            <form class="row g-3 needs-validation" novalidate id="form-subscriptions">
+                                 <div class="col-md-6">
+                                    <label for="subscriptions_network_company" class="form-label">Select Biller</label>
+                                    <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
+                                        <div class="img-holder"><img src="/images/brands/gotv.png" alt="service provider icon"> </div>
+                                        <select class="form-select" id="subscriptions_network_company" required>
+                                        <option selected disabled value="">GOtv</option>
+                                        <option>Dstv</option>
+                                        <option>Cltv</option>
+                                        </select>
+                                    </div>
+                                    <div class="feed_msg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="card_number" class="form-label">Smart Card Number</label>
+                                     <input type="text" class="form-control" id="card_number" placeholder="0012345678" required>
+                                      <div class="feed_msg"></div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <label for="subscriptions_validaty" class="form-label">Select Validity</label>
+                                        <select class="form-select" id="validaty" required>
+                                        <option selected disabled value="">Monthly</option>
+                                        <option>Weekly</option>
+                                        <option>Day(s)</option>
+                                        </select>
+                                    <div class="feed_msg"></div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <label for="subscriptions_package" class="form-label">Select Package</label>
+                                        <select class="form-select" id="subscriptions_package" required>
+                                        <option selected disabled value="">₦2,700 - Jinja</option>
+                                        <option>₦3,700 - Jinja</option>
+                                        <option>₦5,700 - Jinja</option>
+                                        </select>
+                                    <div class="feed_msg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                   <label for="email_address" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="subscription_email_address" required>
+                                    <div class=" feed_msg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="subscription_phone_number" class="form-label">Phone Number <span>(Optional)</span></label>
+                                    <input type="text" class="form-control" id="subscription_phone_number" >
+                                    <div class="feed_msg"></div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-checks">
+                                    <label class="form-check-label" for="invalidCheck">
+                                        View previous transactions <a href="/transaction">here</a>
+                                    </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <button class="btn btn-primary btn-with-icon float-inline-end" type="submit">Proceed</button>
+                                </div>
+                            </form>
+                        </div>
                         </div>
                       </div>
                 </div>
             </div>
             </div>
    </div>
-    <!-- add this two closing div to close the header section-->
+   
      </div>
  </div>
 </section>
@@ -316,7 +385,7 @@
 your bill effortlessly</h4>
 <p>Let's help you manage and resolve your bill discrepancies. Stay informed at every step of your resolution requests with 
 our transparent workflow, from submission to resolution.</p>
-<a href="#">Reconcile Your Electricity Bills  <i class="fa-solid fa-arrow-right-long ml-3"></i></a>
+<div class="link-holder"><a href="#">Reconcile Your Electricity Bills  <i class="fa-solid fa-arrow-right-long ml-3"></i></a></div>
                      </div>
                      <div class="right-content-container">
                          <img src="/images/electricity_backlog.png" alt="reconcile electricity">
@@ -329,7 +398,7 @@ our transparent workflow, from submission to resolution.</p>
                         <h4>Pay only for the 
 power you consume</h4>
                         <p>Ensure you are receiving the accurate bill for your meter from power holding companies using our Electricity Bill Calculator feature. Let’s help you detect errors, and address issues promptly.</p>
-                        <a href="#">Calculate Your Electricity Bills<i class="fa-solid fa-arrow-right-long ml-3"></i></a>
+                       <div class="link-holder"> <a href="#">Calculate Your Electricity Bills<i class="fa-solid fa-arrow-right-long ml-3"></i></a></div>
                     </div>
                      <div class="right-content-container">
                          <img src="/images/select_appiliance.png" alt="reconcile electricity">
@@ -343,8 +412,7 @@ power you consume</h4>
                             <span class="active rounded-pill ">Coming soon</span>
                             <span class="inactive rounded-pill">App only</span>
                         </div>
-                        <h4>Never run out of power! 
-Bill us now, pay later</h4>
+                        <h4>Never run out of power! Bill us now, pay later</h4>
                         <p>We understand that managing finances involves more than just paying bills, so we are offering you great flexibility and control over your expenses. Tailor your repayment plan to suit your budget. </p>
                        
                     </div>

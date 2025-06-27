@@ -60,5 +60,23 @@ $(document).ready(function () {
     });
   }
  
+  $(document).ready(function () {
+    $('.input-icon').on('click', async function () {
+      try {
+        const text = await navigator.clipboard.readText();
+
+        // Find the closest input before or inside the same group
+        const input = $(this).siblings('.paste_target').length
+          ? $(this).siblings('.paste_target')
+          : $(this).closest('.input-group').find('.paste_target');
+
+        input.val(text);
+      } catch (err) {
+        alert('Clipboard access failed. Make sure your browser allows clipboard permissions.');
+        console.error(err);
+      }
+    });
+  });
+  
 
 });
