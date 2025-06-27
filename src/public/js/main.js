@@ -79,4 +79,19 @@ $(document).ready(function () {
   });
   
 
+  
+  const sidebar = document.getElementById('mobileSidebar');
+  const toggle = document.getElementById('sidebarToggle');
+  const backdrop = document.getElementById('sidebarBackdrop');
+
+  toggle.addEventListener('click', () => {
+    sidebar.classList.toggle('show');
+    backdrop.classList.toggle('show');
+  });
+
+  backdrop.addEventListener('click', () => {
+    sidebar.classList.remove('show');
+    backdrop.classList.remove('show');
+  });
+
 });

@@ -8,11 +8,11 @@
                             <img src="images/brands/logo.png" alt="brand logo" class="w-134 h-22">
                         </a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_content" aria-controls="navbar_content" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler d-lg-none" type="button" id="sidebarToggle">
                     <span class="fa-solid fa-bars-staggered" style="color:white;"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbar_content">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
+                    <div class="collapse navbar-collapse d-none d-lg-flex" id="navbar_content">
+                    <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#pay_bill_section">Pay Bills</a>
                         </li>
@@ -30,7 +30,41 @@
                     </div>
                 </div>
             </nav>
-
+           
+            <!-- Sidebar for Small Screens -->
+        <div class="mobile-sidebar " id="mobileSidebar">
+                 <div class="container-fluid">
+                     <div class="d-flex align-items-centers justify-content-between pt-2">
+                        <div id="logo" class="logo">
+                            <a class="navbar-brand" href="/" rel="home">
+                                <img src="images/brands/logo.png" alt="brand logo" class="w-134 h-22">
+                            </a>
+                        </div>
+                        <button class="navbar-toggler d-lg-none" type="button" id="sidebarToggle">
+                             <span class="fa-solid fa-xmark fa-2xl" style="color:#1D4ED8;font-weight: 900;"></span>
+                        </button>
+                     </div>
+                   
+                    <div class="collapse navbar-collapse d-none d-lg-flex" id="navbar_content">
+                    <ul class="nav flex-column mb-2 mt-4">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#pay_bill_section">Pay Bills</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#reconcile_electricity">Reconcile Electricity Bills</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#feature_section">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq_section">FAQs</a>
+                        </li>
+                    </ul>
+                    <a class="btn btn-primary login-btn" href="/login">Login</a>
+                    </div>
+                </div>
+        </div>    
+            <div class="backdrop" id="sidebarBackdrop"></div>
         </div>
    
  
