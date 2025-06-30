@@ -171,6 +171,8 @@ ul,ol {padding: 0;}
 .bg-1b{background-image: linear-gradient(to right, rgba(238, 242, 255, 1), rgba(236, 232, 255, 1));}
 .bg-1c{background-image: linear-gradient(to right, rgba(239, 246, 255, 1), rgba(191, 219, 254, 1))}
 .bg-light {background-color: rgb(245, 245, 245);}
+.bg-blue-100{background: #2B28AE;padding: 10px;}
+
 
 .mt-50{margin-top: 50px;}
 
@@ -179,6 +181,7 @@ ul,ol {padding: 0;}
 .btn-primary{height: auto; background-color: #1D4ED8;box-shadow: 0 1px 1px rgba(43, 40, 174, 1);border-radius: 8px;color: #FFFFFF;font-size: 16px;line-height: 24px;}
 .btn-with-icon::after {content: "\f178";font-family: "Font Awesome 6 Free";font-weight: 900;padding-left: 0.5em;display: inline-block;}
 
+.w-110{width: 110px;}
 .w-134{width: 134px;}
 .h-22{height: 22px;}
 
@@ -188,7 +191,7 @@ ul,ol {padding: 0;}
 .rounded-pill.inactive:hover{background-color: rgba(29, 78, 216, 1);color: #FFF;}
 .rounded-pill.active:hover{background-color: rgba(213, 231, 255, 1);color: #111827;}
 
-.navbar-toggler, .navbar-toggler:focus {border: none;border-radius: 0;}
+.navbar-toggler, .navbar-toggler:focus {border: none;border-radius: 0;color: transparent;}
 /* .navbar-toggler .navbar-toggler-icon {background-image:} */
 #navbar_content {justify-content: space-evenly;}
 
@@ -328,6 +331,43 @@ ul,ol {padding: 0;}
 .footer_section .content-wrapper .foot-item-container .foot-item .footer_logo img{width: 24px; height: auto; margin-right: 5px;}
 .footer_section .content-wrapper .lower-footer-content {background-color: #FBFCFE;padding: 40px 20px;}
 .footer_section .content-wrapper .lower-footer-content  .socials-handles .icon-item img{width: 24px;height: 24px;}
+
+
+/*---------- Modals --------*/
+#payment_popup .modal-header{border-bottom: none;}
+.recharge-electricity-modal .modal-body{padding: 35px;}
+.recharge-electricity-modal h3{color: #111827;font-size: 20px;font-weight: 600;font-family: var(--font-family-inter);line-height: 28px;}
+.recharge-electricity-modal .payment_method_container {width: 100%;max-width: 336px;}
+.recharge-electricity-modal .payment_method_container span{font-weight: 400;font-family: var(--dark-color);color: #6D7280;font-size: 16px;}
+.recharge-electricity-modal .payment_method_container .payment-selection-wrapper{padding-top: 15px;}
+.recharge-electricity-modal .payment_method_container .payment-selection-wrapper .form-control{margin-bottom: 15px;}
+.recharge-electricity-modal .payment_method_container .payment-selection-wrapper .form-control.active, .recharge-electricity-modal .payment_method_container .payment-selection-wrapper .form-control:hover{border: 2px solid #1D4ED8;}
+.recharge-electricity-modal .payment_method_container .payment-selection-wrapper .icon-holder img{width: 32px;height: 32px;margin-right: 8px;}
+
+.recharge-electricity-modal .order_details_container{width: 100%;/*max-width: 492px;*/}
+.recharge-electricity-modal .order_details_container .order-wrapper{background-color: #F2F8FF; padding: 15px;}
+.recharge-electricity-modal .order_details_container .order-wrapper .order-item{margin-bottom: 20px;}
+.recharge-electricity-modal .order_details_container .order-wrapper span, .recharge-electricity-modal .order_details_container .order-wrapper p{font-size: 16px;font-family: var(--font-family-inter);line-height: 24px;}
+.recharge-electricity-modal .order_details_container .order-wrapper p{margin-bottom: 0;font-weight: 500;color: #111827;}
+.recharge-electricity-modal .order_details_container .order-wrapper span {color: #6D7280}
+.recharge-electricity-modal .order_details_container .order-wrapper  .order-footer{background-color: #FFF;border-radius: 8px;min-height: 96px;align-items: center;display: flex;flex-direction: column;justify-content: center;}
+.recharge-electricity-modal .order_details_container .order-wrapper  .order-footer p, .modal-content-body .transaction-card h2{color: #1D4ED8; font-size: 32px;line-height: 40px;font-weight: 700;font-family: var(--font-family-red-display);margin-top: 10px;}
+
+
+#transaction_details_modal .modal-content-body .order-wrapper{padding-top: 30px;}
+.modal-content-body .order-wrapper .order-item{margin-bottom: 20px;}
+.modal-content-body .order-wrapper span,.modal-content-body .order-wrapper p{font-size: 16px;font-family: var(--font-family-inter);line-height: 24px;}
+.modal-content-body .order-wrapper p{margin-bottom: 0;font-weight: 500;color: #111827;}
+.modal-content-body .order-wrapper span {color: #6D7280}
+.modal-footer{border-top: 1px solid #D5E7FF;padding: 40px 0px;column-gap: 20px;justify-content: center;}
+.modal-footer .btn-inactive, .modal-footer .btn-active{min-height: 44px;font-weight: 800;}
+.modal-footer .btn-inactive{background-color: #F2F8FF;border-radius: 8px;color:#1D4ED8;font-size: 16px;box-shadow: 0 1px 1px rgba(242, 248, 255, 1);height: auto;line-height: 24px;}
+
+.modal-content-body .transaction-card{background-color: #F2F8FF;border-radius: 8px;}
+.modal-content-body .divider-line{height: 15px;background: #FFF;z-index: 1;}
+.modal-content-body  .status-badge{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);font-weight: 600;font-size: 14px;border: 8px solid #FFFFFF;}
+.modal-content-body  .status-badge.success{color: #16A34A !important;background-color: #E9F9EF;}
+.modal-content-body  .status-badge.failed{color: #EF4444 !important;background-color: #FEF2F2;}
 /*========================================================= Media Query  =================================================== */
 @media only screen and (max-width: 1025px) {
 /* .upper-header-section .header-nav-container .tabs-area-container .nav-pills .nav-item {padding: 0px 8px;} */
@@ -362,6 +402,7 @@ ul,ol {padding: 0;}
 .feature_section .grid-container .card h2 {padding-bottom: 10px;margin-bottom: 0;}
 .feature_section .grid-container .card p {padding-right: 0;}
 
+.recharge-electricity-modal .order_details_container .order-wrapper  .order-footer{min-height: 80px;}
 }
 
 
@@ -374,6 +415,10 @@ ul,ol {padding: 0;}
 @media screen and (max-width: 767px) {
  .sm-row-gap-10{row-gap: 10px}
 .hidden-sm{display: none;}
+.mobile-sidebar .nav-item.active, .mobile-sidebar .nav-item:hover{background-color: #2B28AE;color: #FFF;}
+.mobile-sidebar .nav-item.active .nav-link, .mobile-sidebar .nav-item:hover .nav-link{color: #FFF;font-weight: 700;}
+.mobile-sidebar .nav-item{padding: 5px 10px;}
+.mobile-sidebar .nav-link {padding: 5px;font-size: 16px;color: #111827;cursor: pointer;}
 .header-content-container .header-super-content h2{font-size: 30px;line-height: 38px;}
 .feature_section  .grid-container {grid-template-columns: 1fr;}
 .feature_section .grid-container .app-only {min-width: 100px;height: auto;padding: 4px;}
@@ -392,6 +437,10 @@ ul,ol {padding: 0;}
 .feature_section .header-super-content h3 {line-height: 36px;font-size: 28px;}
 /* .feature_section .grid-container .card {padding: 15px;} */
 
+.recharge-electricity-modal  .modal-content-body{row-gap: 30px;}
+.recharge-electricity-modal .payment_method_container {max-width: 100%;}
+.recharge-electricity-modal .order_details_container .order-wrapper span, .recharge-electricity-modal .order_details_container .order-wrapper p{font-size: 14px;}
+.recharge-electricity-modal .order_details_container .order-wrapper  .order-footer p, .modal-content-body .transaction-card h2{font-size: 24px;line-height: 32px;}
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -406,26 +455,12 @@ ul,ol {padding: 0;}
 }
 
 /* nEW STYLES */
-  .mobile-sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
-      height: 800px;
-      background-color: #fff;
-      z-index: 1050;
-      transition: all 0.3s ease;
-      overflow-y: auto;
-    }
-
-    .mobile-sidebar.show {
-      left: 0;
-    }
-
-    @media (min-width: 992px) {
-      .mobile-sidebar {
+  .mobile-sidebar {position: fixed;top: 0;left: -250px;width: 250px;height: 800px;background-color: #F2F8FF;z-index: 1050;transition: all 0.3s ease;overflow-y: auto;}
+  .mobile-sidebar.show {left: 0;}
+   @media (min-width: 992px) {
+        .mobile-sidebar {
         display: none !important;
-      }
+        }
     }
 
     .backdrop {

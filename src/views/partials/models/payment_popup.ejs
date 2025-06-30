@@ -1,0 +1,163 @@
+<div class="modal fade" id="" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-content-body flex-lg-row flex-sm-column-reverse d-flex column-gap-10">
+            <div class="payment_method_container">
+                <h3>Choose payment method</h3>
+                <span>Select the one convenient for you</span>
+                <div class="payment-selection-wrapper">
+                    <div class="col  active d-flex align-items-center justify-content-between form-control ">
+                        <div class="d-flex align-items-center icon-holder">
+                            <img src="/images/ussd_icon.png" alt="payment icon">
+                            <label for="ussd_transfer" class="custom-radio">USSD Transfer</label>
+                        </div>
+                        <input type="radio" name="payment_selection" checked id="ussd_transfer" value="ussd">
+                    </div>
+                     <div class="col d-flex align-items-center justify-content-between form-control ">
+                        <div class="d-flex align-items-center icon-holder">
+                            <img src="/images/opay_icon.png" alt="payment icon">
+                             <label for="opay_transfer" class="custom-radio">OPay</label>
+                        </div>
+                        <input type="radio" name="payment_selection" id="opay_transfer" value="opay">
+                    </div>
+                     <div class="col d-flex align-items-center justify-content-between form-control ">
+                        <div class="d-flex align-items-center icon-holder">
+                            <img src="/images/flutterwave_icon.png" alt="payment icon">
+                        <label for="flutterwave_transfer" class="custom-radio">Flutterwave</label>
+                        </div>
+                        <input type="radio" name="payment_selection" id="flutterwave_transfer" value="flutterwave">
+                    </div>
+                    <button  class="btn btn-primary btn-with-icon w-100 float-inline-end" type="submit">Proceed to Payment</button>
+                </div>
+            </div>
+            <div class="order_details_container">
+                <h3>Order details</h3>
+                <div class="order-wrapper">
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Biller</span>
+                        <p>Ikeja Electric</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Meter Number</span>
+                        <p>0012345678</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Meter Name</span>
+                        <p>JOHN DOE KVAVYDASKMASK</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Amount</span>
+                        <p>₦500</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Transaction Fee</span>
+                        <p>₦50</p>
+                    </div>
+                    <div class="order-footer text-center">
+                            <span>Amount Due</span>
+                            <p>₦550</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="payment_popup" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+         <div id="logo" class="logo">
+               <img src="images/brands/modal-logo.png" alt="brand logo" class="w-110">
+            </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-content-body ">
+           
+             <h3>Transaction details</h3>
+
+            <div class="transaction-card p-4 text-center">
+                <span class="text-muted mb-1">Amount Paid</span>
+                <h2 class="text-primary fw-bold mb-3">₦550</h2>
+            </div>
+             <div class="divider-line position-relative text-center">
+                <div id="payment-status" class="status-badge success text-white px-4 py-2 d-inline-flex align-items-center gap-2 rounded-pill ">
+                    <i class="fa fa-check-circle"></i>
+                    <span class="status-text">Successful</span>
+                </div>
+            </div>
+            <div class="transaction-card p-4 text-center">
+                <div class="text-muted mb-1">Token</div>
+                <div class="d-flex justify-content-center align-items-center gap-2">
+                <p class="fw-bold m-0" id="token-text">12345678901234567890</p>
+                <i class="fa fa-copy copy-icon" style="cursor: pointer;" title="Copy" id="copyToken"></i>
+                </div>
+                <small class="text-success mt-2 d-block" id="copy-msg" style="display: none;">Copied!</small>
+            </div>
+            <div class="order-wrapper">
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Disco</span>
+                        <p>IKEDC</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Purchase Type</span>
+                        <p>Electricity Purchase</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Payment Type</span>
+                        <p>Prepaid</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Meter Number</span>
+                        <p>0012345678</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Account Name</span>
+                        <p>JOHN DOE KVAVYDASKMASK</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Units</span>
+                        <p>89 KWh</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Address</span>
+                        <p>3A Jane Doe Street</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Amount</span>
+                        <p>₦500</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Transaction Fee</span>
+                        <p>₦50</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Payment Method</span>
+                        <p>USSD Transfer</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Transaction ID</span>
+                        <p>BB1234ABtfw24</p>
+                    </div>
+                    <div class="order-item d-flex justify-content-between">
+                        <span>Transaction Time</span>
+                        <p>NOV 30, 2023 6:40 PM</p>
+                    </div>
+            </div>
+
+        </div>
+      </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-inactive">Transaction issue <i class="fa-solid fa-question"></i></button>
+        <button type="button" class="btn btn-primary btn-active">Download receipt <i class="fa-solid fa-download"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

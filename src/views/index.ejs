@@ -60,12 +60,12 @@
                         <div class="tab-content" id="pills-tabContent">
                             <!-- electricity tab start -->
                         <div class="tab-pane fade show active" id="pills-electricity" role="tabpanel" aria-labelledby="pills-electricity-tab">
-                           <form class="row g-3 needs-validation recharge-electricity" novalidate>
+                           <form class="row g-3 needs-validation recharge-electricity" method="post">
                                 <div class="col-md-6">
                                     <label for="disco_company" class="form-label">Select Disco</label>
                                     <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
                                         <div class="img-holder"><img src="/images/brands/EEDC.png" alt="Electricity icon"> </div>
-                                        <select class="form-select" id="disco_company" required>
+                                        <select class="form-select" id="disco_company" >
                                         <option selected disabled value="">Ikeja Electric</option>
                                         <option>Ikeja Electric</option>
                                         <option>Phed</option>
@@ -93,20 +93,20 @@
 
                                 <div class="col-md-6">
                                     <label for="meter_number" class="form-label">Meter Number</label>
-                                    <input type="text" class="form-control" id="meter_number" required>
+                                    <input type="text" class="form-control" id="meter_number" >
                                     <div class=" feed_msg"></div>
                                 </div>
                                 <div class="col-md-6">
                                      <label for="purchase_amount" class="form-label">Enter Amount</label>
                                     <div class="input-group has-validation">
                                     <span class="input-group-text" id="inputGroupPrepend">₦</span>
-                                    <input type="text" class="form-control"  id="purchase_amount" aria-describedby="inputGroupPrepend" required>
+                                    <input type="text" class="form-control"  id="purchase_amount" aria-describedby="inputGroupPrepend" >
                                     <div class="feed_msg"></div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                    <label for="email_address" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" id="email_address" required>
+                                    <input type="email" class="form-control" id="email_address" >
                                     <div class=" feed_msg"></div>
                                 </div>
                                 <div class="col-md-6">
@@ -122,7 +122,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <button class="btn btn-primary btn-with-icon float-inline-end" type="submit">Proceed</button>
+                                    <button type="submit" class="btn btn-primary btn-with-icon float-inline-end" >Proceed</button>
                                 </div>
                             </form>
                         </div>
@@ -134,7 +134,7 @@
                                     <label for="network_company" class="form-label">Select Network</label>
                                     <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
                                         <div class="img-holder"><img src="/images/brands/mtn.png" alt="service provider icon"> </div>
-                                        <select class="form-select" id="network_company" required>
+                                        <select class="form-select" id="network_company" >
                                         <option selected disabled value="">MTN</option>
                                         <option>Airtel</option>
                                         <option>Glo</option>
@@ -146,7 +146,7 @@
                                     <label for="airtel_phone_number" class="form-label">Enter Phone Number</label>
                                      <div class="input-wrapper">
                                         <div class="relative">
-                                            <input type="tel" class="paste_target form-control" id="airtel_phone_number" min="0" step="1"  required> 
+                                            <input type="tel" class="paste_target form-control" id="airtel_phone_number" min="0" step="1"  > 
                                             <div class="input-icon">
                                                <img src="/images/paste_item.png" alt="paste icon">
                                             </div>
@@ -167,7 +167,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label for="">Email Address</label>
-                                     <input type="text" class="form-control" placeholder="Email address" required>
+                                     <input type="text" class="form-control" placeholder="Email address" >
                                 </div>
                                 <div class="col-6">
                                     <div class="form-checks">
@@ -188,7 +188,7 @@
                                     <label for="data_network_company" class="form-label">Select Network</label>
                                     <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
                                         <div class="img-holder"><img src="/images/brands/mtn.png" alt="service provider icon"> </div>
-                                        <select class="form-select" id="data_network_company" required>
+                                        <select class="form-select" id="data_network_company" >
                                         <option selected disabled value="">MTN</option>
                                         <option>Airtel</option>
                                         <option>Glo</option>
@@ -200,7 +200,7 @@
                                     <label for="data_phone_number" class="form-label">Enter Phone Number</label>
                                     <div class="input-wrapper">
                                         <div class="relative">
-                                            <input type="tel" class="paste_target form-control" id="data_phone_number" min="0" step="1"  required> 
+                                            <input type="tel" class="paste_target form-control" id="data_phone_number" min="0" step="1"  > 
                                             <div class="input-icon">
                                                <img src="/images/paste_item.png" alt="paste icon">
                                             </div>
@@ -212,13 +212,13 @@
                                         <label class="form-label">Sort </label>
                                         <div class="metre-type column-gap-20 d-flex align-items-center gx-5" id="metreTypeContainer">
                                          <div class="col d-flex ">
-                                           <select name="" class="form-select" id="" required>
+                                           <select name="" class="form-select" id="" >
                                                 <option value="">By validity</option>
                                                 <option value=""></option>
                                            </select>
                                          </div>
                                           <div class="col d-flex">
-                                            <select name="" class="form-select" id="" required>
+                                            <select name="" class="form-select" id="" >
                                                 <option value="daily">Daily</option>
                                                 <option value="weekly">Weekly</option>
                                                 <option value="monthly">Monthly</option>
@@ -228,7 +228,7 @@
                                    </div>
                                  <div class="col-md-6">
                                     <label for="subscriptions_bundle" class="form-label">Select Data Bundle</label>
-                                        <select class="form-select" id="subscriptions_bundle" required>
+                                        <select class="form-select" id="subscriptions_bundle" >
                                         <option selected disabled value="">₦100 - 100MB</option>
                                         <option>₦1000 - 150 GB</option>
                                         <option>₦15000 - 5000 GB</option>
@@ -237,7 +237,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label for="">Email Address</label>
-                                     <input type="text" class="form-control" placeholder="Email address" required>
+                                     <input type="text" class="form-control" placeholder="Email address" >
                                 </div>
                                 <div class="col-6">
                                     <div class="form-checks">
@@ -257,7 +257,7 @@
                                     <label for="subscriptions_network_company" class="form-label">Select Biller</label>
                                     <div class="d-flex align-items-center column-gap-10 custom-select-with-logo">
                                         <div class="img-holder"><img src="/images/brands/gotv.png" alt="service provider icon"> </div>
-                                        <select class="form-select" id="subscriptions_network_company" required>
+                                        <select class="form-select" id="subscriptions_network_company" >
                                         <option selected disabled value="">GOtv</option>
                                         <option>Dstv</option>
                                         <option>Cltv</option>
@@ -267,12 +267,12 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="card_number" class="form-label">Smart Card Number</label>
-                                     <input type="text" class="form-control" id="card_number" placeholder="0012345678" required>
+                                     <input type="text" class="form-control" id="card_number" placeholder="0012345678" >
                                       <div class="feed_msg"></div>
                                 </div>
                                  <div class="col-md-6">
                                     <label for="subscriptions_validaty" class="form-label">Select Validity</label>
-                                        <select class="form-select" id="validaty" required>
+                                        <select class="form-select" id="validaty" >
                                         <option selected disabled value="">Monthly</option>
                                         <option>Weekly</option>
                                         <option>Day(s)</option>
@@ -281,7 +281,7 @@
                                 </div>
                                  <div class="col-md-6">
                                     <label for="subscriptions_package" class="form-label">Select Package</label>
-                                        <select class="form-select" id="subscriptions_package" required>
+                                        <select class="form-select" id="subscriptions_package" >
                                         <option selected disabled value="">₦2,700 - Jinja</option>
                                         <option>₦3,700 - Jinja</option>
                                         <option>₦5,700 - Jinja</option>
@@ -290,7 +290,7 @@
                                 </div>
                                 <div class="col-md-6">
                                    <label for="email_address" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" id="subscription_email_address" required>
+                                    <input type="email" class="form-control" id="subscription_email_address" >
                                     <div class=" feed_msg"></div>
                                 </div>
                                 <div class="col-md-6">

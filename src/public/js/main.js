@@ -80,18 +80,70 @@ $(document).ready(function () {
   
 
   
-  const sidebar = document.getElementById('mobileSidebar');
-  const toggle = document.getElementById('sidebarToggle');
-  const backdrop = document.getElementById('sidebarBackdrop');
+const sidebar = document.getElementById('mobileSidebar');
+const toggle = document.getElementById('sidebarToggle');
+const backdrop = document.getElementById('sidebarBackdrop');
+const icon = document.getElementById('menuIcon'); 
 
-  toggle.addEventListener('click', () => {
-    sidebar.classList.toggle('show');
-    backdrop.classList.toggle('show');
+toggle.addEventListener('click', () => {
+  const sidebarVisible = sidebar.classList.toggle('show');
+  backdrop.classList.toggle('show');
+ if (sidebar.classList.contains('show')) {
+    icon.classList.remove('fa-bars-staggered');
+    icon.classList.add('fa-xmark');
+  } else {
+    icon.classList.remove('fa-xmark');
+    icon.classList.add('fa-bars-staggered');
+  }
+});
+
+backdrop.addEventListener('click', () => {
+  sidebar.classList.remove('show');
+  backdrop.classList.remove('show');
+  icon.classList.remove('fa-xmark');
+  icon.classList.add('fa-bars-staggered');
+});
+
+
+
+
+// Temperary validations, subjected to be removed
+ $('.recharge-electricity').on('submit', function (e) {
+  console.log('submitted');
+    e.preventDefault();
+
+    let isValid = true;
+    $('#loader').show();
+
+    $(this).find('input').each(function () {
+      if ($.trim($(this).val()) === '') {
+        isValid = false;
+        $(this).addClass('is-invalid');
+      } else {
+        $(this).removeClass('is-invalid');
+      }
+    });
+
+    if (isValid) {
+      setTimeout(function () {
+        $('#loader').hide();
+
+         $('#payment_popup .modal-content')
+        .removeClass()
+        .addClass('modal-content recharge-electricity-modal');
+
+        const modal = new bootstrap.Modal(document.getElementById('payment_popup'));
+        modal.show();
+      }, 500); // simulate delay
+    } else {
+      $('#loader').hide();
+    }
   });
 
-  backdrop.addEventListener('click', () => {
-    sidebar.classList.remove('show');
-    backdrop.classList.remove('show');
+  $('input[name="payment_selection"]').on('change', function () {
+    $('.payment-selection-wrapper .form-control').removeClass('active');
+    $(this).closest('.form-control').addClass('active');
   });
+
 
 });
