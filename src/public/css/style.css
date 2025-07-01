@@ -368,6 +368,9 @@ ul,ol {padding: 0;}
 .modal-content-body  .status-badge{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);font-weight: 600;font-size: 14px;border: 8px solid #FFFFFF;}
 .modal-content-body  .status-badge.success{color: #16A34A !important;background-color: #E9F9EF;}
 .modal-content-body  .status-badge.failed{color: #EF4444 !important;background-color: #FEF2F2;}
+
+.login_section .left-image-container .carousel_indicators img{width: 384px;}
+
 /*========================================================= Media Query  =================================================== */
 @media only screen and (max-width: 1025px) {
 /* .upper-header-section .header-nav-container .tabs-area-container .nav-pills .nav-item {padding: 0px 8px;} */

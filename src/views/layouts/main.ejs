@@ -30,6 +30,10 @@
         <link rel="stylesheet" href="/css/style.css?v=<%= TEMPLATE_VERSION %>">
         <!-- Custom styles for this template End -->
 
+         <% if (typeof page_styles !== 'undefined') { %>
+            <link rel="stylesheet" href="/css/dashboard.css?v=<%= TEMPLATE_VERSION %>">
+        <% } %>
+
         <script>
 
             <% if(typeof errors === "object") { %>
@@ -47,13 +51,17 @@
         <%- style %>
     </head>
 
-    <body class="main-layout header-sticky <% if (typeof  selected_page ==='string'){ %><%= selected_page %><% } %>">
+    <body class="main-layout header-sticky <% if (typeof  selected_page ==='string'){ %><%= selected_page %><% } %> <%= isDashboard ? 'dashboard-layout' : '' %>">
 
         <!-- main page content -->
         <div class="default_layout_wrapper">
 
-        <%- include('../partials/head_menu') %>
-           
+        
+             <% if (isDashboard) { %>
+                    <%- include('../partials/dashboard-header') %>
+                <% } else { %>
+                    <%- include('../partials/head_menu') %>
+             <% } %>
 
         </div>
         

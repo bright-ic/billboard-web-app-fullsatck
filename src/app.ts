@@ -59,6 +59,12 @@ const ExpressConfig = (): Application => {
 
   app.use(flash());
 
+// Remove this code when auth or session is set
+  app.use((req, res, next) => {
+  res.locals.isDashboard = req.path.startsWith('/dashboard');
+  next();
+});
+
   return app
 }
 
