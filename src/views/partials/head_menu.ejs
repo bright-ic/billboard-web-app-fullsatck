@@ -26,7 +26,11 @@
                             <a class="nav-link" href="#faq_section">FAQs</a>
                         </li>
                     </ul>
-                    <a class="btn btn-primary login-btn" href="/login">Login</a>
+                    <ul class="d-flex align-items-center auth-container">
+                        <li><a  class="nav-link"  href="/dashboard/login">Login</a></li>/
+                         <li><a  class="nav-link"  href="/dashboard/register">Signup</a></li>
+                    </ul>
+                    <!-- <a class="btn btn-primary login-btn" href="/dashboard/login">Login</a> -->
                     </div>
                 </div>
             </nav>
@@ -70,6 +74,6 @@
         </div>
    
  <div id="loader" style="display: none;">
-  <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+  <div class="spinner-border text-primary " role="status"><span class="visually-hidden">Loading...</span></div>
 </div>
  <%- body %>

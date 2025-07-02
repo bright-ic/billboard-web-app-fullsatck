@@ -109,7 +109,6 @@ backdrop.addEventListener('click', () => {
 
 // Temperary validations, subjected to be removed
  $('.recharge-electricity').on('submit', function (e) {
-  console.log('submitted');
     e.preventDefault();
 
     let isValid = true;
@@ -145,5 +144,52 @@ backdrop.addEventListener('click', () => {
     $(this).closest('.form-control').addClass('active');
   });
 
+
+   $('.login_form').on('submit', function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+    $('#loader').show();
+
+    $(this).find('input').each(function () {
+      if ($.trim($(this).val()) === '') {
+        isValid = false;
+        $(this).addClass('is-invalid');
+      } else {
+        $(this).removeClass('is-invalid');
+      }
+    });
+
+    if (isValid) {
+      setTimeout(function () {
+        $('#loader').hide();
+
+         $('#otp_modal .modal-content')
+        .removeClass()
+        .addClass('modal-content otp_modal');
+
+        const modal = new bootstrap.Modal(document.getElementById('otp_modal'));
+        modal.show();
+      }, 500); // simulate delay
+    } else {
+      $('#loader').hide();
+    }
+  });
+  
+
+  // otp input to skip to next when number is entered
+  document.querySelectorAll('.code-input').forEach((input, index, inputs) => {
+  input.addEventListener('input', () => {
+    if (input.value.length === 1 && index < inputs.length - 1) {
+      inputs[index + 1].focus();
+    }
+  });
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === "Backspace" && input.value === '' && index > 0) {
+      inputs[index - 1].focus();
+    }
+  });
+});
 
 });

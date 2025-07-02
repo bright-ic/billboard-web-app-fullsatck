@@ -183,6 +183,7 @@ ul,ol {padding: 0;}
 
 .w-110{width: 110px;}
 .w-134{width: 134px;}
+.w-185{width: 185px;}
 .h-22{height: 22px;}
 
 .rounded-pill.active{background-color: rgba(29, 78, 216, 1); color: #FFF;font-family: var(--font-family-inter);font-size: 16px;font-weight: 500;line-height: 24px;}
@@ -203,8 +204,8 @@ ul,ol {padding: 0;}
 
 .header-container{background-image: url("/images/hero-img.png");min-height: 380px;background-position: center;background-repeat: no-repeat;background-size: cover;position: relative;}
 .header-container .navbar-nav {column-gap: 10px;}
-.header-container .navbar-nav .nav-item .nav-link{color: #BFDBFE; font-family: var(--font-family-inter); font-weight: 400;font-size: 16px;line-height: 24px;text-transform: capitalize;text-decoration: none;cursor: pointer;}
-.header-container .navbar-nav .nav-item .nav-link.active, .header-container .navbar-nav .nav-item:hover .nav-link{color: #FFFFFF;font-weight: 600;}
+.header-container .navbar-nav .nav-item .nav-link, .header-container .auth-container .nav-link{color: #BFDBFE; font-family: var(--font-family-inter); font-weight: 400;font-size: 16px;line-height: 24px;text-transform: capitalize;text-decoration: none;cursor: pointer;}
+.header-container .navbar-nav .nav-item .nav-link.active, .header-container .navbar-nav .nav-item:hover .nav-link, .header-container .auth-container .nav-link:hover{color: #FFFFFF;font-weight: 600;}
 
 .header-container .carousel-inner .carousel-item img{width: 100%; border-radius: 12px;object-fit: cover;height: auto;}
 .header-content-container .header-super-content{text-align: center;width: 100%; max-width: 892px;margin: 0 auto;}
@@ -265,6 +266,11 @@ ul,ol {padding: 0;}
 .bg-wrapper.bg-1c .content-container .left-content-container a{color: rgba(29, 78, 216, 1);}
 
 .bg-wrapper .content-container .left-content-container .mb-50{margin-bottom: 50px;}
+
+  .mobile-sidebar {position: fixed;top: 0;left: -250px;width: 250px;height: 800px;background-color: #F2F8FF;z-index: 1050;transition: all 0.3s ease;overflow-y: auto;}
+  .mobile-sidebar.show {left: 0;}
+  .backdrop {position: fixed;inset: 0;background: rgba(0,0,0,0.3);z-index: 1049;display: none;}
+  .backdrop.show {display: block;}
 
 
 .feature_section{background-image: linear-gradient(to right, rgba(29, 78, 216, 1), rgba(17, 24, 39, 1))}
@@ -332,13 +338,16 @@ ul,ol {padding: 0;}
 .footer_section .content-wrapper .lower-footer-content {background-color: #FBFCFE;padding: 40px 20px;}
 .footer_section .content-wrapper .lower-footer-content  .socials-handles .icon-item img{width: 24px;height: 24px;}
 
+#loader {position: fixed;top: 0;left: 0;width: 100vw;height: 100vh;background-color: rgba(0, 0, 0, 0.4);z-index: 9999; display: flex; align-items: center;justify-content: center;}
+
+
 
 /*---------- Modals --------*/
 #payment_popup .modal-header{border-bottom: none;}
 .recharge-electricity-modal .modal-body{padding: 35px;}
 .recharge-electricity-modal h3{color: #111827;font-size: 20px;font-weight: 600;font-family: var(--font-family-inter);line-height: 28px;}
 .recharge-electricity-modal .payment_method_container {width: 100%;max-width: 336px;}
-.recharge-electricity-modal .payment_method_container span{font-weight: 400;font-family: var(--dark-color);color: #6D7280;font-size: 16px;}
+.recharge-electricity-modal .payment_method_container span{font-weight: 400;font-family: var(--font-family-inter);color: #6D7280;font-size: 16px;}
 .recharge-electricity-modal .payment_method_container .payment-selection-wrapper{padding-top: 15px;}
 .recharge-electricity-modal .payment_method_container .payment-selection-wrapper .form-control{margin-bottom: 15px;}
 .recharge-electricity-modal .payment_method_container .payment-selection-wrapper .form-control.active, .recharge-electricity-modal .payment_method_container .payment-selection-wrapper .form-control:hover{border: 2px solid #1D4ED8;}
@@ -369,7 +378,14 @@ ul,ol {padding: 0;}
 .modal-content-body  .status-badge.success{color: #16A34A !important;background-color: #E9F9EF;}
 .modal-content-body  .status-badge.failed{color: #EF4444 !important;background-color: #FEF2F2;}
 
-.login_section .login-lef-container .carousel_indicators img{width: 384px;}
+
+
+.otp_modal .modal-header{border-bottom: none;}
+.otp_modal .modal-content-body{text-align: center;padding: 35px 35px 20px;}
+.otp_modal .modal-content-body h3{color: #111827;font-size: 20px;font-family: var(--font-family-inter);font-weight: 600;line-height: 28px;padding: 20px 0px;}
+.otp_modal .modal-content-body p{font-size: 16px;font-family: var(--font-family-inter);line-height: 24px;color: #6D7280;font-weight: 400;}
+.otp_modal .modal-content-body .pulse-check {color: #16A34A;width: 67px;height: 67px;}
+.otp_modal .modal-footer {border-top: none;padding: 0px 0px 20px;}
 
 /*========================================================= Media Query  =================================================== */
 @media only screen and (max-width: 1025px) {
@@ -417,6 +433,7 @@ ul,ol {padding: 0;}
 
 @media screen and (max-width: 767px) {
  .sm-row-gap-10{row-gap: 10px}
+ .flex-sm-column-reverse {flex-direction: column-reverse !important;}
 .hidden-sm{display: none;}
 .mobile-sidebar .nav-item.active, .mobile-sidebar .nav-item:hover{background-color: #2B28AE;color: #FFF;}
 .mobile-sidebar .nav-item.active .nav-link, .mobile-sidebar .nav-item:hover .nav-link{color: #FFF;font-weight: 700;}
@@ -444,36 +461,26 @@ ul,ol {padding: 0;}
 .recharge-electricity-modal .payment_method_container {max-width: 100%;}
 .recharge-electricity-modal .order_details_container .order-wrapper span, .recharge-electricity-modal .order_details_container .order-wrapper p{font-size: 14px;}
 .recharge-electricity-modal .order_details_container .order-wrapper  .order-footer p, .modal-content-body .transaction-card h2{font-size: 24px;line-height: 32px;}
+
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     .upper-header-section .header-nav-container .tabs-area-container .nav-pills{ padding: 10px;}
     .partnership_section .section_wrapper .bill-wrap{flex-direction: column-reverse;row-gap: 20px;}
     .bg-wrapper .content-container {padding-left: 20px; padding-top: 20px;}
-  
+    .navbar-expand-sm .navbar-nav .nav-link, .auth-container .nav-link {font-size: 12px;}
 }
 
 @media only screen and (max-width: 479px) {
   .upper-header-section .header-nav-container .tabs-area-container .nav-pills .nav-item {width: 180px;}
 }
 
-/* nEW STYLES */
-  .mobile-sidebar {position: fixed;top: 0;left: -250px;width: 250px;height: 800px;background-color: #F2F8FF;z-index: 1050;transition: all 0.3s ease;overflow-y: auto;}
-  .mobile-sidebar.show {left: 0;}
-   @media (min-width: 992px) {
+/* @media (min-width: 576px) {
+    .navbar-expand-sm .navbar-nav .nav-link, .auth-container .nav-link {font-size: 12px;}
+} */
+ @media (min-width: 992px) {
         .mobile-sidebar {
         display: none !important;
         }
-    }
-
-    .backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.3);
-      z-index: 1049;
-      display: none;
-    }
-
-    .backdrop.show {
-      display: block;
     }

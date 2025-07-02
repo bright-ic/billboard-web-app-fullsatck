@@ -1,1 +1,70 @@
 .dashboard-content-wrapper .nav-header{background-color:  #2563EB0D; border: 1px solid #F2F8FF;}
+.default_layout_wrapper {background-color: #2563EB0A}
+.auth-container .nav-link{color: #6D7280;font-size: 16px;font-family: var(--font-family-inter);font-weight: 500;line-height: 24px;}
+.login_section .content-container{justify-content: space-evenly;align-items: center;}
+.login_section .login-left-container{width: 100%;max-width: 480px;border-radius: 12px;background-color: #EFF6FF;padding: 40px;}
+.login_section .login-left-container .carousel_indicators img{width: 100%;}
+.login_section .login-left-container  .carousel-item{margin-top: 30px;}
+.login_section .login-left-container  .carousel-item  .card{border-radius: 8px;padding: 15px;border: 1px solid #F2F8FF;}
+.login_section .login-left-container  .carousel-item .card p{font-weight: 400;font-family: var(--font-family-inter);color: #111827;font-size: 16px;line-height: 24px;margin-bottom: 25px;}
+.login_section .login-left-container  .carousel-item  .card img{width: 40px;height: 40px;}
+.login_section .login-left-container .carousel-indicators{position: relative;}
+.login_section .login-left-container .carousel-indicators [data-bs-target]{background-color: #BFDBFE;width: 50px;height: 6px;font-weight: 900;margin-top: 1rem;margin-bottom: 0;}
+.login_section .login-left-container .carousel-indicators [data-bs-target].active {background-color: #1D4ED8;}
+
+.login_section .login-right-container{max-width: 400px;width: 100%;}
+.login_section .login-right-container h3{color: #111827;text-transform: capitalize;margin-bottom: 10px;font-family: var(--font-family-red-display);font-size: 28px;font-weight: 700;}
+.login_section .login-right-container .span{color: #6D7280;margin-bottom: 50px;font-weight: 400;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
+.login_section .login-right-container .form-control{margin-bottom: 8px;}
+.login_section .login-right-container label{font-weight: 500;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;margin-bottom: 2px;}
+.login_section .login-right-container button{margin: 30px 0px 60px;}
+.login_section .login-right-container .footer p{font-size: 14px;font-weight: 500;font-family: var(--font-family-inter);line-height: 22px;}
+.login_section .login-right-container .code-input {width: 60px;height: 60px;font-size: 24px;border-radius: 8px;border: 1px solid #cce0ff;box-shadow: none;}
+.login_section .login-right-container .code-input:focus {border-color: #2563eb;box-shadow: 0 0 0 0.1rem rgba(37, 99, 235, 0.25);}
+.login_section .login-right-container .otp-form-container p{font-size: 16px;text-align: center;font-weight: 400;font-family: var(--font-family-inter);}
+.login_section .login-right-container .resend_otp{color: #1D4ED8;font-size: 16px;font-weight: 600;font-family: var(--font-family-inter);line-height: 24px;}
+
+.list-group .chevron-holder{width: 32px;background: #F2F8FF;height: auto;border-radius: 50%;padding: 7px;align-items: center;display: flex;justify-content: center;}
+
+
+.transaction_section .breadcum-wrapper .left-container h3{color: #111827;font-family: var(--font-family-red-display);font-size: 48px;font-weight: 700;}
+.transaction_section .breadcum-wrapper .left-container .span{color: #6D7280;font-weight: 400;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
+.transaction_section .breadcum-wrapper .right-container{max-width: 476px;height: auto;width: 100%;}
+
+.pagination-footer{border-top: 1px solid #D5E7FF;padding: 20px 0px;}
+.pagination-footer .btn-inactive{background-color: #F2F8FF;color: #A7ACB3;font-weight: 600;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
+
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+
+
+@media only screen and (max-width: 1140px) { 
+    .transaction_section .breadcum-wrapper .left-container h3 {font-size: 38px;}
+}
+
+@media screen and (max-width: 1090px) {
+   
+}
+
+@media screen and (max-width: 991px) {
+    .transaction_section .breadcum-wrapper .left-container h3 {font-size: 28px;}
+}
+
+@media screen and (max-width: 767px) {
+.login_section .content-container {row-gap: 40px;}
+.login_section .login-right-container h3 {font-size: 24px;}
+.login_section .login-right-container .span{margin-bottom: 20px;}
+.login_section .login-right-container button {margin: 20px 0px;}
+
+ .transaction_section .breadcum-wrapper .left-container h3 {font-size: 24px;}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .nav-link {font-size: 12px;}
+}

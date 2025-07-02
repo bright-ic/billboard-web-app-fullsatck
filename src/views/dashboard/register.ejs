@@ -45,18 +45,33 @@
                      </div>
                 </div>
                 <div class="login-right-container">
-                   <div class="login-form-container d-none">
-                         <form action="" method="post" class="login_form">
-                        <h3>Welcome Back!</h3>
+                   <div class="login-form-container">
+                         <form action="" method="post" class="signup_form">
+                        <h3>Create Account</h3>
                         <div class="span">Bill payments made convenient</div>
                        <div class="row">
                         <div class="col-md-12">
-                            <label for="login_email" class="form-label">Email address</label>
-                            <input type="text" class="form-control" id="login_email" placeholder="Email address">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" placeholder="Enter First Name">
                             <div class=" feed_msg"></div>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary float-inline-end w-100" >Request OTP </button>
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" placeholder="Enter Last Name">
+                            <div class=" feed_msg"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="signup_email" class="form-label">Email address</label>
+                            <input type="text" class="form-control" id="signup_email" placeholder="Email address">
+                            <div class=" feed_msg"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter Username">
+                            <div class=" feed_msg"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary float-inline-end w-100" >Submit </button>
                         </div>
                         <div class="col-md-12 footer text-center">
                             <p>By continuing, you agree to Billboard's <br class="hidden-sm"> <b>Terms of Service</b> and <b>Privacy Policy</b>.</p>
@@ -64,32 +79,6 @@
                        </div>
                     </form>
                    </div>
-
-                   <!-- OTP form Starts HERE -->
-                    <div class="otp-form-container">
-                         <form action="" method="post" class="login_form">
-                        <h3>Enter OTP</h3>
-                        <div class="span">Please enter the code sent to your email below.</div>
-                       <div class="row">
-                        <div class="col-md-12">
-                             <div class="d-flex justify-content-center gap-2">
-                                <input type="text" class="form-control text-center code-input" maxlength="1" />
-                                <input type="text" class="form-control text-center code-input" maxlength="1" />
-                                <input type="text" class="form-control text-center code-input" maxlength="1" />
-                                <input type="text" class="form-control text-center code-input" maxlength="1" />
-                            </div>
-                            <div class=" feed_msg"></div>
-                        </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary float-inline-end w-100" >Login</button>
-                        </div>
-                        <div class="col-md-12"><p>Didn't receive any code? <a href="#" class="resend_otp">Resend code</a></p></div>
-                        <div class="col-md-12 footer text-center">
-                            <p>By continuing, you agree to Billboard's <br class="hidden-sm"> <b>Terms of Service</b> and <b>Privacy Policy</b>.</p>
-                        </div>
-                       </div>
-                    </form>
-                    </div>
                     
                 </div>
             </div>
