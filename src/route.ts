@@ -5,12 +5,14 @@ import IndexController from "./controllers";
 
 // Route groups
 import index_route from "./routes/index";
+import dashboard from "./routes/dashboard";
 
 const AppRoutes = () => {
     const app = expressConfig();
 
     // Routes
     app.use('/', index_route);
+    app.use('/', dashboard);
 
     // No matching route
     app.use((req: Request, res: Response, next: NextFunction) => {

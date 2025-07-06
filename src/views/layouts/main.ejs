@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <%- meta %>
 
-        <title>Jerax Services: <% if (typeof  page_title === "string" && page_title !== '') { %> | <%= page_title %><% } %></title>
+        <title>Billboard: <% if (typeof  page_title === "string" && page_title !== '') { %> | <%= page_title %><% } %></title>
 
         <!-- <link rel="shortcut icon" type="image/png" href="/images/favicon.png?v=<%= TEMPLATE_VERSION %>" /> -->
 
@@ -30,6 +30,10 @@
         <link rel="stylesheet" href="/css/style.css?v=<%= TEMPLATE_VERSION %>">
         <!-- Custom styles for this template End -->
 
+         <% if (typeof page_styles !== 'undefined') { %>
+            <link rel="stylesheet" href="/css/dashboard.css?v=<%= TEMPLATE_VERSION %>">
+        <% } %>
+
         <script>
 
             <% if(typeof errors === "object") { %>
@@ -45,14 +49,20 @@
         </script>
 
         <%- style %>
+        
     </head>
 
-    <body class="main-layout header-sticky <% if (typeof  selected_page ==='string'){ %><%= selected_page %><% } %>">
+    <body class="main-layout header-sticky <% if (typeof  selected_page ==='string'){ %><%= selected_page %><% } %> <%= isDashboard ? 'dashboard-layout' : '' %>">
 
         <!-- main page content -->
         <div class="default_layout_wrapper">
 
-            <%- body %>
+        
+             <% if (isDashboard) { %>
+                    <%- include('../partials/dashboard-header') %>
+                <% } else { %>
+                    <%- include('../partials/head_menu') %>
+             <% } %>
 
         </div>
         
@@ -73,12 +83,11 @@
         <script src ="/js/common.js?v=<%= TEMPLATE_VERSION %>"></script>
         <script src ="/js/base.js?v=<%= TEMPLATE_VERSION %>"></script>
 
-        <% if (typeof selected_page === 'string' && selected_page === 'home_page') { %>
-            <script src="/js/homepage.js"></script>
-        <% } %>
+            <script src="/js/main.js"></script>
 
         <%- script %>
-
+        <%- include('../partials/models/payment_popup') %>
+    
     </body>
 
 </html>

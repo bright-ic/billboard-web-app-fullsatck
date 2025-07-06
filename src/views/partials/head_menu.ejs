@@ -1,0 +1,79 @@
+ <div class="page-content-wrapper w-100 p-0 m-0 vertical-align">
+    <div class="header-container header-section-wrapper w-100 bg-01">
+        <div class="container">
+            <nav class="navbar sticky-top  navbar-expand-sm navbar-light">
+                <div class="container-fluid">
+                    <div id="logo" class="logo">
+                        <a class="navbar-brand" href="/" rel="home">
+                            <img src="images/brands/logo.png" alt="brand logo" class="w-134 h-22">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler d-lg-none" type="button" id="sidebarToggle">
+                    <span id="menuIcon" class="fa-solid fa-bars-staggered fa-xl" style="color:white; font-weight: 900;"></span>
+                    </button>
+                    <div class="collapse navbar-collapse d-none d-lg-flex" id="navbar_content">
+                    <ul class="navbar-nav  mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#pay_bill_section">Pay Bills</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#reconcile_electricity">Reconcile Electricity Bills</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#feature_section">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq_section">FAQs</a>
+                        </li>
+                    </ul>
+                    <ul class="d-flex align-items-center auth-container">
+                        <li><a  class="nav-link"  href="/dashboard/login">Login</a></li>/
+                         <li><a  class="nav-link"  href="/dashboard/register">Signup</a></li>
+                    </ul>
+                    <!-- <a class="btn btn-primary login-btn" href="/dashboard/login">Login</a> -->
+                    </div>
+                </div>
+            </nav>
+           
+            <!-- Sidebar for Small Screens -->
+        <div class="mobile-sidebar " id="mobileSidebar">
+                     <div class="bg-blue-100">
+                        <div id="logo" class="logo">
+                            <a class="navbar-brand" href="/" rel="home">
+                                <img src="images/brands/logo.png" alt="brand logo" class="w-134 h-22">
+                            </a>
+                        </div>
+                     </div>
+                 <div class="sidebar-container-fluid">
+                    <ul class="nav flex-column mb-2 mt-4">
+                        <li class="nav-item d-flex align-items-center">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                        <a class="nav-link active" aria-current="page" href="#pay_bill_section">Pay Bills</a>
+                        </li>
+                        <li class="nav-item active d-flex align-items-center">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        <a class="nav-link" href="#reconcile_electricity">Reconcile Electricity Bills</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="fa-solid fa-heart"></i>
+                        <a class="nav-link" href="#feature_section">Features</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <a class="nav-link" href="#faq_section">FAQs</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <a class="nav-link login-btn" href="/login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+        </div>    
+            
+        <div class="backdrop" id="sidebarBackdrop"></div>
+        </div>
+   
+ <div id="loader" style="display: none;">
+  <div class="spinner-border text-primary " role="status"><span class="visually-hidden">Loading...</span></div>
+</div>
+ <%- body %>
