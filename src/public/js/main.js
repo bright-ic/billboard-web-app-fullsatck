@@ -177,6 +177,24 @@ backdrop.addEventListener('click', () => {
   });
   
 
+  $('.chevron-holder').on('click', function (e) {
+    e.preventDefault();
+
+  
+    $('#loader').show();
+      setTimeout(function () {
+        $('#loader').hide();
+
+         $('#transfer_confirmation_modal .modal-content')
+        .removeClass()
+        .addClass('modal-content transfer_confirmation_modal');
+
+        const modal = new bootstrap.Modal(document.getElementById('transfer_confirmation_modal'));
+        modal.show();
+      }, 500); 
+  });
+
+
   // otp input to skip to next when number is entered
   document.querySelectorAll('.code-input').forEach((input, index, inputs) => {
   input.addEventListener('input', () => {
@@ -191,5 +209,35 @@ backdrop.addEventListener('click', () => {
     }
   });
 });
+
+  // document.querySelectorAll('.method-option input[type=radio]').forEach(radio => {
+  //   radio.addEventListener('change', function () {
+  //     document.querySelectorAll('.method-option').forEach(opt => opt.classList.remove('active'));
+  //     this.closest('.method-option').classList.add('active');
+  //   });
+  // });
+
+ const tabs = document.querySelectorAll('.method-option');
+  const tabContents = document.querySelectorAll('.tab-pane-content');
+
+  tabs.forEach(tab => {
+    // Handle tab click
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const selectedTabId = tab.getAttribute('data-tab');
+      if (selectedTabId) {
+        tabContents.forEach(content => content.classList.add('d-none'));
+        const contentToShow = document.getElementById(selectedTabId);
+        if (contentToShow) contentToShow.classList.remove('d-none');
+      }
+
+      const radio = tab.querySelector('input[type=radio]');
+      if (radio) radio.checked = true;
+    });
+  });
+
+ 
 
 });

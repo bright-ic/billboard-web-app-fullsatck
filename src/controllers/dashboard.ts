@@ -78,7 +78,22 @@ class DashboardController extends BaseController {
             return BaseController.sendFailResponse(res, error);
         }
     }
+    async electricity(req:Request, res:Response) {
+        const view_data:ObjectType = {};
 
+        try {
+            res.render('dashboard/electricity', this.setTemplateParameters(req, {
+                page_styles: ['/css/dashboard.css'],
+                page_title: 'electricity',
+                selected_page: 'electricity_page',
+                ...view_data
+            }));
+        } catch (e) {
+            console.log(e)
+            let error = 'An error occurred processing your request. Please check your request and try again';
+            return BaseController.sendFailResponse(res, error);
+        }
+    }
     
 }
 

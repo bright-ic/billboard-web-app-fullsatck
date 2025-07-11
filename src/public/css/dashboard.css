@@ -1,5 +1,5 @@
 .dashboard-content-wrapper .nav-header{background-color:  #2563EB0D; border: 1px solid #F2F8FF;}
-.default_layout_wrapper {background-color: #2563EB0A}
+body.transactions_page, .default_layout_wrapper {background-color: #2563EB0A}
 .auth-container .nav-link{color: #6D7280;font-size: 16px;font-family: var(--font-family-inter);font-weight: 500;line-height: 24px;}
 .login_section .content-container{justify-content: space-evenly;align-items: center;}
 .login_section .login-left-container{width: 100%;max-width: 480px;border-radius: 12px;background-color: #EFF6FF;padding: 40px;}
@@ -27,9 +27,23 @@
 .list-group .chevron-holder{width: 32px;background: #F2F8FF;height: auto;border-radius: 50%;padding: 7px;align-items: center;display: flex;justify-content: center;}
 
 
+.transfer_confirmation_modal .modal-body{padding: 1rem 1.2rem;}
 .transaction_section .breadcum-wrapper .left-container h3{color: #111827;font-family: var(--font-family-red-display);font-size: 48px;font-weight: 700;}
 .transaction_section .breadcum-wrapper .left-container .span{color: #6D7280;font-weight: 400;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
 .transaction_section .breadcum-wrapper .right-container{max-width: 476px;height: auto;width: 100%;}
+.transaction-card .token-content{font-size: 14px;font-family: var(--font-family-inter);padding-top: 10px;}
+.transaction-card #token-text{color: #111827;font-family: var(--font-family-inter);font-size: 18px;}
+
+.method-selection .form-control {border: 1px solid #dee2e6;cursor: pointer;transition: all 0.3s;width: 100%;max-width: 362px;min-height: 96px;}
+.method-selection .form-control:hover {border-color: #0d6efd;}
+.method-selection .form-control.active {border-color: #0d6efd;box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);}
+.recom-badge{border-bottom-left-radius: 8px;}
+.info_note{background-color: #F2F8FF;border-radius: 8px;color: #6D7280;font-size: 14px;}
+.dashboard-footer{background-color: #D5E7FF;}
+
+.calulation-result-container {display: flex;align-items: center;justify-content: center;flex-direction: column;}
+.calulation-result-container .item-list {margin-bottom: 20px;}
+.calulation-result-container .item-list .order-value{color: #111827;font-family: var(--font-family-inter);font-weight: 600;line-height: 24px;}
 
 .pagination-footer{border-top: 1px solid #D5E7FF;padding: 20px 0px;}
 .pagination-footer .btn-inactive{background-color: #F2F8FF;color: #A7ACB3;font-weight: 600;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
@@ -54,6 +68,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media screen and (max-width: 991px) {
     .transaction_section .breadcum-wrapper .left-container h3 {font-size: 28px;}
+    .method-selection .form-control{gap: 0 !important;flex-direction: row !important;}
 }
 
 @media screen and (max-width: 767px) {
@@ -63,6 +78,8 @@ input[type="number"]::-webkit-outer-spin-button {
 .login_section .login-right-container button {margin: 20px 0px;}
 
  .transaction_section .breadcum-wrapper .left-container h3 {font-size: 24px;}
+ .method-selection{flex-direction: column;column-gap: 5px;}
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
