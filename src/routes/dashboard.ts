@@ -6,7 +6,7 @@
 import { Router, Request, Response } from 'express';
 const router = Router();
 
-import { ROUTE_DASHBOARD, ROUTE_LOGIN, ROUTE_REGISTER, ROUTE_TRANSACTIONS} from '../lib/route-constants';
+import { ROUTE_DASHBOARD, ROUTE_ELECTRIC, ROUTE_LOGIN, ROUTE_REGISTER, ROUTE_TRANSACTIONS} from '../lib/route-constants';
 import DashboardController from '../controllers/dashboard';
 
 router.get(ROUTE_DASHBOARD, async (req: Request, res: Response) => {
@@ -29,6 +29,10 @@ router.get(ROUTE_TRANSACTIONS, async (req: Request, res: Response) => {
     return dashboardController.transactions(req, res);
 });
 
+router.get(ROUTE_ELECTRIC, async (req: Request, res: Response) => {
+    const dashboardController = new DashboardController(req);
+    return dashboardController.electricity(req, res);
+});
 
 
 export default router;

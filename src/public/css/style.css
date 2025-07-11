@@ -198,6 +198,7 @@ ul,ol {padding: 0;}
 
 .column-gap-20  {column-gap: 20px;}
 .column-gap-10{column-gap: 10px;}
+.column-gap-80{column-gap: 80px;}
 .float-inline-end{float: inline-end;}
 
 .section_wrapper{margin: 40px 0px;}
@@ -228,8 +229,8 @@ ul,ol {padding: 0;}
 .upper-header-section .header-nav-container .tabs-area-container .nav-pills .nav-item .svg-inline--fa.fa-right-left {transform: rotate(90deg) !important;}
 
 .upper-header-section .header-nav-container .tabs-area-container .tab-content {background-color: #FFFFFF;border-radius: 12px;width: 100%;padding: 15px;box-shadow: 2px 4px rgba(var(--shadow-color-rgb), .075);}
-.upper-header-section .header-nav-container .tabs-area-container .tab-content .img-holder{border-radius: 50%;/*margin-bottom: 20px;*/border: 0.1px solid #A7ACB3;}
-.upper-header-section .header-nav-container .tabs-area-container .tab-content .img-holder img{border-radius: 50%;width: 30px;height: 30px;}
+.upper-header-section .header-nav-container .tabs-area-container .tab-content .img-holder, .electry-distriction-company .img-holder{border-radius: 50%;/*margin-bottom: 20px;*/border: 0.1px solid #A7ACB3;}
+.upper-header-section .header-nav-container .tabs-area-container .tab-content .img-holder img, .electry-distriction-company .img-holder img{border-radius: 50%;width: 40px;height: 40px;}
 .upper-header-section .header-nav-container .tabs-area-container .tab-content label span{color: #A7ACB3;}
 .upper-header-section .header-nav-container .tabs-area-container .tab-content label a{color: #1D4ED8; text-decoration: none;font-size: 16px;line-height: 24px;font-weight: 600;cursor: pointer;}
 
@@ -461,7 +462,7 @@ ul,ol {padding: 0;}
 .recharge-electricity-modal .payment_method_container {max-width: 100%;}
 .recharge-electricity-modal .order_details_container .order-wrapper span, .recharge-electricity-modal .order_details_container .order-wrapper p{font-size: 14px;}
 .recharge-electricity-modal .order_details_container .order-wrapper  .order-footer p, .modal-content-body .transaction-card h2{font-size: 24px;line-height: 32px;}
-
+.foot-item-container{    flex-direction: column;row-gap: 20px;}
 
 }
 
