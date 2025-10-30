@@ -10,28 +10,28 @@
                 <h3>Choose payment method</h3>
                 <span>Select the one convenient for you</span>
                 <div class="payment-selection-wrapper">
-                    <div class="col  active d-flex align-items-center justify-content-between form-control ">
+                    <div class="col payment-selection-option active d-flex align-items-center justify-content-between form-control ">
                         <div class="d-flex align-items-center icon-holder">
                             <img src="/images/ussd_icon.png" alt="payment icon">
                             <label for="ussd_transfer" class="custom-radio">USSD Transfer</label>
                         </div>
                         <input type="radio" name="payment_selection" checked id="ussd_transfer" value="ussd">
                     </div>
-                     <div class="col d-flex align-items-center justify-content-between form-control ">
+                     <div class="col payment-selection-option d-flex align-items-center justify-content-between form-control ">
                         <div class="d-flex align-items-center icon-holder">
                             <img src="/images/opay_icon.png" alt="payment icon">
                              <label for="opay_transfer" class="custom-radio">OPay</label>
                         </div>
                         <input type="radio" name="payment_selection" id="opay_transfer" value="opay">
                     </div>
-                     <div class="col d-flex align-items-center justify-content-between form-control ">
+                     <div class="col payment-selection-option d-flex align-items-center justify-content-between form-control ">
                         <div class="d-flex align-items-center icon-holder">
                             <img src="/images/flutterwave_icon.png" alt="payment icon">
                         <label for="flutterwave_transfer" class="custom-radio">Flutterwave</label>
                         </div>
                         <input type="radio" name="payment_selection" id="flutterwave_transfer" value="flutterwave">
                     </div>
-                    <button  class="btn btn-primary btn-with-icon w-100 float-inline-end" type="submit">Proceed to Payment</button>
+                    <button  class="btn btn-primary btn-with-icon w-100 float-inline-end" type="submit" data-bs-toggle="modal" data-bs-target="#transfer_confirmation_modal">Proceed to Payment</button>
                 </div>
             </div>
             <div class="order_details_container">
@@ -74,7 +74,7 @@
     <div class="modal-content">
       <div class="modal-header">
          <div id="logo" class="logo">
-               <img src="images/brands/modal-logo.png" alt="brand logo" class="w-110">
+               <img src="/images/brands/modal-logo.png" alt="brand logo" class="w-110">
             </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -94,14 +94,14 @@
                 </div>
             </div>
             <div class="transaction-card p-4 text-center">
-                <div class="text-muted mb-1">Token</div>
+                <div class="text-muted mb-1 token-content">Token</div>
                 <div class="d-flex justify-content-center align-items-center gap-2">
                 <p class="fw-bold m-0" id="token-text">12345678901234567890</p>
-                <i class="fa fa-copy copy-icon" style="cursor: pointer;" title="Copy" id="copyToken"></i>
+                <i class="fa fa-copy copy-icon" style="cursor: pointer;color: #111827;" title="Copy" id="copyToken"></i>
                 </div>
                 <small class="text-success mt-2 d-block" id="copy-msg" style="display: none;">Copied!</small>
             </div>
-            <div class="order-wrapper">
+            <div class="order-wrapper mt-3">
                     <div class="order-item d-flex justify-content-between">
                         <span>Disco</span>
                         <p>IKEDC</p>
@@ -163,7 +163,7 @@
 </div>
 
 
-<div class="modal fade" id="otp_modal" tabindex="-1" aria-hidden="true">
+<div class="modal fade request-sent" id="otp_modal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -175,7 +175,25 @@
             <p>We have sent a one-time password to your email. Please check your inbox and enter the code on the next page.</p>
         </div>
        <div class="modal-footer">
-        <button type="button" class="btn btn-primary" >Okay</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade text-center request-sent" id="request_sent_modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <div class="modal-content-body">
+            <i class="fa-regular fa-circle-check pulse-check fa-bounce"></i>
+            <h3>Thank you!</h3>
+            <p>Your request has been sent successfully.<br> We will reach out within the next 48 hours <br>to assist you on the next step.</p>
+        </div>
+       <div class="modal-footer border-0">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" >Okay</button>
       </div>
     </div>
   </div>

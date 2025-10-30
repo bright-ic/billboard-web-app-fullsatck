@@ -1,0 +1,130 @@
+ <section class="page_container" >
+   <div class="section_wrapper transaction_section electricity-caculator-section" id="electricity-caculator_section">
+        <div class="container">
+            <div class="content-container">
+                <div class="container my-10">
+                     <div class="breadcum-wrapper d-block d-md-flex align-items-center justify-content-between">
+                           <div class="left-container">
+                              <h3>Reconcile your electricity bill</h3>
+                              <div class="span">Ensure you are receiving the accurate bill for your meter from power holding companies, and pay only for the electricity you use.</div>
+
+                            </div>
+                           <div class="right-container d-none d-md-flex">
+                             <img src="/images/reconcile_calculator.png" alt="background icon" class="w-100">
+                           </div>
+                     </div>
+                </div>
+                <div class="container">
+                    <div class="row gx-5">
+                        <div class="col-lg-6 col-md-12">
+                             <label class="form-label fw-semibold">Select Reconciliation Method</label>
+                          <div class="row">
+                                <div class="col-12 reconcile-method-selection mt-2">
+                                        <div class="form-control p-3 d-flex flex-column flex-md-row align-items-center gap-3 method-option position-relative" data-tab="tab1">
+                                            <div class="icon rounded p-2">
+                                                <img src="/images/icons/icon_1.png" alt="icon" style="width: 60px;">
+                                            </div>
+                                            <div class="flex-grow-1 ms-2">
+                                                <div class="fw-bold text-dark">Electricity Backlog Bills</div>
+                                                <p class="pt-1">Get proper reconciliation on any wrong debt imposed by your DISCO</p>
+                                            </div>
+                                            <input type="radio" name="recon_method" value="nerc" class="form-check-input ms-auto" checked>
+                                        </div>
+                                </div>
+                                <div class="col-12 reconcile-method-selection mt-3">
+                                        <div class="form-control p-3 d-flex flex-column flex-md-row align-items-center gap-3 method-option position-relative" data-tab="tab2">
+                                            <div class="icon rounded p-2">
+                                                <img src="/images/icons/icon_2.png" alt="icon" style="width: 60px;">
+                                            </div>
+                                            <div class="flex-grow-1 ms-2">
+                                                <div class="fw-bold text-dark">Monthly Bill Regularization</div>
+                                                <p class="pt-1">Let's help you regulate your postpaid bill as NERC approves.</p>
+                                            </div>
+                                            <input type="radio" name="recon_method" value="nerc" class="form-check-input ms-auto" >
+                                        </div>
+                                </div>
+                                <div class="col-12 reconcile-method-selection mt-3">
+                                        <div class="form-control p-3 d-flex flex-column flex-md-row align-items-center gap-3 method-option position-relative" data-tab="tab3">
+                                            <div class="icon rounded p-2">
+                                                <img src="/images/icons/icon_3.png" alt="icon" style="width: 60px;">
+                                            </div>
+                                            <div class="flex-grow-1 ms-2">
+                                                <div class="fw-bold text-dark">Bulk Bill Management</div>
+                                                <p class="pt-1">We manage large electricity bills for estates, plazas and more.</p>
+                                            </div>
+                                            <input type="radio" name="recon_method" value="nerc" class="form-check-input ms-auto" >
+                                        </div>
+                                </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                             <div class="tab-pane-content active" id="tab1">
+
+                             <div class="card shadow-sm mt-3 border-0">
+                                        <div class="card-body p-4">
+                                            <label for="">Please fill up all fields</label>
+                                            <form action="" method="post" class="request_form">
+                                                <div class="row g-3 ">
+                                                    <div class="col-6">
+                                                        <label for="first_name">First Name</label>
+                                                        <input type="text" class="form-control" name="first_name" id="" placeholder="First Name">
+                                                    </div>
+                                                     <div class="col-6">
+                                                        <label for="last_name">Last Name</label>
+                                                        <input type="text" class="form-control" name="last_name" id="" placeholder="Last Name">
+                                                    </div>
+                                                     <div class="col-12">
+                                                        <label for="account_number">Account Number</label>
+                                                        <input type="text" class="form-control" name="account_number" id="" placeholder="0112229933">
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <label for="feeder_district" class="form-label">Reason for Request</label>
+                                                        <select class="form-select" id="feeder_district" >
+                                                            <option selected disabled value="">Reason for Request</option>
+                                                            <option>Option-2</option>
+                                                            <option>Option-3</option>
+                                                        </select>
+                                                        <div class="feed_msg"></div>
+                                                    </div>
+                                                     <div class="col-6">
+                                                        <label for="email_address">Email Address</label>
+                                                        <input type="email" class="form-control" name="email_address" id="" placeholder="Email Address">
+                                                    </div>
+                                                     <div class="col-6">
+                                                        <label for="phone">Phone Number</label>
+                                                        <input type="text" class="form-control" name="phone" id="" placeholder="Last Name">
+                                                    </div>
+                                                    <div class="col-12">
+                                                    <div class="btn-holder text-end"> <button class="btn btn-primary btn-with-icon" type="submit">Submit Request</button></div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                             </div>
+                              <div class="tab-pane-content " id="tab2">
+                                        <div class="card shadow-sm mt-3 border-0">
+                                          <div class="card-body p-4">
+                                            <div class="row">
+                                                <h4>Monthly Bill Regularization content goes here</h4>
+                                            </div>
+                                          </div>
+                                        </div>
+                              </div>
+                               <div class="tab-pane-content " id="tab3">
+                                     <div class="card shadow-sm mt-3 border-0">
+                                          <div class="card-body p-4">
+                                            <div class="row">
+                                                <h4>Bulk Bill Management content goes here</h4>
+                                            </div>
+                                          </div>
+                                        </div>
+                               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

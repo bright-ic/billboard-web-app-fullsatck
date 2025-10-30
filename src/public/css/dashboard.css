@@ -1,5 +1,7 @@
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {font-family: var(--font-family-red-display);}
+
 .dashboard-content-wrapper .nav-header{background-color:  #2563EB0D; border: 1px solid #F2F8FF;}
-.default_layout_wrapper {background-color: #2563EB0A}
+body.transactions_page, .default_layout_wrapper {background-color: #2563EB0A}
 .auth-container .nav-link{color: #6D7280;font-size: 16px;font-family: var(--font-family-inter);font-weight: 500;line-height: 24px;}
 .login_section .content-container{justify-content: space-evenly;align-items: center;}
 .login_section .login-left-container{width: 100%;max-width: 480px;border-radius: 12px;background-color: #EFF6FF;padding: 40px;}
@@ -27,9 +29,35 @@
 .list-group .chevron-holder{width: 32px;background: #F2F8FF;height: auto;border-radius: 50%;padding: 7px;align-items: center;display: flex;justify-content: center;}
 
 
+.transfer_confirmation_modal .modal-body{padding: 1rem 1.2rem;}
 .transaction_section .breadcum-wrapper .left-container h3{color: #111827;font-family: var(--font-family-red-display);font-size: 48px;font-weight: 700;}
 .transaction_section .breadcum-wrapper .left-container .span{color: #6D7280;font-weight: 400;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
 .transaction_section .breadcum-wrapper .right-container{max-width: 476px;height: auto;width: 100%;}
+.transaction-card .token-content{font-size: 14px;font-family: var(--font-family-inter);padding-top: 10px;}
+.transaction-card #token-text{color: #111827;font-family: var(--font-family-inter);font-size: 18px;}
+
+.method-selection .form-control {border: 1px solid #dee2e6;cursor: pointer;transition: all 0.3s;width: 100%;max-width: 362px;min-height: 96px;}
+.method-selection .form-control:hover {border-color: #0d6efd;}
+.method-selection .form-control.active {border-color: #0d6efd;box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);}
+.recom-badge{border-bottom-left-radius: 8px;}
+.info_note{background-color: #F2F8FF;border-radius: 8px;color: #6D7280;font-size: 14px;}
+.dashboard-footer{background-color: #D5E7FF;height: 72px;color: #111827;font-size: 16px; font-family: var(--font-family-inter);line-height: 24px;margin-top: 30px;}
+
+
+
+.electricity-caculator-section .tab-pane-content, .tab-pane-content{display: none;}
+.electricity-caculator-section .tab-pane-content.active, .tab-pane-content.active{display: block;}
+.electricity-caculator-section .tab-pane-content label{color: #6D7280;font-family: var(--font-family-inter);line-height: 22px;font-weight: 400;font-size: 14px;}
+.electricity-caculator-section  .calulation-result .item-list {margin-bottom: 20px;color: #6D7280;font-family: var(--font-family-inter);line-height: 24px;font-weight: 400;font-size: 16px;}
+.electricity-caculator-section  .calulation-result .order-value{color: #111827;margin-bottom: 20px;font-size: 16px; font-family: var(--font-family-inter);font-weight: 600;line-height: 24px;}
+.electricity-caculator-section  .calulation-result .order-value:last-child{font-family: var(--font-family-red-display);font-size: 28px;line-height: 32px;font-weight: 700;}
+
+.electricity-caculator-section .electric-card-container {background-color: #F2F8FF;padding: 16px;}
+.electricity-caculator-section .electric-card-container .tab-pane-content .header-row, .electricity-caculator-section .electric-card-container .total_average_kw {color: #6D7280;font-size: 16px;font-family: var(--font-family-inter);line-height: 24px;}
+.electricity-caculator-section .electric-card-container .total_average_kw span{color: #111827;font-weight: 600;font-size: 16px;font-family: var(--font-family-inter);}
+
+.electricity-caculator-section #avaerage_per{display: none;}
+.method-option p{color: #6D7280;margin-bottom: 0; font-family: var(--font-family-inter);line-height: 24px;font-weight: 400;font-size: 16px;width: 298px;}
 
 .pagination-footer{border-top: 1px solid #D5E7FF;padding: 20px 0px;}
 .pagination-footer .btn-inactive{background-color: #F2F8FF;color: #A7ACB3;font-weight: 600;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
@@ -41,6 +69,69 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+
+/*------- Admin section ------*/
+.b-1 {border: 1px solid #f3f6f9 !important;}
+.be-1 {border-right: 1px solid #f3f6f9 !important;}
+.bb-1 {border-bottom: 1px solid #f3f6f9 !important;}
+.ps-5 {padding-left: 5px !important;}
+.ps-15 {padding-left: 15px !important;}
+.bs-5 {border-left: 5px solid #f3f6f9 !important;}
+.fw-500 {font-weight: 500;}
+.fs-12 {font-size: 0.9rem !important;}
+.fs-16 {font-size: 1.1428571429rem !important;}
+.text-fade {color: #7e8299 !important;}
+.text-truncate {overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.text-dark {color: #172b4c !important;}
+.max-w-300 {max-width: 300px !important;}
+.no-border {border: 0 !important;}
+.box-title {z-index: auto;}
+.me-15 {margin-right: 15px !important;}
+
+
+.media-body {min-width: 0;}
+.media {display:flex; padding: 1rem;transition: background-color .2s linear;}
+.media-right{right: 30px;position: absolute;}
+.media .avatar {flex-shrink: 0;}
+
+.media-single, .media-center-v {align-items: center;}
+
+.avatar-lg {width: 48px;height: 48px;line-height: 48px;font-size: 1.23rem;}
+.avatar {position: relative;display: inline-block;width: 40px;height: 40px;line-height: 36px;text-align: center;text-transform: uppercase;border-radius: 10px;}
+.avatar img {width: 100%;height: 100%;border-radius: 100%;vertical-align: top;}
+
+.bg-success-light {background-color: #d1f5f0 !important;color: #04a08b;}
+.bg-danger-light {background-color: #ffeae5 !important;color: #FF6C6C;}
+.bg-warning-light { background-color: #fff2e2 !important;color: #F6B749;}
+
+
+
+
+.bb-dashed {border-bottom-style: dashed !important;}
+.wrapper .border-light {border-color: #f3f6f9 !important;}
+
+.icon-inside {position: absolute;right: 15px;top: calc(50% - 11px);pointer-events: none;font-size: 18px;font-size: 1.125rem;color: #c4c3c3;z-index: 3;}
+.daterangepicker:before {top: -7px;border-right: 7px solid transparent;border-left: 7px solid transparent;border-bottom: 7px solid #ccc;}
+.btn-link{color: #2B28AE;text-decoration: none;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
+.box{position: relative;margin-bottom: 1.5rem; width: 100%; background-color: #ffffff;border-radius: 10px;padding: 0px;transition: .5s;display: flex;flex-direction: column;box-shadow: 0 0 30px 0 rgba(82, 63, 105, 0.05);}
+.box-body {padding: 1.5rem;flex: 1 1 auto;border-radius: 10px;font-family: var(--font-family-inter);color: #6D7280;}
+.box-body h2{margin-top: 0.7rem;margin-bottom: 0.7rem;line-height: 1.2;font-size: 16px;font-family: var(--font-family-inter);color: #172b4c;}
+.box-body h5, .box-body h4, .box-body h3{font-family: var(--font-family-inter);line-height: 24px;font-weight: 400;font-size: 16px;color: #172b4c;}
+.box-header {color: #172b4c; display: block;padding: 1.5rem;position: relative;border-bottom: 1px solid rgba(72, 94, 144, 0.16); border-top-left-radius: 10px;border-top-right-radius: 10px;}
+.box-header .box-title {display: inline-block;margin: 0;font-weight: 500;}
+
+.border-primary {border-color: #3762EA !important;}
+.border-danger {border-color: #FF6C6C !important;}
+.border-info {border-color: #00baff !important;}
+.border-success {border-color: #04a08b !important;}
+
+
+.badge-danger-light {background-color: #ffeae5;color: #FF6C6C;}
+.badge-primary-light {background-color: #e1eaf9;color: #3762EA;}
+.badge-success-light {background-color: #d1f5f0;color: #04a08b;}
+.badge-warning-light {background-color: #fff2e2;color: #F6B749;}
+
+.table-responsive .table tr td {color: #6D7280;font-weight: 400;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
 
 
 
@@ -54,6 +145,10 @@ input[type="number"]::-webkit-outer-spin-button {
 
 @media screen and (max-width: 991px) {
     .transaction_section .breadcum-wrapper .left-container h3 {font-size: 28px;}
+    .method-selection .form-control, .reconcile-method-selection  .form-control{gap: 0 !important;flex-direction: row !important;}
+    .electricity-caculator-section .electric-card-container .tab-pane-content .header-row{display: none;}
+     .electricity-caculator-section .electric-card-container .tab-pane-content  .delete-row {position: absolute;top: -20px;right: -20px;cursor: pointer;}
+    .user-info .user-container{flex-direction: column;align-items: start;line-height: 26px;}
 }
 
 @media screen and (max-width: 767px) {
@@ -63,6 +158,16 @@ input[type="number"]::-webkit-outer-spin-button {
 .login_section .login-right-container button {margin: 20px 0px;}
 
  .transaction_section .breadcum-wrapper .left-container h3 {font-size: 24px;}
+ .method-selection, .reconcile-method-selection {flex-direction: column;column-gap: 5px;}
+ .method-selection .form-control {max-width: 100%;}
+ .div-option-1, .div-option-2{display: grid;grid-template-columns: 90% 8%;column-gap: 2%;}
+ .div-option-side {align-items: center;justify-content: center;display: flex;border-radius: 8px;box-shadow: 0 0 0 0.05rem rgba(13, 110, 253, 0.1);}
+.div-option-1 .div-option-side {background: #F2F8FF; color: #A7ACB3;}
+ .div-option-2 .div-option-side {background: #E9F9EF;color: #16A34A;}
+
+/* this helps to add card to the item calculation page on mobile */
+  .responsive-row-wrapper {border-radius: 0.5rem;border: 0.5px solid #fff;box-shadow: 0 2px 5px rgba(0,0,0,0.05);margin-bottom: 30px; padding: 10px;background-color: #fff;}
+    .electricity-caculator-section .electric-card-container .tab-pane-content .delete-row{width: 40px;height: 40px;}
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {

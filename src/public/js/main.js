@@ -144,6 +144,18 @@ backdrop.addEventListener('click', () => {
     $(this).closest('.form-control').addClass('active');
   });
 
+document.querySelectorAll('.payment-selection-option').forEach(option => {
+  option.addEventListener('click', function () {
+    
+    document.querySelectorAll('.payment-selection-option').forEach(opt => opt.classList.remove('active'));
+
+    this.classList.add('active');
+    const radio = this.querySelector('input[name="payment_selection"]');
+    if (radio) radio.checked = true;
+  });
+});
+
+
 
    $('.login_form').on('submit', function (e) {
     e.preventDefault();
@@ -175,7 +187,58 @@ backdrop.addEventListener('click', () => {
       $('#loader').hide();
     }
   });
+
+$('.request_form').on('submit', function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+    $('#loader').show();
+
+    $(this).find('input').each(function () {
+      if ($.trim($(this).val()) === '') {
+        isValid = false;
+        $(this).addClass('is-invalid');
+      } else {
+        $(this).removeClass('is-invalid');
+      }
+    });
+
+    if (isValid) {
+      setTimeout(function () {
+        $('#loader').hide();
+
+         $('#request_sent_modal .modal-content')
+        .removeClass()
+        .addClass('modal-content  request_sent_modal');
+
+        const modal = new bootstrap.Modal(document.getElementById('request_sent_modal'));
+        modal.show();
+      }, 500); // simulate delay
+    } else {
+      $('#loader').hide();
+    }
+  });
+
+ 
   
+
+  $('.chevron-holder').on('click', function (e) {
+    e.preventDefault();
+
+  
+    $('#loader').show();
+      setTimeout(function () {
+        $('#loader').hide();
+
+         $('#transfer_confirmation_modal .modal-content')
+        .removeClass()
+        .addClass('modal-content transfer_confirmation_modal');
+
+        const modal = new bootstrap.Modal(document.getElementById('transfer_confirmation_modal'));
+        modal.show();
+      }, 500); 
+  });
+
 
   // otp input to skip to next when number is entered
   document.querySelectorAll('.code-input').forEach((input, index, inputs) => {
@@ -191,5 +254,40 @@ backdrop.addEventListener('click', () => {
     }
   });
 });
+
+  // document.querySelectorAll('.method-option input[type=radio]').forEach(radio => {
+  //   radio.addEventListener('change', function () {
+  //     document.querySelectorAll('.method-option').forEach(opt => opt.classList.remove('active'));
+  //     this.closest('.method-option').classList.add('active');
+  //   });
+  // });
+
+ const tabs = document.querySelectorAll('.method-option');
+ const tabContents = document.querySelectorAll('.tab-pane-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+const selectedTabId = tab.getAttribute('data-tab');
+if (selectedTabId) {
+  tabContents.forEach(content => {
+    content.classList.add('d-none');
+    content.classList.remove('active'); 
+  });
+
+  const contentToShow = document.getElementById(selectedTabId);
+  if (contentToShow) {
+    contentToShow.classList.remove('d-none');
+    contentToShow.classList.add('active'); 
+  }
+}
+
+const radio = tab.querySelector('input[type=radio]');
+if (radio) radio.checked = true; });
+  });
+
+ 
 
 });
