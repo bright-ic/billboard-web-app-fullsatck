@@ -1,0 +1,149 @@
+ <section class="page_container" data-id="transaction_section">
+   <div class="section_wrapper transaction_section" id="transaction_section">
+        <div class="container">
+            <div class="content-container">
+                <div class="container my-10">
+                     <div class="breadcum-wrapper d-block d-md-flex align-items-center justify-content-between">
+                           <div class="left-container mb-5">
+                              <h3>All Transactions</h3>
+                              <div class="span">Find details of your previous transaction by clicking on the one you would like to view </div>
+                           </div>
+                    </div>
+                </div>
+                <!-- content goes here -->
+                  <div class="container">
+                            <div class="row">
+                                <div class="col mb-2">
+                                <form id="filterTransactions" method="post">
+                                    <div class="row g-3"> 
+                                    <div class="col-sm-6 col-md-5">
+                                        <div class="position-relative">
+                                        <input id="dateRange" type="text" class="form-control" placeholder="Date Range">
+                                        <span class="icon-inside"><i class="fas fa-calendar-alt"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto d-flex align-items-center me-auto form-group" data-bs-toggle="collapse"> <a class="btn-link" data-bs-toggle="collapse" href="#allFilters" aria-expanded="false" aria-controls="allFilters">All Filters<i class="fas fa-sliders-h text-3 ms-1"></i></a> </div>
+                                    
+                                    <div class="col-auto d-flex align-items-center ms-auto">
+                                        <div class="dropdown"> <a class="text-muted btn-link" href="#" role="button" id="statements" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-file-download text-3 me-1"></i>Statements</a>
+                                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="statements"> <a class="dropdown-item" href="#">CSV</a> <a class="dropdown-item" href="#">PDF</a> </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 collapse" id="allFilters">
+                                        <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="allTransactions" name="allFilters" checked="">
+                                        <label class="form-check-label" for="allTransactions">All Transactions</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="paymentsSend" name="allFilters">
+                                        <label class="form-check-label" for="paymentsSend">Payments Send</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="paymentsReceived" name="allFilters">
+                                        <label class="form-check-label" for="paymentsReceived">Payments Received</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="refunds" name="allFilters">
+                                        <label class="form-check-label" for="refunds">Refunds</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="withdrawal" name="allFilters">
+                                        <label class="form-check-label" for="withdrawal">Withdrawal</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="deposit" name="allFilters">
+                                        <label class="form-check-label" for="deposit">Deposit</label>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+
+                         <div class="card shadow-sm mt-5 border-0">
+                                <div class="card-body p-4">
+                                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                                            <h5 class="fw-bold mb-0">Recent transactions</h5>
+                                            <div class="d-flex gap-2 align-items-center jusstify-content-center">
+                                            <input type="text" class="form-control" value="12-01-2023  -  12-01-2023" style="max-width: 230px;" />
+                                            <select class="form-select" style="max-width: 150px;">
+                                                <option selected>Categories</option>
+                                                <option value="1">Electricity</option>
+                                                <option value="2">Internet</option>
+                                            </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- NOVEMBER SECTION -->
+                                        <h6 class="text-muted fw-semibold text-uppercase mb-3">November</h6>
+                                            <% const transactions = [
+                                                { transaction_type: 'electricity' },
+                                                { transaction_type: 'recharge' },
+                                                { transaction_type: 'subscription' }
+                                                ]; %>
+                                                <% transactions.forEach(tx => { %>
+                                            <div class="list-group border-0">
+                                                <div class="list-group-item d-flex justify-content-between align-items-center border-0 p-2 rounded mb-2">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <% if (tx.transaction_type === 'electricity') { %>
+                                                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="background: #F2F8FF; width: 50px; height: auto;">
+                                                        <img src="/images/icons/electric-icon.png" alt="icon" class="w-100">
+                                                        </div>
+                                                    <% } else if (tx.transaction_type === 'recharge') { %>
+                                                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="background: #E9F9EF; width: 50px; height: auto;">
+                                                            <img src="/images/icons/recharge-icon.png" alt="icon" class="w-100">
+                                                        </div>
+                                                    <% } else if (tx.transaction_type === 'subscription') { %>
+                                                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="background: #EEF2FF; width: 50px; height: auto;">
+                                                            <img src="/images/icons/subscription-icon.png" alt="icon" class="w-100">
+                                                        </div>
+                                                        <% } %>
+                                                    
+
+                                                        <div>
+                                                            <div><%= tx.transaction_type %></div>
+                                                        <div class="fw-semibold trans-info"><%= tx.name %></div>
+                                                        <small class="text-muted trans-date"><%= tx.date || 'Jul 02, 2025' %> • <%= tx.time || '6:40 PM' %></small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="text-end d-none d-md-block">
+                                                        <div class="text-muted user_id"><%= tx.user_id || '#user_ID' %></div>
+                                                    </div>
+                                                    <div class="text-end d-none d-md-block">
+                                                        <div class="fw-bold trans-amount">₦<%= tx.amount || '0.00' %></div>
+                                                    </div>
+                                                    <div class="text-end d-none d-md-block">
+                                                        <div class="text-muted small trans-id"><%= tx.txn_id || 'BB1234ABtfw24' %></div>
+                                                    </div>
+                                                    <div class="trans-status d-none d-md-block">
+                                                        <% if (tx.status === 'success') { %>
+                                                            <span class="badge rounded-pill bg-success-subtle text-success d-flex align-items-center gap-1 px-3 py-2"><i class="fa-solid fa-circle-check"></i> Successful</span>
+                                                        <% } else if (tx.status === 'pending') { %>
+                                                            <span class="badge rounded-pill d-flex align-items-center gap-1 px-3 py-2 bg-warning-subtle text-warning"><i class="fa-regular fa-clock-rotate-left"></i> Pending</span>
+                                                        <% } else { %>
+                                                            <span class="badge rounded-pill d-flex align-items-center gap-1 px-3 py-2 bg-danger-subtle text-danger"><i class="fa-regular fa-circle-xmark"></i> Failed</span>
+                                                        <% } %>
+                                                    </div>
+                                                    <div>
+                                                        <div class="fw-bold d-block d-md-none trans-amount">₦<%= tx.amount || '0.00' %></div>
+                                                        <div class="chevron-holder d-none d-md-flex"> <i class="fa-solid fa-chevron-right text-muted "></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% }); %>
+
+                                            <div class="pagination-footer pagina d-flex align-items-center justify-content-center gap-3 mt-4">
+                                                <button type="button" class="btn btn-inactive">Previous</button>
+                                                <div style="display: flex;align-items: center;justify-content: space-between;column-gap: 10px;">
+                                                    <span class="text-muted">Page</span><input type="number" min="1" max="24" value="1" class="form-control text-center"style="width: 42px; height:auto " /> <span class="text-muted">of 24</span>
+                                                </div>
+                                                <button type="button" class="btn btn-primary btn-active">Next</button>
+                                            </div>
+                                </div>
+                         </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

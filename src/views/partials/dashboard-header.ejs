@@ -14,7 +14,7 @@
                     <div class="collapse navbar-collapse d-none d-lg-flex" id="navbar_content">
                     <ul class="navbar-nav  mb-2 mb-lg-0">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/dashboard/transaction">Transactions</a>
+                        <a class="nav-link active" aria-current="page" href="/dashboard/transactions">Transactions</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="/dashboard/electricity">Reconcile Electricity Bills</a>
@@ -31,20 +31,38 @@
            
             <!-- Sidebar for Small Screens -->
         <div class="mobile-sidebar " id="mobileSidebar">
-                    <div id="logo" class="logo">
+                    <div id="logo" class="logo p-3">
                         <a class="navbar-brand" href="/" rel="home">
                             <img src="/images/brands/modal-logo.png" alt="brand logo" class="w-110 ">
                         </a>
                     </div>
                  <div class="sidebar-container-fluid">
                     <ul class="nav flex-column mb-2 mt-4">
-                       <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/dashboard/transaction">Transactions</a>
+                        <!-- show this if user is Admin -->
+                         <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/users">All Users</a>
+                          </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/payments">Payments</a>
+                         </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/tickets">Support Tickets</a>
+                          </li>
+                           <li class="nav-item">
+                            <a class="nav-link" href="/dashboard/users_transactions">All Transactions</a>
+                          </li>
+                        <!-- else show this -->
+                       <li class="nav-item active">
+                        <a class="nav-link active" aria-current="page" href="/dashboard/transactions">Transactions</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="/dashboard/electricity">Reconcile Electricity Bills</a>
                         </li>
-                        <li class="nav-item"><a class="text-muted" href="/logout">Log Out</a></li> 
+                         <li class="nav-item">
+                        <a class="nav-link" href="/dashboard/reconcile">Reconcile Bills</a>
+                        </li>
+                        <!-- ends -->
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li> 
                     </ul>
                 </div>
         </div>    

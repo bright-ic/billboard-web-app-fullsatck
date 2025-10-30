@@ -1,0 +1,94 @@
+<style>
+    .appliance-card {
+      position: relative;
+    }
+
+    .delete-row {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ffecec;
+      color: #dc3545;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 8px;
+      cursor: pointer;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .form-control,
+    .form-select {
+      border-radius: 10px;
+    }
+
+    .add-row-btn {
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .total-section {
+      text-align: right;
+      font-weight: 600;
+      padding-top: 10px;
+    }
+  </style>
+
+ <section class="page_container" data-id="transaction_section">
+   <div class="section_wrapper transaction_section electricity-caculator-section" id="electricity-caculator_section">
+        <div class="container">
+            <div class="content-container">
+                <div class="container my-10">
+                     <div class="container my-5">
+                                    <div id="appliance-list">
+                                    <div class="appliance-card card shadow-sm mt-3 border-0 mb-5">
+                                          <button class="badge badge-light badge-sm mx-1 delete-row"><i class="fa-solid fa-trash-can"></i></button>
+
+                                        <div class="mb-3">
+                                        <label>Select Appliance</label>
+                                        <select class="form-select">
+                                            <option selected>Air Conditioner 1 HP</option>
+                                        </select>
+                                        </div>
+
+                                        <div class="row g-3">
+                                        <div class="col-md-4">
+                                            <label>Load (KW)</label>
+                                            <input type="text" class="form-control" value="0.85" readonly>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Number of Items</label>
+                                            <select class="form-select">
+                                            <option selected>1</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Avg. Daily Usage (Hrs)</label>
+                                            <select class="form-select">
+                                            <option selected>4</option>
+                                            </select>
+                                        </div>
+                                        </div>
+
+                                        <div class="mt-3">
+                                        <label>Est. Daily Usage (KWh)</label>
+                                        <input type="text" class="form-control" value="2.984" readonly>
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="text-center">
+                                    <button id="add-row" class="btn btn-outline-primary add-row-btn">+ Add New Row</button>
+                                    </div>
+                                    <div class="total-section mt-4">
+                                    Total Average KW Consumed Per Day: <span id="total-kwh">2.984</span>
+                                    </div>
+                                </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

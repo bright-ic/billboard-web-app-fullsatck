@@ -41,7 +41,7 @@ body { font-family: "Inter", sans-serif; font-style: normal; font-size: 18px; li
 .form-control:focus, .form-select {outline: none; box-shadow: none;min-height: 44px;border: 1px solid #D5E7FF;}
 
 .error_label {font-size: 14px; color: #D50A0A; }
-.hidden-lg{display: none;}
+.hidden-lg, .visible-sm{display: none;}
 
 input[type="text"].errors,
 input[type="password"].errors,
@@ -173,6 +173,8 @@ ul,ol {padding: 0;}
 .bg-light {background-color: rgb(245, 245, 245);}
 .bg-blue-100{background: #2B28AE;padding: 10px;}
 
+.badge.badge-light{background: #FEF2F2 !important; color: #dc3545 !important;width: 44px;height: 44px;}
+
 
 .mt-50{margin-top: 50px;}
 
@@ -180,6 +182,9 @@ ul,ol {padding: 0;}
 /*-------- Buttons designs ------ */
 .btn-primary{height: auto; background-color: #1D4ED8;box-shadow: 0 1px 1px rgba(43, 40, 174, 1);border-radius: 8px;color: #FFFFFF;font-size: 16px;line-height: 24px;}
 .btn-with-icon::after {content: "\f178";font-family: "Font Awesome 6 Free";font-weight: 900;padding-left: 0.5em;display: inline-block;}
+.btn-light {height: auto;border-radius: 8px;font-weight: 600; color:#1D4ED8;box-shadow: 0 1px 1px rgb(224, 224, 235); font-family: var(--font-family-inter); background-color:#FFFFFF;font-size: 16px;line-height: 24px;border: 1px solid #1D4ED8;}
+.btn-light:hover{color: #FFF;background-color: #1D4ED8;}
+
 
 .w-110{width: 110px;}
 .w-134{width: 134px;}
@@ -381,12 +386,12 @@ ul,ol {padding: 0;}
 
 
 
-.otp_modal .modal-header{border-bottom: none;}
-.otp_modal .modal-content-body{text-align: center;padding: 35px 35px 20px;}
-.otp_modal .modal-content-body h3{color: #111827;font-size: 20px;font-family: var(--font-family-inter);font-weight: 600;line-height: 28px;padding: 20px 0px;}
-.otp_modal .modal-content-body p{font-size: 16px;font-family: var(--font-family-inter);line-height: 24px;color: #6D7280;font-weight: 400;}
-.otp_modal .modal-content-body .pulse-check {color: #16A34A;width: 67px;height: 67px;}
-.otp_modal .modal-footer {border-top: none;padding: 0px 0px 20px;}
+.request-sent .modal-header{border-bottom: none;}
+.request-sent .modal-content-body{text-align: center;padding: 35px 35px 20px;}
+.request-sent .modal-content-body h3{color: #111827;font-size: 20px;font-family: var(--font-family-inter);font-weight: 600;line-height: 28px;padding: 20px 0px;}
+.request-sent .modal-content-body p{font-size: 16px;font-family: var(--font-family-inter);line-height: 24px;color: #6D7280;font-weight: 400;}
+.request-sent .modal-content-body .pulse-check {color: #16A34A;width: 67px;height: 67px;}
+.request-sent .modal-footer {border-top: none;padding: 0px 0px 20px;}
 
 /*========================================================= Media Query  =================================================== */
 @media only screen and (max-width: 1025px) {
@@ -409,7 +414,7 @@ ul,ol {padding: 0;}
 }
 
 @media only screen and (max-width: 991px) {
- .hidden-md{display: none;}
+ .hidden-md, .visible-sm{display: none;}
  .visible-md,.hidden-lg{display: block;}
  .bg-wrapper .content-container {flex-direction: column;column-gap: normal;row-gap: 50px;padding-left: 20px;padding-top: 20px;}
  .upper-header-section .header-nav-container .tabs-area-container .nav-pills {height: auto;row-gap: 10px;padding: 10px;}
@@ -436,6 +441,7 @@ ul,ol {padding: 0;}
  .sm-row-gap-10{row-gap: 10px}
  .flex-sm-column-reverse {flex-direction: column-reverse !important;}
 .hidden-sm{display: none;}
+.visible-sm{display: block;}
 .mobile-sidebar .nav-item.active, .mobile-sidebar .nav-item:hover{background-color: #2B28AE;color: #FFF;}
 .mobile-sidebar .nav-item.active .nav-link, .mobile-sidebar .nav-item:hover .nav-link{color: #FFF;font-weight: 700;}
 .mobile-sidebar .nav-item{padding: 5px 10px;}
@@ -450,6 +456,7 @@ ul,ol {padding: 0;}
 .cta_section .content-wrapper .left-content-container {width: 100%;}
 .cta_section .section_wrapper .content-wrapper {padding: 40px 10px 20px;}
 .sm-flex-column-reverse{flex-direction: column-reverse;}
+
 
 /* .feature_section .grid-container .card img {width: 300px;} */
 .feature_section .grid-container .track-payments, .feature_section .grid-container .payment-integrations {min-height: 400px;}

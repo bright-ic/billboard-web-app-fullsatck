@@ -144,6 +144,18 @@ backdrop.addEventListener('click', () => {
     $(this).closest('.form-control').addClass('active');
   });
 
+document.querySelectorAll('.payment-selection-option').forEach(option => {
+  option.addEventListener('click', function () {
+    
+    document.querySelectorAll('.payment-selection-option').forEach(opt => opt.classList.remove('active'));
+
+    this.classList.add('active');
+    const radio = this.querySelector('input[name="payment_selection"]');
+    if (radio) radio.checked = true;
+  });
+});
+
+
 
    $('.login_form').on('submit', function (e) {
     e.preventDefault();
@@ -175,6 +187,39 @@ backdrop.addEventListener('click', () => {
       $('#loader').hide();
     }
   });
+
+$('.request_form').on('submit', function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+    $('#loader').show();
+
+    $(this).find('input').each(function () {
+      if ($.trim($(this).val()) === '') {
+        isValid = false;
+        $(this).addClass('is-invalid');
+      } else {
+        $(this).removeClass('is-invalid');
+      }
+    });
+
+    if (isValid) {
+      setTimeout(function () {
+        $('#loader').hide();
+
+         $('#request_sent_modal .modal-content')
+        .removeClass()
+        .addClass('modal-content  request_sent_modal');
+
+        const modal = new bootstrap.Modal(document.getElementById('request_sent_modal'));
+        modal.show();
+      }, 500); // simulate delay
+    } else {
+      $('#loader').hide();
+    }
+  });
+
+ 
   
 
   $('.chevron-holder').on('click', function (e) {
@@ -226,16 +271,22 @@ backdrop.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
 
-      const selectedTabId = tab.getAttribute('data-tab');
-      if (selectedTabId) {
-        tabContents.forEach(content => content.classList.add('d-none'));
-        const contentToShow = document.getElementById(selectedTabId);
-        if (contentToShow) contentToShow.classList.remove('d-none');
-      }
+const selectedTabId = tab.getAttribute('data-tab');
+if (selectedTabId) {
+  tabContents.forEach(content => {
+    content.classList.add('d-none');
+    content.classList.remove('active'); 
+  });
 
-      const radio = tab.querySelector('input[type=radio]');
-      if (radio) radio.checked = true;
-    });
+  const contentToShow = document.getElementById(selectedTabId);
+  if (contentToShow) {
+    contentToShow.classList.remove('d-none');
+    contentToShow.classList.add('active'); 
+  }
+}
+
+const radio = tab.querySelector('input[type=radio]');
+if (radio) radio.checked = true; });
   });
 
  
