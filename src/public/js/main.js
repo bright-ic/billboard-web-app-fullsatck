@@ -263,9 +263,10 @@ $('.request_form').on('submit', function (e) {
   // });
 
  const tabs = document.querySelectorAll('.method-option');
- const tabContents = document.querySelectorAll('.tab-pane-content');
+  const tabContents = document.querySelectorAll('.tab-pane-content');
 
   tabs.forEach(tab => {
+    // Handle tab click
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');

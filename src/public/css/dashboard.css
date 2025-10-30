@@ -58,6 +58,11 @@ body.transactions_page, .default_layout_wrapper {background-color: #2563EB0A}
 
 .electricity-caculator-section #avaerage_per{display: none;}
 .method-option p{color: #6D7280;margin-bottom: 0; font-family: var(--font-family-inter);line-height: 24px;font-weight: 400;font-size: 16px;width: 298px;}
+.dashboard-footer{background-color: #D5E7FF;}
+
+.calulation-result-container {display: flex;align-items: center;justify-content: center;flex-direction: column;}
+.calulation-result-container .item-list {margin-bottom: 20px;}
+.calulation-result-container .item-list .order-value{color: #111827;font-family: var(--font-family-inter);font-weight: 600;line-height: 24px;}
 
 .pagination-footer{border-top: 1px solid #D5E7FF;padding: 20px 0px;}
 .pagination-footer .btn-inactive{background-color: #F2F8FF;color: #A7ACB3;font-weight: 600;font-family: var(--font-family-inter);line-height: 24px;font-size: 16px;}
@@ -149,6 +154,7 @@ input[type="number"]::-webkit-outer-spin-button {
     .electricity-caculator-section .electric-card-container .tab-pane-content .header-row{display: none;}
      .electricity-caculator-section .electric-card-container .tab-pane-content  .delete-row {position: absolute;top: -20px;right: -20px;cursor: pointer;}
     .user-info .user-container{flex-direction: column;align-items: start;line-height: 26px;}
+    .method-selection .form-control{gap: 0 !important;flex-direction: row !important;}
 }
 
 @media screen and (max-width: 767px) {
@@ -168,6 +174,8 @@ input[type="number"]::-webkit-outer-spin-button {
 /* this helps to add card to the item calculation page on mobile */
   .responsive-row-wrapper {border-radius: 0.5rem;border: 0.5px solid #fff;box-shadow: 0 2px 5px rgba(0,0,0,0.05);margin-bottom: 30px; padding: 10px;background-color: #fff;}
     .electricity-caculator-section .electric-card-container .tab-pane-content .delete-row{width: 40px;height: 40px;}
+ .method-selection{flex-direction: column;column-gap: 5px;}
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
